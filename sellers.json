@@ -1,0 +1,16 @@
+{
+  "updated": "2026-10-19",
+  "note": "Public registry of d402 sellers. Entries are added by pull request to site/public/sellers.json in github.com/napoleon1313/d402. status is \"live\" for a public seller anyone can call and \"demo\" for one you run yourself (url null). At the time of writing there are no live sellers.",
+  "sellers": [
+    {
+      "name": "d402 example search api",
+      "url": null,
+      "scope": ["/search"],
+      "taskTypes": ["classify"],
+      "schemes": ["d402"],
+      "status": "demo",
+      "source": "https://github.com/napoleon1313/d402/tree/main/examples/search-proxy",
+      "run": "pnpm example"
+    }
+  ]
+}

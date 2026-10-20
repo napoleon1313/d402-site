@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-5hce7sga> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>@d402-labs/mpp · docs · d402</title><meta name="description" content="An MPP (Machine Payments Protocol, the Payment HTTP auth scheme from paymentauth.org / tempoxyz/mpp-specs) scheme for d402 sellers, built on the real mppx..."><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0a0a0a"><link rel="icon" type="image/svg+xml" href="/d402-site/favicon.svg"><link rel="canonical" href="https://napoleon1313.github.io/d402-site/docs/packages/mpp/"><meta property="og:type" content="website"><meta property="og:site_name" content="d402"><meta property="og:title" content="@d402-labs/mpp · docs · d402"><meta property="og:description" content="An MPP (Machine Payments Protocol, the Payment HTTP auth scheme from paymentauth.org / tempoxyz/mpp-specs) scheme for d402 sellers, built on the real mppx..."><meta property="og:url" content="https://napoleon1313.github.io/d402-site/docs/packages/mpp/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="@d402-labs/mpp · docs · d402"><meta name="twitter:description" content="An MPP (Machine Payments Protocol, the Payment HTTP auth scheme from paymentauth.org / tempoxyz/mpp-specs) scheme for d402 sellers, built on the real mppx..."><script>
+      (function () {
+        try {
+          var t = localStorage.getItem("d402-theme");
+          if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/d402-site/_astro/bench.CT3VcaLi.css">
+<link rel="stylesheet" href="/d402-site/_astro/bench.C14rLK3X.css"></head> <body class data-astro-cid-5hce7sga> <a class="skip-link" href="#main" data-astro-cid-5hce7sga>skip to content</a> <header class="site-nav" data-astro-cid-5hce7sga> <nav class="wrap nav-inner" aria-label="primary" data-astro-cid-5hce7sga> <a class="nav-home" href="/d402-site/" aria-label="d402 home" data-astro-cid-5hce7sga>d402</a> <ul class="nav-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga> <a href="/d402-site/docs" aria-current="page" data-astro-cid-5hce7sga>docs</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a> </li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> <button type="button" class="theme-toggle" data-theme-toggle aria-label="switch to light theme" data-astro-cid-5hce7sga>light</button> </nav> </header> <main id="main" tabindex="-1" data-astro-cid-5hce7sga>  <div class="wrap dc-shell"> <details class="dc-side" id="dc-side" open> <summary><span>docs / @d402-labs/mpp</span></summary> <nav aria-label="docs"> <div class="dc-group"> <span class="dc-group-title">start</span> <ul> <li> <a href="/d402-site/docs">introduction</a> </li><li> <a href="/d402-site/docs/overview">overview</a> </li><li> <a href="/d402-site/docs/spec">spec</a> </li><li> <a href="/d402-site/docs/quickstart">quick start</a> </li><li> <a href="/d402-site/docs/agents">for agents</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">packages</span> <ul> <li> <a href="/d402-site/docs/packages">all packages</a> </li><li> <a href="/d402-site/docs/packages/spec">@d402-labs/spec</a> </li><li> <a href="/d402-site/docs/packages/server">@d402-labs/server</a> </li><li> <a href="/d402-site/docs/packages/client">@d402-labs/client</a> </li><li> <a href="/d402-site/docs/packages/mcp">@d402-labs/mcp</a> </li><li> <a href="/d402-site/docs/packages/mcp-seller">@d402-labs/mcp-seller</a> </li><li> <a href="/d402-site/docs/packages/proxy">@d402-labs/proxy</a> </li><li> <a href="/d402-site/docs/packages/pool">@d402-labs/pool</a> </li><li> <a href="/d402-site/docs/packages/x402">@d402-labs/x402</a> </li><li> <a href="/d402-site/docs/packages/mpp" aria-current="page">@d402-labs/mpp</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">clients</span> <ul> <li> <a href="/d402-site/docs/packages/python">python</a> </li><li> <a href="/d402-site/docs/packages/curl">curl</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">use cases</span> <ul> <li> <a href="/d402-site/docs/use-cases">all use cases</a> </li><li> <a href="/d402-site/docs/use-cases/01-dataset-builder">01 dataset builder</a> </li><li> <a href="/d402-site/docs/use-cases/02-x402-side-by-side">02 x402 side by side</a> </li><li> <a href="/d402-site/docs/use-cases/03-rate-limit-upgrade">03 rate limit upgrade</a> </li><li> <a href="/d402-site/docs/use-cases/04-mcp-agent">04 mcp agent</a> </li><li> <a href="/d402-site/docs/use-cases/05-multi-seller-wallet">05 multi-seller wallet</a> </li><li> <a href="/d402-site/docs/use-cases/06-trust-tiers">06 trust tiers</a> </li><li> <a href="/d402-site/docs/use-cases/07-paid-crawl">07 paid crawl</a> </li><li> <a href="/d402-site/docs/use-cases/08-marketplace">08 marketplace</a> </li><li> <a href="/d402-site/docs/use-cases/09-triple-gate">09 triple gate: one 402, three ways to pay</a> </li><li> <a href="/d402-site/docs/use-cases/10-pairwise">10 pairwise</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">bench</span> <ul> <li> <a href="/d402-site/docs/bench">bench report</a> </li> </ul> </div> </nav> </details> <script>
+  // Collapsed on phones, always open on desktop. Runs before paint; without JS the list is simply open.
+  (function () {
+    var d = document.getElementById("dc-side");
+    if (!d || !window.matchMedia) return;
+    var mq = window.matchMedia("(min-width: 960px)");
+    var sync = function () { d.open = mq.matches; };
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+  })();
+</script> <article class="dc-main prose" id="dc-content"> <p class="eyebrow dc-eyebrow">package / @d402-labs/mpp</p><h1>@d402-labs/mpp</h1>  <p>An <a href="https://mpp.dev" rel="noopener">MPP</a> (Machine Payments Protocol, the <code>Payment</code> HTTP auth
+scheme from <a href="https://paymentauth.org" rel="noopener">paymentauth.org</a> /
+<a href="https://github.com/tempoxyz/mpp-specs" rel="noopener">tempoxyz/mpp-specs</a>) scheme for d402
+sellers, built on the real <a href="https://www.npmjs.com/package/mppx" rel="noopener"><code>mppx</code></a> SDK
+(0.13.x).</p>
+<p>One 402, three ways to pay:</p>
+<ul>
+<li><strong>labels</strong>: the d402 JSON body, as before (<code>accepts[0]</code>, <code>scheme: "d402"</code>).</li>
+<li><strong>stablecoin</strong>: an MPP <code>WWW-Authenticate: Payment ... method="tempo"</code> challenge
+(Tempo charge, testnet by default).</li>
+<li><strong>card</strong>: an MPP <code>WWW-Authenticate: Payment ... method="stripe"</code> challenge
+(Stripe Shared Payment Token, card), when Stripe is configured and the price is
+at least Stripe&#39;s minimum (USD 0.50; mppx drops the card offer below that).</li>
+</ul>
+<p>The agent comes back with either <code>D402-Voucher</code> (d402 path, always wins) or
+<code>Authorization: Payment <credential></code> (this scheme). The credential is verified
+and charged through mppx, and the response carries <code>Payment-Receipt</code>.</p>
+<h2 id="seller">Seller<a class="dc-anchor" href="#seller" aria-label="link to this section">#</a></h2>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">ts</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-ts">import { createD402 } from &quot;@d402-labs/server&quot;;
+import { createMppScheme } from &quot;@d402-labs/mpp&quot;;
+
+const mpp = createMppScheme({
+  amount: &quot;0.007&quot;,                                   // USD per request
+  realm: &quot;api.example.com&quot;,
+  tempo: { recipient: process.env.MPP_TEMPO_RECIPIENT }, // testnet by default
+  // stripe: { secretKey: process.env.STRIPE_SECRET_KEY }, // card, price &gt;= 0.50
+});
+const d402 = createD402({ /* ...as usual... */ schemes: [mpp] });
+app.route(&quot;/&quot;, d402.routes);
+app.use(&quot;/v1/*&quot;, d402.gate);</code></pre></div>
+<p>The 402 then looks like:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang"></span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code>HTTP/1.1 402 Payment Required
+WWW-Authenticate: Payment id=&quot;...&quot;, realm=&quot;api.example.com&quot;, method=&quot;tempo&quot;, intent=&quot;charge&quot;,
+  request=&quot;&lt;base64url JSON: amount 7000, currency, recipient, chainId 42431&gt;&quot;,
+  description=&quot;0.007 USD per request&quot;, expires=&quot;...&quot;, opaque=&quot;&lt;nonce&gt;&quot;
+Content-Type: application/json
+
+{ &quot;d402&quot;: &quot;1&quot;, &quot;accepts&quot;: [ { &quot;scheme&quot;: &quot;d402&quot;, ... },
+  { &quot;scheme&quot;: &quot;mpp&quot;, &quot;challenge&quot;: &quot;WWW-Authenticate&quot;, &quot;methods&quot;: [&quot;tempo/charge&quot;],
+    &quot;amount&quot;: &quot;0.007&quot;, &quot;currency&quot;: &quot;USD&quot;, &quot;realm&quot;: &quot;api.example.com&quot;, ... } ], ... }</code></pre></div>
+<p>The <code>mpp</code> entry in <code>accepts</code> is informational, so JSON-only clients can see MPP is
+offered. The challenge you pay is the header. <code>tempo.charge()</code> issues one
+challenge per accepted stablecoin (OUSD, then pathUSD on testnet), so the header
+may hold more than one <code>Payment ...</code> challenge.</p>
+<h3 id="options">Options</h3>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>amount</code></td>
+<td>required</td>
+<td>Decimal price, e.g. <code>"0.007"</code>. Tempo uses 6 decimals, Stripe 2.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td><code>"USD"</code></td>
+<td>Shown in <code>accepts</code>; lowercased for the Stripe charge.</td>
+</tr>
+<tr>
+<td><code>realm</code></td>
+<td>request hostname</td>
+<td>Seller id in the challenge.</td>
+</tr>
+<tr>
+<td><code>methods</code></td>
+<td>Tempo + Stripe from the options below</td>
+<td>Any mppx server methods (<code>tempo.charge(...)</code>, <code>stripe.spt(...)</code>, <code>Method.toServer(...)</code>).</td>
+</tr>
+<tr>
+<td><code>tempo</code></td>
+<td><code>{ recipient: MPP_TEMPO_RECIPIENT, testnet: true }</code></td>
+<td>Default Tempo charge. <code>store</code> for a shared replay store across replicas.</td>
+</tr>
+<tr>
+<td><code>stripe</code></td>
+<td>on when <code>client</code> / <code>secretKey</code> / <code>STRIPE_SECRET_KEY</code></td>
+<td><code>networkId</code> defaults to <code>STRIPE_NETWORK_ID</code> or <code>"internal"</code>.</td>
+</tr>
+<tr>
+<td><code>secretKey</code></td>
+<td><code>MPP_SECRET_KEY</code>, else random per process</td>
+<td>HMAC key that binds challenge ids. Set it (&gt;= 32 bytes) when you run more than one process or restart often.</td>
+</tr>
+<tr>
+<td><code>verify</code></td>
+<td>mppx verifies and charges</td>
+<td>Replace method verification. Called only after the challenge is checked as ours, unexpired and unspent.</td>
+</tr>
+<tr>
+<td><code>fetch</code></td>
+<td>global <code>fetch</code></td>
+<td>Used for Tempo RPC calls and Stripe API calls.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>"<amount> <currency> per request"</code></td>
+<td></td>
+</tr>
+</tbody></table>
+</div>
+<p>Challenges are stateless (HMAC-bound ids, 5 minute expiry from mppx). The scheme
+also keeps a bounded in-memory set of paid challenge ids, so a credential pays
+for one request even when a method has no replay store of its own.</p>
+<h2 id="agent">Agent<a class="dc-anchor" href="#agent" aria-label="link to this section">#</a></h2>
+<p>With the mppx client, which handles the 402 and retries with the credential:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">ts</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-ts">import { privateKeyToAccount } from &quot;viem/accounts&quot;;
+import { Mppx, tempo } from &quot;mppx/client&quot;;
+
+const mppx = Mppx.create({ methods: [tempo({ account: privateKeyToAccount(process.env.KEY as `0x${string}`) })], polyfill: false });
+const res = await mppx.fetch(&quot;https://api.example.com/v1/quote&quot;);
+res.headers.get(&quot;Payment-Receipt&quot;);</code></pre></div>
+<p>Card: <code>stripe.charge({ createToken, paymentMethod })</code> from <code>mppx/client</code>, where
+<code>createToken</code> returns a Stripe Shared Payment Token for the challenge&#39;s amount,
+currency and <code>networkId</code>.</p>
+<p>From a shell (the mppx CLI; there is no <code>--inspect</code> flag in 0.13, use these):</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">npx mppx https://api.example.com/v1/quote -v          # pay and fetch, show details
+npx mppx sign --dry-run -C &quot;$(curl -s -D - -o /dev/null https://api.example.com/v1/quote \
+  | sed -n 's/^www-authenticate: //Ip')&quot;               # parse and validate the challenge only</code></pre></div>
+<h2 id="charge-for-real-on-a-laptop">Charge for real on a laptop<a class="dc-anchor" href="#charge-for-real-on-a-laptop" aria-label="link to this section">#</a></h2>
+<p>This container cannot reach Tempo RPCs or Stripe, so nothing below was run here.</p>
+<p>Tempo testnet (Moderato, chain 42431, pathUSD):</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">npx mppx account create --network testnet -a seller   # stored in the OS keychain, autofunded on testnet
+npx mppx account create --network testnet -a agent
+npx mppx account fund --network testnet -a agent      # more testnet tokens if needed
+npx mppx account view -a seller                       # copy the address
+
+export MPP_TEMPO_RECIPIENT=0x...                      # the seller address
+export MPP_SECRET_KEY=&quot;$(openssl rand -base64 32)&quot;
+# start your d402 seller with createMppScheme({ amount: &quot;0.007&quot; })
+
+npx mppx http://localhost:8787/v1/quote -a agent --network testnet -v</code></pre></div>
+<p>Mainnet: <code>tempo: { testnet: false }</code> and a funded mainnet account (<code>--network mainnet</code>).</p>
+<p>Stripe card (test mode):</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">export STRIPE_SECRET_KEY=sk_test_...
+export STRIPE_NETWORK_ID=...      # your Stripe network id; mppx's examples use &quot;internal&quot;
+# price must be &gt;= 0.50 USD or mppx will not offer the card method</code></pre></div>
+<p>The agent needs a Shared Payment Token from Stripe (<code>createToken</code> above). SPTs
+are a Stripe preview feature; your account needs access.</p>
+<h2 id="what-was-verified-offline-and-what-needs-network">What was verified offline, and what needs network<a class="dc-anchor" href="#what-was-verified-offline-and-what-needs-network" aria-label="link to this section">#</a></h2>
+<p>Verified in this package&#39;s tests (<code>src/mpp.test.ts</code>, no network):</p>
+<ul>
+<li>The 402 carries the mppx-generated challenge beside the d402 body, the body
+still parses as a d402 <code>Offer</code>, challenges are fresh per request, and mppx&#39;s
+own parser (<code>Challenge.deserializeList</code>, <code>Challenge.verify</code>) and CLI
+(<code>mppx sign --dry-run</code>) accept them.</li>
+<li>A Tempo testnet challenge is generated by the real <code>tempo.charge()</code> method
+(amount in 6-decimal units, chain 42431, recipient).</li>
+<li>Full handshake with the real mppx client (<code>Mppx.create(...).fetch</code>) against a
+d402 seller: with a fake method built from <code>Method.from/toClient/toServer</code>,
+and with the real Stripe client and server methods and a fake Stripe API
+client (the PaymentIntent request shape is asserted).</li>
+<li>mppx&#39;s real verification path: HMAC check, expiry, tampering, payload schema,
+method errors mapped to <code>schemeError</code>.</li>
+<li>A Tempo credential makes mppx query the chain through the injected <code>fetch</code>
+(<code>eth_getTransactionReceipt</code>); the fake RPC returns nothing, so it fails.</li>
+</ul>
+<p>Needs network (not run here): a real Tempo transaction (client signing needs RPC
+for nonce and fees; the server checks or broadcasts it on chain), and a real
+Stripe PaymentIntent with a real SPT.</p>
+   <footer class="dc-foot label"> <a href="https://github.com/napoleon1313/d402/blob/main/packages/mpp/README.md" rel="noopener">edit on github: packages/mpp/README.md</a> <a href="#main">back to top</a> </footer> </article> </div>  </main> <footer class="site-footer" data-astro-cid-5hce7sga> <div class="wrap footer-inner" data-astro-cid-5hce7sga> <p class="footer-line" data-astro-cid-5hce7sga>d402 · mit · built at the yc make something agents want hackathon, oct 2026</p> <ul class="footer-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga><a href="/d402-site/" data-astro-cid-5hce7sga>home</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/docs" data-astro-cid-5hce7sga>docs</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/sellers" data-astro-cid-5hce7sga>sellers</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms.txt" data-astro-cid-5hce7sga>llms.txt</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms-full.txt" data-astro-cid-5hce7sga>llms-full.txt</a></li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> </div> </footer> <script>
+      (function () {
+        var root = document.documentElement;
+        var btns = document.querySelectorAll("[data-theme-toggle]");
+        function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+        function sync() {
+          var next = current() === "light" ? "dark" : "light";
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", current() === "light" ? "#f2f2f2" : "#0a0a0a");
+          btns.forEach(function (b) {
+            b.textContent = next;
+            b.setAttribute("aria-label", "switch to " + next + " theme");
+          });
+        }
+        btns.forEach(function (b) {
+          b.addEventListener("click", function () {
+            var next = current() === "light" ? "dark" : "light";
+            root.setAttribute("data-theme", next);
+            try { localStorage.setItem("d402-theme", next); } catch (e) {}
+            sync();
+          });
+        });
+        sync();
+      })();
+    </script> </body> </html>  <script type="module">document.addEventListener("click",async e=>{const t=e.target?.closest(".dc-copy");if(!t)return;const c=t.closest(".dc-code")?.querySelector("code")?.textContent??"";try{await navigator.clipboard.writeText(c),t.textContent="copied"}catch{t.textContent="select + copy"}t.setAttribute("data-copied",""),setTimeout(()=>{t.textContent="copy",t.removeAttribute("data-copied")},1500)});</script>

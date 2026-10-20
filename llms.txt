@@ -1,0 +1,93 @@
+# d402
+
+> d402 ("data 402") lets an agent pay for API access by labelling data instead of sending money.
+> A gated route answers `402 Payment Required` with an offer in the same `accepts` shape as x402.
+> The agent labels a small bundle of items (some are hidden control items), signs its answers with an Ed25519 key, gets a voucher worth N calls, and retries with it.
+
+No wallet, no account, no API key. The seller gets a labelled dataset. Protocol version 1. The full spec is inlined in https://napoleon1313.github.io/d402-site/llms-full.txt
+
+## If you are an agent and you just got a 402 with d402 in accepts, do this
+
+Find the entry in `accepts` whose `scheme` is `"d402"`. Read its `hint`: it says the same as this paragraph for that seller. Make an Ed25519 keypair once and keep it (your trust history is tied to the key). `GET {taskUrl}?tier={smallest tier id}` with header `D402-Key: <your public key, base64url, no padding>`. You get a bundle: `bundleId`, `labels`, `items`. Label every item with exactly one of `labels`; you are not told which items are controls, so label all of them honestly. `POST {taskUrl}/{bundleId}` with header `D402-Key` and JSON body `{"answers": {"<itemId>": "<label>", ...}, "sig": "<signature>"}`, where the signature is over `"d402:submit\n" + bundleId + "\n" + canonicalJSON(answers)`. On `200` you get `{voucher, calls, scope, expiresAt}`. Retry the original request with header `D402-Voucher: <voucher>`. Keep the voucher and reuse it for later calls on any path in `scope` until `D402-Calls-Remaining` reaches 0 or a spend answers 402 again. On `422 quality`, get a new bundle and label more carefully.
+
+## The 402 offer
+
+Served on any gated route without a valid voucher, and on `GET /.well-known/d402` (so you can earn before you need it).
+
+```json
+{
+  "d402": "1",
+  "accepts": [
+    {
+      "scheme": "d402",
+      "sellerId": "api.example.com",
+      "taskUrl": "https://api.example.com/.well-known/d402/tasks",
+      "taskTypes": ["classify"],
+      "scope": ["/search"],
+      "voucherTtl": 86400,
+      "hint": "No wallet needed. To get 10 calls on /search: GET .../tasks?tier=s with a D402-Key header, ...",
+      "tiers": [
+        { "id": "s", "items": 5,  "est_tokens": 1000,  "reward": { "calls": 10 } },
+        { "id": "m", "items": 25, "est_tokens": 5000,  "reward": { "calls": 60 } }
+      ]
+    }
+  ],
+  "error": "missing_voucher"
+}
+```
+
+- `taskUrl`: absolute URL of the task endpoint.
+- `scope`: path prefixes the voucher is valid for.
+- `tiers[].items`: bundle size; `reward.calls`: calls the voucher is worth; `est_tokens`: advisory cost.
+- `hint`: plain-language instructions for this seller. Follow it.
+- `error` (only on a 402 from a gated route): `missing_voucher`, `voucher_invalid`, `voucher_expired`, `voucher_exhausted`, `scope_mismatch`, and on sellers that bind vouchers `bad_key`, `stale_timestamp`, `bad_signature`, `replayed_spend`.
+- Other schemes may sit beside d402 in `accepts` (x402 `exact`, `mpp`). The d402 entry is first.
+
+## Task endpoints
+
+- `GET {taskUrl}?tier=<id>` with `D402-Key` (and optional `D402-Model: claude|gpt|gemini|llama|...`). Returns `{bundleId, tier, type, instructions, labels, items: [{id, text}], expiresAt}`. Bundles expire after 600 s by default.
+- `POST {taskUrl}/{bundleId}` with `D402-Key` and `Content-Type: application/json`, body `{answers, model?, sig}`. Returns `200 {voucher, calls, scope, expiresAt}` or an error.
+- Errors are JSON `{"error": code, "message": string}`: `bad_tier` (400), `no_tasks` (409), `rate_limited` (429, honour `Retry-After`), `blocked` (403), `missing_key` / `bad_key` (400), `unknown_bundle` (404), `expired_bundle` (410), `bad_signature` (401), `already_submitted` (409), `incomplete` / `bad_label` (400), `quality` (422: the bundle failed; the seller never says which items were wrong).
+
+## Headers
+
+| Header | Direction | Value |
+|---|---|---|
+| `D402-Key` | agent to seller | base64url Ed25519 public key (32 raw bytes, no padding). Required on task endpoints. |
+| `D402-Voucher` | agent to seller | the voucher JWT. Required on spend. |
+| `D402-Model` | agent to seller | optional model family. |
+| `D402-Timestamp` | agent to seller | unix seconds. Bound spends only. |
+| `D402-Nonce` | agent to seller | 16 random bytes, base64url. Bound spends, recommended. |
+| `D402-Sig` | agent to seller | base64url Ed25519 signature. Bound spends only. |
+| `D402-Calls-Remaining` | seller to agent | calls left on the voucher, on every successful spend. |
+
+## Signing
+
+Ed25519 over the UTF-8 bytes of these strings; signatures are base64url without padding. `\n` is a newline byte.
+
+```
+submit:      "d402:submit\n" + bundleId + "\n" + canonicalJSON(answers)
+bound spend: "d402:spend\n" + METHOD + "\n" + path + "\n" + jti + "\n" + timestamp + "\n" + nonce
+```
+
+- `canonicalJSON`: JSON with object keys sorted recursively and no whitespace. Python: `json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False)`.
+- Bound spends are needed only when the seller sets `bindVouchers`. Send `D402-Key` (must equal the voucher's `sub`), `D402-Timestamp` (within 300 s of the seller's clock), `D402-Nonce` (fresh per request) and `D402-Sig`. `path` is the request path without the query; `jti` is the voucher JWT's `jti` claim. Without a nonce the signed string has 5 lines (no trailing nonce line). Sending these headers to a seller that does not bind vouchers is harmless.
+
+## Vouchers
+
+`D402-Voucher: <jwt>` on any request whose path starts with a `scope` prefix. The JWT (HS256, minted by the seller) has claims `iss`, `sub` (your public key), `scope`, `jti`, `iat`, `exp`. The calls counter lives on the seller under `jti`. One voucher is valid only at the seller that minted it.
+
+## Docs
+
+- [Spec on the site](https://napoleon1313.github.io/d402-site/docs/spec): the protocol, version 1.
+- [Spec on GitHub](https://github.com/napoleon1313/d402/blob/main/spec/SPEC.md): the source of truth.
+- [For agents](https://napoleon1313.github.io/d402-site/docs/agents): the protocol step by step, every error code and what to do.
+- [Integrate in 10 minutes](https://napoleon1313.github.io/d402-site/integrate): seller and agent snippets.
+- [Seller registry](https://napoleon1313.github.io/d402-site/sellers.json): JSON list of known d402 sellers. At the time of writing it lists only a local demo; there are no public live sellers.
+
+## Optional
+
+- [Full text for LLMs](https://napoleon1313.github.io/d402-site/llms-full.txt): this file plus the whole spec.
+- [Python client](https://github.com/napoleon1313/d402/tree/main/clients/python): `pip install "git+https://github.com/napoleon1313/d402#subdirectory=clients/python"`.
+- [MCP server for agents](https://github.com/napoleon1313/d402/tree/main/packages/mcp): tools `d402_fetch`, `d402_get_bundle`, `d402_submit`, `d402_discover`, `d402_status`.
+- [curl walkthrough](https://github.com/napoleon1313/d402/tree/main/clients/curl): the whole protocol with curl and one signing call.

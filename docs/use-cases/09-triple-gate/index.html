@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-5hce7sga> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>09 triple gate: one 402, three ways to pay · docs · d402</title><meta name="description" content="A quote API wants to be paid and does not care how. Its single GET /quote takes a d402 voucher (labels), an x402 payment (USDC on Base via Coinbase's..."><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0a0a0a"><link rel="icon" type="image/svg+xml" href="/d402-site/favicon.svg"><link rel="canonical" href="https://napoleon1313.github.io/d402-site/docs/use-cases/09-triple-gate/"><meta property="og:type" content="website"><meta property="og:site_name" content="d402"><meta property="og:title" content="09 triple gate: one 402, three ways to pay · docs · d402"><meta property="og:description" content="A quote API wants to be paid and does not care how. Its single GET /quote takes a d402 voucher (labels), an x402 payment (USDC on Base via Coinbase's..."><meta property="og:url" content="https://napoleon1313.github.io/d402-site/docs/use-cases/09-triple-gate/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="09 triple gate: one 402, three ways to pay · docs · d402"><meta name="twitter:description" content="A quote API wants to be paid and does not care how. Its single GET /quote takes a d402 voucher (labels), an x402 payment (USDC on Base via Coinbase's..."><script>
+      (function () {
+        try {
+          var t = localStorage.getItem("d402-theme");
+          if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/d402-site/_astro/bench.CT3VcaLi.css">
+<link rel="stylesheet" href="/d402-site/_astro/bench.C14rLK3X.css"></head> <body class data-astro-cid-5hce7sga> <a class="skip-link" href="#main" data-astro-cid-5hce7sga>skip to content</a> <header class="site-nav" data-astro-cid-5hce7sga> <nav class="wrap nav-inner" aria-label="primary" data-astro-cid-5hce7sga> <a class="nav-home" href="/d402-site/" aria-label="d402 home" data-astro-cid-5hce7sga>d402</a> <ul class="nav-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga> <a href="/d402-site/docs" data-astro-cid-5hce7sga>docs</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/docs/use-cases" aria-current="page" data-astro-cid-5hce7sga>use cases</a> </li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> <button type="button" class="theme-toggle" data-theme-toggle aria-label="switch to light theme" data-astro-cid-5hce7sga>light</button> </nav> </header> <main id="main" tabindex="-1" data-astro-cid-5hce7sga>  <div class="wrap dc-shell"> <details class="dc-side" id="dc-side" open> <summary><span>docs / 09 triple gate: one 402, three ways to pay</span></summary> <nav aria-label="docs"> <div class="dc-group"> <span class="dc-group-title">start</span> <ul> <li> <a href="/d402-site/docs">introduction</a> </li><li> <a href="/d402-site/docs/overview">overview</a> </li><li> <a href="/d402-site/docs/spec">spec</a> </li><li> <a href="/d402-site/docs/quickstart">quick start</a> </li><li> <a href="/d402-site/docs/agents">for agents</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">packages</span> <ul> <li> <a href="/d402-site/docs/packages">all packages</a> </li><li> <a href="/d402-site/docs/packages/spec">@d402-labs/spec</a> </li><li> <a href="/d402-site/docs/packages/server">@d402-labs/server</a> </li><li> <a href="/d402-site/docs/packages/client">@d402-labs/client</a> </li><li> <a href="/d402-site/docs/packages/mcp">@d402-labs/mcp</a> </li><li> <a href="/d402-site/docs/packages/mcp-seller">@d402-labs/mcp-seller</a> </li><li> <a href="/d402-site/docs/packages/proxy">@d402-labs/proxy</a> </li><li> <a href="/d402-site/docs/packages/pool">@d402-labs/pool</a> </li><li> <a href="/d402-site/docs/packages/x402">@d402-labs/x402</a> </li><li> <a href="/d402-site/docs/packages/mpp">@d402-labs/mpp</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">clients</span> <ul> <li> <a href="/d402-site/docs/packages/python">python</a> </li><li> <a href="/d402-site/docs/packages/curl">curl</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">use cases</span> <ul> <li> <a href="/d402-site/docs/use-cases">all use cases</a> </li><li> <a href="/d402-site/docs/use-cases/01-dataset-builder">01 dataset builder</a> </li><li> <a href="/d402-site/docs/use-cases/02-x402-side-by-side">02 x402 side by side</a> </li><li> <a href="/d402-site/docs/use-cases/03-rate-limit-upgrade">03 rate limit upgrade</a> </li><li> <a href="/d402-site/docs/use-cases/04-mcp-agent">04 mcp agent</a> </li><li> <a href="/d402-site/docs/use-cases/05-multi-seller-wallet">05 multi-seller wallet</a> </li><li> <a href="/d402-site/docs/use-cases/06-trust-tiers">06 trust tiers</a> </li><li> <a href="/d402-site/docs/use-cases/07-paid-crawl">07 paid crawl</a> </li><li> <a href="/d402-site/docs/use-cases/08-marketplace">08 marketplace</a> </li><li> <a href="/d402-site/docs/use-cases/09-triple-gate" aria-current="page">09 triple gate: one 402, three ways to pay</a> </li><li> <a href="/d402-site/docs/use-cases/10-pairwise">10 pairwise</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">bench</span> <ul> <li> <a href="/d402-site/docs/bench">bench report</a> </li> </ul> </div> </nav> </details> <script>
+  // Collapsed on phones, always open on desktop. Runs before paint; without JS the list is simply open.
+  (function () {
+    var d = document.getElementById("dc-side");
+    if (!d || !window.matchMedia) return;
+    var mq = window.matchMedia("(min-width: 960px)");
+    var sync = function () { d.open = mq.matches; };
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+  })();
+</script> <article class="dc-main prose" id="dc-content"> <p class="eyebrow dc-eyebrow">use case / 09-triple-gate</p><h1>09 triple gate: one 402, three ways to pay</h1>  <p>A quote API wants to be paid and does not care how. Its single <code>GET /quote</code>
+takes a <strong>d402 voucher</strong> (labels), an <strong>x402 payment</strong> (USDC on Base via
+Coinbase&#39;s protocol) or an <strong>MPP credential</strong> (Stripe/Tempo&#39;s Machine Payments
+Protocol), and when it gets none of them it answers <strong>one</strong> 402 that offers all
+three. The x402 and MPP parts are the real SDKs (<code>x402-hono</code>/<code>x402-fetch</code>/<code>x402</code>
+v1 from Coinbase, <code>mppx</code> from Tempo/Stripe), wired for real; what cannot run
+without network (facilitator settlement, Tempo broadcast) is injectable and is
+injected in the tests.</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">pnpm --filter d402-uc-triple-gate run start                      # the story, no network, ~4 s
+TRIPLE_GATE_MOCK=1 pnpm --filter d402-uc-triple-gate run start   # same, with x402 + MPP verification injected: all three reach 200
+pnpm exec vitest run use-cases/09-triple-gate                    # 22 tests, no network</code></pre></div>
+<h2 id="the-one-response">The one response<a class="dc-anchor" href="#the-one-response" aria-label="link to this section">#</a></h2>
+<p><code>GET /quote?symbol=ACME</code> with no payment:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">http</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-http">HTTP/1.1 402 Payment Required
+Content-Type: application/json; charset=UTF-8
+WWW-Authenticate: Payment id=&quot;vknOku5_K5Eh…&quot;, realm=&quot;quotes.example&quot;, method=&quot;tempo&quot;, intent=&quot;charge&quot;,
+                  request=&quot;eyJhbW91bnQiOiI3MDAwIi…&quot;, expires=&quot;2026-10-18T16:15:17Z&quot;, opaque=&quot;eyJfbXBweF9ub25j…&quot;,
+                  Payment id=&quot;RnjjEYDRBvcr…&quot;, method=&quot;tempo&quot;, intent=&quot;charge&quot;, request=&quot;…&quot;        &lt;- MPP: mppx's own
+                                                                                                  challenge, two Tempo
+                                                                                                  currencies (OUSD, pathUSD)
+{
+  &quot;d402&quot;: &quot;1&quot;,                                                                                 &lt;- d402 offer (SPEC 3)
+  &quot;x402Version&quot;: 1,                                                                            &lt;- x402 v1 body marker
+  &quot;accepts&quot;: [
+    { &quot;scheme&quot;: &quot;d402&quot;, &quot;sellerId&quot;: &quot;quotes.example&quot;, &quot;taskUrl&quot;: &quot;…/.well-known/d402/tasks&quot;,
+      &quot;scope&quot;: [&quot;/quote&quot;], &quot;tiers&quot;: [{ &quot;id&quot;: &quot;s&quot;, &quot;items&quot;: 5, &quot;reward&quot;: { &quot;calls&quot;: 10 } }], &quot;hint&quot;: &quot;No wallet needed…&quot; },
+    { &quot;scheme&quot;: &quot;exact&quot;, &quot;network&quot;: &quot;base-sepolia&quot;, &quot;maxAmountRequired&quot;: &quot;7000&quot;,               &lt;- x402 &quot;exact&quot;: 0.007 USDC
+      &quot;asset&quot;: &quot;0x036CbD53842c5426634e7929541eC2318f3dCF7e&quot;, &quot;payTo&quot;: &quot;0x7F3c…293A&quot;,
+      &quot;resource&quot;: &quot;http://…/quote?symbol=ACME&quot;, &quot;mimeType&quot;: &quot;application/json&quot;, &quot;maxTimeoutSeconds&quot;: 300,
+      &quot;extra&quot;: { &quot;name&quot;: &quot;USDC&quot;, &quot;version&quot;: &quot;2&quot; }, &quot;outputSchema&quot;: { &quot;input&quot;: { &quot;type&quot;: &quot;http&quot;, &quot;method&quot;: &quot;GET&quot; } } }
+  ]
+}</code></pre></div>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th></th>
+<th>x402 (USDC)</th>
+<th>MPP (Tempo / Stripe)</th>
+<th>d402 (labels)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>where in the 402</td>
+<td><code>body.accepts[scheme=exact]</code> + <code>body.x402Version</code></td>
+<td><code>WWW-Authenticate: Payment …</code></td>
+<td><code>body.accepts[scheme=d402]</code></td>
+</tr>
+<tr>
+<td>how to pay</td>
+<td><code>X-PAYMENT: <base64 EIP-3009 authorization></code></td>
+<td><code>Authorization: Payment <base64url {challenge, payload}></code></td>
+<td><code>D402-Voucher: <JWT></code></td>
+</tr>
+<tr>
+<td>who checks it</td>
+<td>facilitator <code>POST /verify</code> then <code>/settle</code> (<code>x402/verify</code>)</td>
+<td><code>mppx</code> server handler (verifies, broadcasts on Tempo)</td>
+<td><code>d402.spend()</code></td>
+</tr>
+<tr>
+<td>proof on the 200</td>
+<td><code>X-PAYMENT-RESPONSE</code> (settlement, base64 JSON)</td>
+<td><code>Payment-Receipt</code> (base64url JSON)</td>
+<td><code>D402-Calls-Remaining</code></td>
+</tr>
+</tbody></table>
+</div>
+<p>Precedence inside the gate is voucher, then <code>X-PAYMENT</code>, then <code>Authorization: Payment</code>; a request carrying both a voucher and an x402 header is served from
+the voucher and the facilitator is never called.</p>
+<h2 id="the-story">The story<a class="dc-anchor" href="#the-story" aria-label="link to this section">#</a></h2>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang"></span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code>1. seller up at http://127.0.0.1:42789; GET /quote -&gt; HTTP 402. This one response offers USDC, card/stablecoin via MPP, and labels:
+   WWW-Authenticate: Payment id=&quot;vknOku5_…&quot;, realm=&quot;quotes.example&quot;, method=&quot;tempo&quot;, intent=&quot;char...      &lt;- MPP (mppx), methods [tempo]
+   body.x402Version: 1, body.accepts[].scheme: [d402, exact]
+     d402  -&gt; label 5 items for 10 calls (seller quotes.example)      &lt;- labels (@d402-labs/client)
+     exact -&gt; 0.007 USDC on base-sepolia to 0x7F3c0A9e...             &lt;- x402 (x402-fetch / x402/client)
+     mpp   -&gt; tempo/charge 7000 base units of 0x20c000...6874BE on chain 42431
+     mpp   -&gt; tempo/charge 7000 base units of 0x20c000...000000 on chain 42431
+2. agent A (labels): 402 -&gt; labelled 1 bundle of 5 snippets -&gt; HTTP 200 in 55 ms, D402-Calls-Remaining: 9
+3. agent B (USDC): would pay scheme &quot;exact&quot;: 0.007 USDC (7000 base units) on base-sepolia to 0x7F3c…, asset 0x036C…
+   set X402_PRIVATE_KEY with Base Sepolia USDC to settle for real (facilitator https://x402.org/facilitator)
+4. agent C (MPP): parsed the WWW-Authenticate: Payment challenge with mppx: 2 offer(s): tempo/charge 7000 …
+   set MPP_PRIVATE_KEY (a funded Tempo testnet key, `mppx account create`) to pay for real; STRIPE_SECRET_KEY adds the card method
+5. side by side: …
+
+RESULT: one 402, three ways to pay: USDC (x402), card/stablecoin (MPP), labels (d402); paid here with labels</code></pre></div>
+<p>With <code>TRIPLE_GATE_MOCK=1</code> agents B and C pay too: B signs a real <code>X-PAYMENT</code>
+with a throwaway viem key (x402&#39;s own <code>createPaymentHeader</code>, offline) and the
+gate&#39;s injected facilitator accepts it; C builds a credential with <code>mppx</code>&#39;s
+<code>Credential.from</code> from the served challenge and the injected MPP verifier
+accepts it. Both lines are labelled MOCK; nothing touches a chain.</p>
+<h2 id="what-was-verified-here-vs-what-needs-the-laptop">What was verified here vs what needs the laptop<a class="dc-anchor" href="#what-was-verified-here-vs-what-needs-the-laptop" aria-label="link to this section">#</a></h2>
+<p>Verified in this repo, no network (the 22 tests):</p>
+<ul>
+<li>the 402 body parses with <code>Offer</code> from <a class="dc-codelink" href="/d402-site/docs/packages/spec"><code>@d402-labs/spec</code></a> <strong>and</strong> its <code>exact</code> entry
+parses with x402&#39;s <code>PaymentRequirementsSchema</code>, with the configured price
+(<code>$0.007</code> -&gt; <code>7000</code>), network and checksummed <code>payTo</code>; <code>x402Version: 1</code>;
+<code>WWW-Authenticate</code> starts with <code>Payment </code> and <code>mppx</code>&#39;s <code>Challenge.fromResponseList</code>
+parses it back to <code>tempo/charge</code>, amount <code>7000</code>, chain 42431.</li>
+<li>d402: earn + spend -&gt; 200, 9 calls left; a bad voucher -&gt; merged 402 with
+<code>error: "voucher_invalid"</code> and all three offers intact.</li>
+<li>x402: a real <code>X-PAYMENT</code> (signed with x402&#39;s client code) with <code>verifyX402</code> /
+<code>settleX402</code> injected -&gt; 200 + <code>X-PAYMENT-RESPONSE</code> decodable by
+<code>x402-fetch</code>&#39;s <code>decodeXPaymentResponse</code>; injected failure -&gt; 402 with
+<code>error: "insufficient_funds"</code>; malformed header -&gt; 402 without calling verify;
+settle failure -&gt; 402.</li>
+<li>x402 with the <strong>real</strong> <code>x402-hono</code> <code>paymentMiddleware</code> + <strong>real</strong> <code>x402-fetch</code>
+<code>wrapFetchWithPayment</code> against a local fake facilitator (port 0, answers
+<code>/verify</code> and <code>/settle</code>) -&gt; 200; and the triple gate with <code>facilitatorUrl</code>
+pointed at that fake, no injection -&gt; <code>x402/verify</code>&#39;s <code>useFacilitator</code> calls
+<code>/verify</code> then <code>/settle</code> -&gt; 200.</li>
+<li>MPP: an <code>Authorization: Payment …</code> built with <code>mppx</code>&#39;s <code>Credential</code> from the
+served challenge, <code>verifyMpp</code> injected -&gt; 200 + <code>Payment-Receipt</code> that
+<code>Receipt.deserialize</code> reads; injected failure -&gt; 402 with the reason and a
+fresh challenge; malformed / <code>Bearer</code> -&gt; 402 without calling verify.</li>
+<li>precedence: voucher + <code>X-PAYMENT</code> -&gt; voucher; <code>X-PAYMENT</code> + MPP -&gt; x402.</li>
+</ul>
+<p>Needs network (the laptop): the facilitator&#39;s real <code>/verify</code> + <code>/settle</code> on
+Base Sepolia, and <code>mppx</code>&#39;s Tempo broadcast / Stripe SPT. Nothing in the
+automated tests reaches them.</p>
+<p>Format-compatible, not settled: when <code>verifyMpp</code> is injected, the
+<code>Payment-Receipt</code> is produced by <code>mppx</code>&#39;s <code>Receipt.serialize</code> with the
+credential&#39;s transaction hash as <code>reference</code>; a real run gets the receipt from
+<code>mppx</code> itself (<code>withReceipt</code>). Likewise the mock <code>X-PAYMENT-RESPONSE</code> is x402&#39;s
+<code>settleResponseHeader</code> over a fake transaction hash.</p>
+<h2 id="a-finding-about-x402-fetch">A finding about x402-fetch<a class="dc-anchor" href="#a-finding-about-x402-fetch" aria-label="link to this section">#</a></h2>
+<p><code>x402-fetch@1.2.0</code>&#39;s <code>wrapFetchWithPayment</code> does
+<code>accepts.map((x) => PaymentRequirementsSchema.parse(x))</code> on <strong>every</strong> entry and
+that schema is <code>scheme: z.enum(["exact"])</code>, so a d402 entry throws whatever its
+position in <code>accepts</code> (a test pins this). Moving d402 last does not help, so
+d402 stays first, as every other seller in this repo does. Agent B therefore
+uses <code>src/x402-client.ts</code>: the same flow as <code>x402-fetch</code>, built from x402&#39;s own
+<code>selectPaymentRequirements</code> and <code>createPaymentHeader</code>, with one extra line that
+keeps the <code>exact</code> entries. The server side has no such problem: <code>x402-hono</code>&#39;s
+402 body is exactly <code>{ x402Version, accepts, error }</code>, which is what the gate
+emits, and the <code>X-PAYMENT</code> header is decoded with <code>x402/schemes</code>&#39;
+<code>exact.evm.decodePayment</code>, the function the middleware uses.</p>
+<h2 id="run-it-for-real-on-your-laptop">Run it for real on your laptop<a class="dc-anchor" href="#run-it-for-real-on-your-laptop" aria-label="link to this section">#</a></h2>
+<p>Everything below needs outbound network (x402.org, Base Sepolia RPC, Tempo RPC,
+Stripe); the container this was written in has none.</p>
+<h3 id="x402-on-base-sepolia-usdc">x402 on Base Sepolia (USDC)</h3>
+<ol>
+<li>A key. Either <code>cast wallet new</code> (Foundry) or
+<code>node -e "const {generatePrivateKey,privateKeyToAccount}=require('viem/accounts');const k=generatePrivateKey();console.log(k, privateKeyToAccount(k).address)"</code>
+(run from this folder, where <code>viem</code> is installed).</li>
+<li>Testnet funds for that address: Base Sepolia ETH is not needed (EIP-3009
+transfers are gasless for the payer; the facilitator pays gas), USDC is. Get
+Base Sepolia USDC from the Circle faucet (<a href="https://faucet.circle.com" rel="noopener">https://faucet.circle.com</a>, pick
+Base Sepolia) or Coinbase&#39;s developer platform faucet. The asset is
+<code>0x036CbD53842c5426634e7929541eC2318f3dCF7e</code> (what x402 itself puts in the
+offer). One quote costs 0.007 USDC.</li>
+<li>Run:</li>
+</ol>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">export X402_PRIVATE_KEY=0x…                      # the payer (agent B); needs Base Sepolia USDC
+export X402_PAY_TO=0x…                            # your receiving address (default: a demo address)
+# export X402_FACILITATOR_URL=https://x402.org/facilitator   # the default; it settles base-sepolia for free
+pnpm --filter d402-uc-triple-gate run start</code></pre></div>
+<p>Agent B then signs the EIP-3009 authorization with <code>x402/client</code>, the gate
+calls the facilitator&#39;s <code>/verify</code> and, after serving the quote, <code>/settle</code>; the
+200 carries <code>X-PAYMENT-RESPONSE</code> with the Base Sepolia transaction hash
+(<code>decodeXPaymentResponse</code> prints it). Check it on <a href="https://sepolia.basescan.org" rel="noopener">https://sepolia.basescan.org</a>.</p>
+<h3 id="mpp-on-tempo-testnet-stablecoin-optionally-stripe-card">MPP on Tempo testnet (stablecoin), optionally Stripe (card)</h3>
+<ol>
+<li>An account: <code>npx mppx account create</code> (stored in the OS keychain, auto-funded
+on Tempo testnet; <code>mppx account fund --account main --network testnet</code> tops
+it up). <code>mppx</code> reads <code>MPPX_PRIVATE_KEY</code> as an alternative to the keychain;
+to feed the story export the key as <code>MPP_PRIVATE_KEY</code>
+(<code>mppx account export</code> or generate one with viem and fund it with
+<code>mppx account fund</code>).</li>
+<li>Run:</li>
+</ol>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">export MPP_PRIVATE_KEY=0x…                        # the payer (agent C), funded on Tempo testnet (chain 42431)
+export MPP_RECIPIENT=0x…                          # your receiving address (default: the demo address)
+export MPP_SECRET_KEY=&quot;$(openssl rand -base64 32)&quot;   # HMAC for challenge ids (a dev default is used if unset)
+pnpm --filter d402-uc-triple-gate run start</code></pre></div>
+<p>Agent C then uses <code>mppx/client</code> (<code>Mppx.create({ methods: [tempo({ account })], polyfill: false }).fetch</code>),
+which reads the <code>WWW-Authenticate: Payment</code> challenge, pays on Tempo testnet and
+retries with <code>Authorization: Payment …</code>; the gate&#39;s <code>mppx</code> server handler
+verifies the transaction and the 200 carries <code>Payment-Receipt</code>.</p>
+<p>The <code>mppx</code> CLI can also drive the gate directly, which is a good booth demo:
+<code>npx mppx http://127.0.0.1:<port>/quote?symbol=ACME</code> pays via MPP, and
+<code>npx mppx … --protocol x402</code> pays the same 402 via x402 (<code>mppx</code> ships an
+x402 client too and its <code>--protocol auto</code> prefers MPP when both are offered).
+For that, run the story with <code>TRIPLE_GATE_HOLD=1</code>: it keeps the seller
+listening after the RESULT line and prints the URL to point <code>mppx</code> at.</p>
+<p>Card via Stripe: <code>mppx</code>&#39;s Stripe method (<code>stripe.spt({ secretKey, networkId, currency: "usd", decimals: 2, paymentMethodTypes: ["card"] })</code>)
+is wired in when <code>STRIPE_SECRET_KEY</code> (an <code>sk_test_…</code> key) is set; it also
+needs <code>STRIPE_PROFILE_ID</code> (the machine-payments profile id <code>mppx</code> calls
+<code>networkId</code>). The 402 then carries a second <code>WWW-Authenticate</code> challenge with
+<code>method="stripe"</code>. This path is typechecked against the SDK but was not run
+here (no network).</p>
+<h2 id="environment-variables">Environment variables<a class="dc-anchor" href="#environment-variables" aria-label="link to this section">#</a></h2>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th>var</th>
+<th>used by</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>X402_PAY_TO</code></td>
+<td>gate: x402 <code>payTo</code></td>
+<td>demo address <code>0x7f3c…293a</code></td>
+</tr>
+<tr>
+<td><code>X402_FACILITATOR_URL</code></td>
+<td>gate: <code>x402/verify</code> <code>useFacilitator</code></td>
+<td><code>https://x402.org/facilitator</code></td>
+</tr>
+<tr>
+<td><code>X402_PRIVATE_KEY</code></td>
+<td>agent B: pays for real</td>
+<td>unset -&gt; prints what it would pay</td>
+</tr>
+<tr>
+<td><code>MPP_RECIPIENT</code></td>
+<td>gate: <code>tempo({ recipient })</code></td>
+<td>demo address</td>
+</tr>
+<tr>
+<td><code>MPP_SECRET_KEY</code></td>
+<td>gate: <code>Mppx.create({ secretKey })</code></td>
+<td>a dev-only constant</td>
+</tr>
+<tr>
+<td><code>MPP_PRIVATE_KEY</code></td>
+<td>agent C: pays for real with <code>mppx/client</code></td>
+<td>unset -&gt; prints the parsed challenge</td>
+</tr>
+<tr>
+<td><code>STRIPE_SECRET_KEY</code>, <code>STRIPE_PROFILE_ID</code></td>
+<td>gate: adds <code>stripe.spt</code> to the MPP methods</td>
+<td>unset -&gt; Tempo only</td>
+</tr>
+<tr>
+<td><code>TRIPLE_GATE_MOCK=1</code></td>
+<td>story: inject accepting verifiers for x402 and MPP</td>
+<td>off</td>
+</tr>
+<tr>
+<td><code>TRIPLE_GATE_HOLD=1</code></td>
+<td>story: keep the seller listening after the RESULT (for <code>npx mppx <url></code> demos)</td>
+<td>off</td>
+</tr>
+</tbody></table>
+</div>
+<h2 id="sdk-facts-this-is-built-on-read-from-the-installed-packages">SDK facts this is built on (read from the installed packages)<a class="dc-anchor" href="#sdk-facts-this-is-built-on-read-from-the-installed-packages" aria-label="link to this section">#</a></h2>
+<ul>
+<li><code>x402-hono@1.2.0</code>: <code>paymentMiddleware(payTo, routes, facilitator?, paywall?)</code>;
+<code>routes = { "GET /quote": { price: "$0.007", network: "base-sepolia" } }</code>;
+<code>facilitator = { url, createAuthHeaders? }</code>, default <code>https://x402.org/facilitator</code>.
+Reads <code>X-PAYMENT</code>; 402 body <code>{ error, accepts: PaymentRequirements[], x402Version: 1 }</code>;
+on success sets <code>X-PAYMENT-RESPONSE</code>. The package is marked deprecated in
+favour of <code>@x402/hono@2</code> (whose 402 moves to a <code>PAYMENT-REQUIRED</code> header and
+<code>PAYMENT-SIGNATURE</code> request header); v1 was chosen for the JSON body shape.</li>
+<li><code>x402-fetch@1.2.0</code>: <code>wrapFetchWithPayment(fetch, signer, maxValue = 100000n, selector?, config?)</code>,
+plus <code>createSigner(network, privateKey)</code> and <code>decodeXPaymentResponse(header)</code>.</li>
+<li><code>x402@1.2.0</code>: <code>x402/types</code> (<code>PaymentRequirementsSchema</code>, <code>settleResponseHeader</code>),
+<code>x402/shared</code> (<code>processPriceToAtomicAmount</code>, <code>findMatchingPaymentRequirements</code>),
+<code>x402/client</code> (<code>createPaymentHeader</code>, <code>selectPaymentRequirements</code>),
+<code>x402/schemes</code> (<code>exact.evm.decodePayment</code>), <code>x402/verify</code> (<code>useFacilitator({ url }) -> { verify, settle }</code>,
+which POSTs <code>{ x402Version, paymentPayload, paymentRequirements }</code> to <code>${url}/verify</code> and <code>/settle</code>).</li>
+<li><code>mppx@0.13.5</code>: server <code>Mppx.create({ methods: [tempo({ recipient, testnet, store })], secretKey, realm })</code>,
+<code>mppx.charge({ amount })(request) -> { status: 402, challenge: Response } | { status: 200, withReceipt(res) }</code>,
+<code>mppx.compose([...])</code> for several methods, <code>stripe.spt({ secretKey | client, networkId, currency, decimals, paymentMethodTypes })</code>;
+challenge header <code>Payment id=…, realm=…, method=…, intent=…, request=<base64url JSON>, expires=…, opaque=…</code>;
+credential header <code>Authorization: Payment <base64url {challenge, payload, source?}></code> (<code>Payment-Authorization</code> with <code>requiresAuth</code>);
+receipt header <code>Payment-Receipt: <base64url {method, reference, status, timestamp}></code>;
+client <code>Mppx.create({ methods: [tempo({ account })], polyfill, fetch }).fetch</code>; CLI <code>mppx account create|fund|export</code>, <code>mppx <url> [--protocol mpp|x402]</code>.</li>
+</ul>
+<h2 id="settle-one-real-usdc-payment-in-two-commands">Settle one real USDC payment in two commands<a class="dc-anchor" href="#settle-one-real-usdc-payment-in-two-commands" aria-label="link to this section">#</a></h2>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">pnpm --filter d402-uc-triple-gate run settle:x402          # prints the agent address to fund
+# fund it with Base Sepolia USDC at https://faucet.circle.com (no ETH needed; the facilitator pays gas)
+pnpm --filter d402-uc-triple-gate run settle:x402 -- --pay # pays 0.007 USDC through https://x402.org/facilitator, prints the tx link</code></pre></div>
+<p>The key is saved at <code>$D402_HOME/x402-agent.json</code> (default <code>~/.d402</code>). Set
+<code>X402_PAY_TO</code> to your seller wallet, otherwise the demo pays a burn address.
+Needs a network route to <code>x402.org</code>.</p>
+   <footer class="dc-foot label"> <a href="https://github.com/napoleon1313/d402/blob/main/use-cases/09-triple-gate/README.md" rel="noopener">edit on github: use-cases/09-triple-gate/README.md</a> <a href="#main">back to top</a> </footer> </article> </div>  </main> <footer class="site-footer" data-astro-cid-5hce7sga> <div class="wrap footer-inner" data-astro-cid-5hce7sga> <p class="footer-line" data-astro-cid-5hce7sga>d402 · mit · built at the yc make something agents want hackathon, oct 2026</p> <ul class="footer-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga><a href="/d402-site/" data-astro-cid-5hce7sga>home</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/docs" data-astro-cid-5hce7sga>docs</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/sellers" data-astro-cid-5hce7sga>sellers</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms.txt" data-astro-cid-5hce7sga>llms.txt</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms-full.txt" data-astro-cid-5hce7sga>llms-full.txt</a></li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> </div> </footer> <script>
+      (function () {
+        var root = document.documentElement;
+        var btns = document.querySelectorAll("[data-theme-toggle]");
+        function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+        function sync() {
+          var next = current() === "light" ? "dark" : "light";
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", current() === "light" ? "#f2f2f2" : "#0a0a0a");
+          btns.forEach(function (b) {
+            b.textContent = next;
+            b.setAttribute("aria-label", "switch to " + next + " theme");
+          });
+        }
+        btns.forEach(function (b) {
+          b.addEventListener("click", function () {
+            var next = current() === "light" ? "dark" : "light";
+            root.setAttribute("data-theme", next);
+            try { localStorage.setItem("d402-theme", next); } catch (e) {}
+            sync();
+          });
+        });
+        sync();
+      })();
+    </script> </body> </html>  <script type="module">document.addEventListener("click",async e=>{const t=e.target?.closest(".dc-copy");if(!t)return;const c=t.closest(".dc-code")?.querySelector("code")?.textContent??"";try{await navigator.clipboard.writeText(c),t.textContent="copied"}catch{t.textContent="select + copy"}t.setAttribute("data-copied",""),setTimeout(()=>{t.textContent="copy",t.removeAttribute("data-copied")},1500)});</script>

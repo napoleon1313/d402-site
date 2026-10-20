@@ -1,0 +1,89 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-5hce7sga> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>04 MCP agent · docs · d402</title><meta name="description" content="The flow an LLM agent runs, without the LLM. The story starts a glossary API gated by d402, spawns the real MCP server binary (node --import tsx..."><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0a0a0a"><link rel="icon" type="image/svg+xml" href="/d402-site/favicon.svg"><link rel="canonical" href="https://napoleon1313.github.io/d402-site/docs/use-cases/04-mcp-agent/"><meta property="og:type" content="website"><meta property="og:site_name" content="d402"><meta property="og:title" content="04 MCP agent · docs · d402"><meta property="og:description" content="The flow an LLM agent runs, without the LLM. The story starts a glossary API gated by d402, spawns the real MCP server binary (node --import tsx..."><meta property="og:url" content="https://napoleon1313.github.io/d402-site/docs/use-cases/04-mcp-agent/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="04 MCP agent · docs · d402"><meta name="twitter:description" content="The flow an LLM agent runs, without the LLM. The story starts a glossary API gated by d402, spawns the real MCP server binary (node --import tsx..."><script>
+      (function () {
+        try {
+          var t = localStorage.getItem("d402-theme");
+          if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/d402-site/_astro/bench.CT3VcaLi.css">
+<link rel="stylesheet" href="/d402-site/_astro/bench.C14rLK3X.css"></head> <body class data-astro-cid-5hce7sga> <a class="skip-link" href="#main" data-astro-cid-5hce7sga>skip to content</a> <header class="site-nav" data-astro-cid-5hce7sga> <nav class="wrap nav-inner" aria-label="primary" data-astro-cid-5hce7sga> <a class="nav-home" href="/d402-site/" aria-label="d402 home" data-astro-cid-5hce7sga>d402</a> <ul class="nav-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga> <a href="/d402-site/docs" data-astro-cid-5hce7sga>docs</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/docs/use-cases" aria-current="page" data-astro-cid-5hce7sga>use cases</a> </li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> <button type="button" class="theme-toggle" data-theme-toggle aria-label="switch to light theme" data-astro-cid-5hce7sga>light</button> </nav> </header> <main id="main" tabindex="-1" data-astro-cid-5hce7sga>  <div class="wrap dc-shell"> <details class="dc-side" id="dc-side" open> <summary><span>docs / 04 mcp agent</span></summary> <nav aria-label="docs"> <div class="dc-group"> <span class="dc-group-title">start</span> <ul> <li> <a href="/d402-site/docs">introduction</a> </li><li> <a href="/d402-site/docs/overview">overview</a> </li><li> <a href="/d402-site/docs/spec">spec</a> </li><li> <a href="/d402-site/docs/quickstart">quick start</a> </li><li> <a href="/d402-site/docs/agents">for agents</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">packages</span> <ul> <li> <a href="/d402-site/docs/packages">all packages</a> </li><li> <a href="/d402-site/docs/packages/spec">@d402-labs/spec</a> </li><li> <a href="/d402-site/docs/packages/server">@d402-labs/server</a> </li><li> <a href="/d402-site/docs/packages/client">@d402-labs/client</a> </li><li> <a href="/d402-site/docs/packages/mcp">@d402-labs/mcp</a> </li><li> <a href="/d402-site/docs/packages/mcp-seller">@d402-labs/mcp-seller</a> </li><li> <a href="/d402-site/docs/packages/proxy">@d402-labs/proxy</a> </li><li> <a href="/d402-site/docs/packages/pool">@d402-labs/pool</a> </li><li> <a href="/d402-site/docs/packages/x402">@d402-labs/x402</a> </li><li> <a href="/d402-site/docs/packages/mpp">@d402-labs/mpp</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">clients</span> <ul> <li> <a href="/d402-site/docs/packages/python">python</a> </li><li> <a href="/d402-site/docs/packages/curl">curl</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">use cases</span> <ul> <li> <a href="/d402-site/docs/use-cases">all use cases</a> </li><li> <a href="/d402-site/docs/use-cases/01-dataset-builder">01 dataset builder</a> </li><li> <a href="/d402-site/docs/use-cases/02-x402-side-by-side">02 x402 side by side</a> </li><li> <a href="/d402-site/docs/use-cases/03-rate-limit-upgrade">03 rate limit upgrade</a> </li><li> <a href="/d402-site/docs/use-cases/04-mcp-agent" aria-current="page">04 mcp agent</a> </li><li> <a href="/d402-site/docs/use-cases/05-multi-seller-wallet">05 multi-seller wallet</a> </li><li> <a href="/d402-site/docs/use-cases/06-trust-tiers">06 trust tiers</a> </li><li> <a href="/d402-site/docs/use-cases/07-paid-crawl">07 paid crawl</a> </li><li> <a href="/d402-site/docs/use-cases/08-marketplace">08 marketplace</a> </li><li> <a href="/d402-site/docs/use-cases/09-triple-gate">09 triple gate: one 402, three ways to pay</a> </li><li> <a href="/d402-site/docs/use-cases/10-pairwise">10 pairwise</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">bench</span> <ul> <li> <a href="/d402-site/docs/bench">bench report</a> </li> </ul> </div> </nav> </details> <script>
+  // Collapsed on phones, always open on desktop. Runs before paint; without JS the list is simply open.
+  (function () {
+    var d = document.getElementById("dc-side");
+    if (!d || !window.matchMedia) return;
+    var mq = window.matchMedia("(min-width: 960px)");
+    var sync = function () { d.open = mq.matches; };
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+  })();
+</script> <article class="dc-main prose" id="dc-content"> <p class="eyebrow dc-eyebrow">use case / 04-mcp-agent</p><h1>04 MCP agent</h1>  <p>The flow an LLM agent runs, without the LLM. The story starts a glossary API
+gated by d402, spawns the real MCP server binary
+(<code>node --import tsx packages/mcp/src/bin.ts</code>, <code>D402_HOME</code> in a temp dir) with
+the SDK&#39;s <code>StdioClientTransport</code>, connects a <code>Client</code>, lists the tools, and
+calls them in the order the server&#39;s own instructions give:
+<code>d402_discover</code> -&gt; <code>d402_get_bundle</code> -&gt; (label the items; here the hidden truth
+map answers in place of the model) -&gt; <code>d402_submit</code> -&gt; <code>d402_fetch</code> -&gt;
+<code>d402_status</code>. Every tool result is printed, trimmed. The keypair and the voucher
+cache live in <code>$D402_HOME</code>, which is deleted at the end.</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">pnpm --filter d402-uc-mcp-agent run start</code></pre></div>
+<p>What you will see (abridged):</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang"></span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code>2. spawned: node --import tsx packages/mcp/src/bin.ts (D402_HOME=/tmp/d402-uc04-home-...); tools: d402_discover, d402_get_bundle, d402_submit, d402_fetch, d402_status
+3. tool calls:
+   -&gt; d402_discover({&quot;baseUrl&quot;:&quot;http://127.0.0.1:42391&quot;})
+      { &quot;sellerId&quot;: &quot;docs.example&quot;, &quot;taskUrl&quot;: &quot;.../.well-known/d402/tasks&quot;, &quot;scope&quot;: [ &quot;/lookup&quot; ], &quot;tiers&quot;: [ { &quot;id&quot;: &quot;s&quot;, &quot;items&quot;: 5, ... } ], &quot;hint&quot;: ... }
+   -&gt; d402_get_bundle({&quot;taskUrl&quot;:&quot;...&quot;,&quot;tier&quot;:&quot;s&quot;})
+      { &quot;bundleId&quot;: &quot;b_...&quot;, &quot;labels&quot;: [ &quot;sports&quot;, &quot;business&quot;, &quot;tech&quot;, &quot;world&quot; ], &quot;items&quot;: [ { &quot;id&quot;: &quot;n_0 ...
+   -&gt; d402_submit({&quot;taskUrl&quot;:&quot;...&quot;,&quot;bundleId&quot;:&quot;b_...&quot;,&quot;answers&quot;:{...}})
+      { &quot;jti&quot;: &quot;v_...&quot;, &quot;sellerId&quot;: &quot;docs.example&quot;, &quot;calls&quot;: 10, &quot;scope&quot;: [ &quot;/lookup&quot; ], &quot;hint&quot;: &quot;Voucher stored. ...&quot; }
+   -&gt; d402_fetch({&quot;url&quot;:&quot;http://127.0.0.1:42391/lookup?term=d402&quot;})
+      { &quot;status&quot;: 200, &quot;ok&quot;: true, &quot;headers&quot;: { &quot;D402-Calls-Remaining&quot;: &quot;9&quot; }, &quot;body&quot;: &quot;{\&quot;term\&quot;:\&quot;d402\&quot;,...}&quot; }
+   -&gt; d402_status({})
+      { &quot;publicKey&quot;: &quot;...&quot;, &quot;vouchers&quot;: [ { &quot;jti&quot;: &quot;v_...&quot;, &quot;sellerId&quot;: &quot;docs.example&quot;, &quot;calls&quot;: 9, ... } ] }
+
+RESULT: d402_submit earned 10 calls, d402_fetch got HTTP 200 with 9 calls left, 1 voucher in ...'s cache</code></pre></div>
+<h2 id="wiring-the-same-server-into-a-real-agent">Wiring the same server into a real agent<a class="dc-anchor" href="#wiring-the-same-server-into-a-real-agent" aria-label="link to this section">#</a></h2>
+<p>Claude Code, with the published binary (<code>pnpm add -g @d402-labs/mcp</code>):</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">claude mcp add d402 -e D402_HOME=~/.d402 -- d402-mcp</code></pre></div>
+<p>From this checkout, without installing:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">claude mcp add d402 -e D402_HOME=~/.d402 -- node --import tsx /ABSOLUTE/PATH/d402/packages/mcp/src/bin.ts</code></pre></div>
+<p>Claude Desktop (<code>claude_desktop_config.json</code>), same shape as <code>.mcp.json</code> for
+Claude Code:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">json</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-json">{
+  &quot;mcpServers&quot;: {
+    &quot;d402&quot;: {
+      &quot;command&quot;: &quot;d402-mcp&quot;,
+      &quot;env&quot;: { &quot;D402_HOME&quot;: &quot;~/.d402&quot; }
+    }
+  }
+}</code></pre></div>
+<p>What the agent says, once it has the tools (a 5-line transcript):</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang"></span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code>User:  Look up &quot;d402&quot; on http://127.0.0.1:42391/lookup.
+Agent: d402_fetch returned 402: the seller wants a d402 voucher. I'll earn one. d402_discover: taskUrl ..., tier s is 5 items for 10 calls.
+Agent: d402_get_bundle gave me 5 news snippets to label as sports/business/tech/world. Labelling: n_0012 tech, n_0041 world, n_0007 sports, n_0033 business, n_0019 tech.
+Agent: d402_submit: voucher stored, 10 calls on /lookup. Retrying d402_fetch.
+Agent: 200 OK, 9 calls remaining. &quot;d402: pay for API access with labelled data instead of micropayments.&quot;</code></pre></div>
+   <footer class="dc-foot label"> <a href="https://github.com/napoleon1313/d402/blob/main/use-cases/04-mcp-agent/README.md" rel="noopener">edit on github: use-cases/04-mcp-agent/README.md</a> <a href="#main">back to top</a> </footer> </article> </div>  </main> <footer class="site-footer" data-astro-cid-5hce7sga> <div class="wrap footer-inner" data-astro-cid-5hce7sga> <p class="footer-line" data-astro-cid-5hce7sga>d402 · mit · built at the yc make something agents want hackathon, oct 2026</p> <ul class="footer-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga><a href="/d402-site/" data-astro-cid-5hce7sga>home</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/docs" data-astro-cid-5hce7sga>docs</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/sellers" data-astro-cid-5hce7sga>sellers</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms.txt" data-astro-cid-5hce7sga>llms.txt</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms-full.txt" data-astro-cid-5hce7sga>llms-full.txt</a></li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> </div> </footer> <script>
+      (function () {
+        var root = document.documentElement;
+        var btns = document.querySelectorAll("[data-theme-toggle]");
+        function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+        function sync() {
+          var next = current() === "light" ? "dark" : "light";
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", current() === "light" ? "#f2f2f2" : "#0a0a0a");
+          btns.forEach(function (b) {
+            b.textContent = next;
+            b.setAttribute("aria-label", "switch to " + next + " theme");
+          });
+        }
+        btns.forEach(function (b) {
+          b.addEventListener("click", function () {
+            var next = current() === "light" ? "dark" : "light";
+            root.setAttribute("data-theme", next);
+            try { localStorage.setItem("d402-theme", next); } catch (e) {}
+            sync();
+          });
+        });
+        sync();
+      })();
+    </script> </body> </html>  <script type="module">document.addEventListener("click",async e=>{const t=e.target?.closest(".dc-copy");if(!t)return;const c=t.closest(".dc-code")?.querySelector("code")?.textContent??"";try{await navigator.clipboard.writeText(c),t.textContent="copied"}catch{t.textContent="select + copy"}t.setAttribute("data-copied",""),setTimeout(()=>{t.textContent="copy",t.removeAttribute("data-copied")},1500)});</script>

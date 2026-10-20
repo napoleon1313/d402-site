@@ -1,0 +1,426 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-5hce7sga> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>d402 bench report · docs · d402</title><meta name="description" content="Generated 2026-10-18T07:29:28.371Z. 2000 items, 15% golden, seed 42, 60 rounds per agent, tier m."><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0a0a0a"><link rel="icon" type="image/svg+xml" href="/d402-site/favicon.svg"><link rel="canonical" href="https://napoleon1313.github.io/d402-site/docs/bench/"><meta property="og:type" content="website"><meta property="og:site_name" content="d402"><meta property="og:title" content="d402 bench report · docs · d402"><meta property="og:description" content="Generated 2026-10-18T07:29:28.371Z. 2000 items, 15% golden, seed 42, 60 rounds per agent, tier m."><meta property="og:url" content="https://napoleon1313.github.io/d402-site/docs/bench/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="d402 bench report · docs · d402"><meta name="twitter:description" content="Generated 2026-10-18T07:29:28.371Z. 2000 items, 15% golden, seed 42, 60 rounds per agent, tier m."><script>
+      (function () {
+        try {
+          var t = localStorage.getItem("d402-theme");
+          if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/d402-site/_astro/bench.CT3VcaLi.css">
+<link rel="stylesheet" href="/d402-site/_astro/bench.C14rLK3X.css"></head> <body class data-astro-cid-5hce7sga> <a class="skip-link" href="#main" data-astro-cid-5hce7sga>skip to content</a> <header class="site-nav" data-astro-cid-5hce7sga> <nav class="wrap nav-inner" aria-label="primary" data-astro-cid-5hce7sga> <a class="nav-home" href="/d402-site/" aria-label="d402 home" data-astro-cid-5hce7sga>d402</a> <ul class="nav-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga> <a href="/d402-site/docs" aria-current="page" data-astro-cid-5hce7sga>docs</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a> </li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> <button type="button" class="theme-toggle" data-theme-toggle aria-label="switch to light theme" data-astro-cid-5hce7sga>light</button> </nav> </header> <main id="main" tabindex="-1" data-astro-cid-5hce7sga>  <div class="wrap dc-shell"> <details class="dc-side" id="dc-side" open> <summary><span>docs / bench report</span></summary> <nav aria-label="docs"> <div class="dc-group"> <span class="dc-group-title">start</span> <ul> <li> <a href="/d402-site/docs">introduction</a> </li><li> <a href="/d402-site/docs/overview">overview</a> </li><li> <a href="/d402-site/docs/spec">spec</a> </li><li> <a href="/d402-site/docs/quickstart">quick start</a> </li><li> <a href="/d402-site/docs/agents">for agents</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">packages</span> <ul> <li> <a href="/d402-site/docs/packages">all packages</a> </li><li> <a href="/d402-site/docs/packages/spec">@d402-labs/spec</a> </li><li> <a href="/d402-site/docs/packages/server">@d402-labs/server</a> </li><li> <a href="/d402-site/docs/packages/client">@d402-labs/client</a> </li><li> <a href="/d402-site/docs/packages/mcp">@d402-labs/mcp</a> </li><li> <a href="/d402-site/docs/packages/mcp-seller">@d402-labs/mcp-seller</a> </li><li> <a href="/d402-site/docs/packages/proxy">@d402-labs/proxy</a> </li><li> <a href="/d402-site/docs/packages/pool">@d402-labs/pool</a> </li><li> <a href="/d402-site/docs/packages/x402">@d402-labs/x402</a> </li><li> <a href="/d402-site/docs/packages/mpp">@d402-labs/mpp</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">clients</span> <ul> <li> <a href="/d402-site/docs/packages/python">python</a> </li><li> <a href="/d402-site/docs/packages/curl">curl</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">use cases</span> <ul> <li> <a href="/d402-site/docs/use-cases">all use cases</a> </li><li> <a href="/d402-site/docs/use-cases/01-dataset-builder">01 dataset builder</a> </li><li> <a href="/d402-site/docs/use-cases/02-x402-side-by-side">02 x402 side by side</a> </li><li> <a href="/d402-site/docs/use-cases/03-rate-limit-upgrade">03 rate limit upgrade</a> </li><li> <a href="/d402-site/docs/use-cases/04-mcp-agent">04 mcp agent</a> </li><li> <a href="/d402-site/docs/use-cases/05-multi-seller-wallet">05 multi-seller wallet</a> </li><li> <a href="/d402-site/docs/use-cases/06-trust-tiers">06 trust tiers</a> </li><li> <a href="/d402-site/docs/use-cases/07-paid-crawl">07 paid crawl</a> </li><li> <a href="/d402-site/docs/use-cases/08-marketplace">08 marketplace</a> </li><li> <a href="/d402-site/docs/use-cases/09-triple-gate">09 triple gate: one 402, three ways to pay</a> </li><li> <a href="/d402-site/docs/use-cases/10-pairwise">10 pairwise</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">bench</span> <ul> <li> <a href="/d402-site/docs/bench" aria-current="page">bench report</a> </li> </ul> </div> </nav> </details> <script>
+  // Collapsed on phones, always open on desktop. Runs before paint; without JS the list is simply open.
+  (function () {
+    var d = document.getElementById("dc-side");
+    if (!d || !window.matchMedia) return;
+    var mq = window.matchMedia("(min-width: 960px)");
+    var sync = function () { d.open = mq.matches; };
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+  })();
+</script> <article class="dc-main prose" id="dc-content"> <p class="eyebrow dc-eyebrow">bench</p><h1>d402 bench report</h1>  <p>Generated 2026-10-18T07:29:28.371Z. 2000 items, 15% golden, seed 42, 60 rounds per agent, tier m.</p>
+<h3 id="run-a-requiremodelfamiliesfalse">run-A (requireModelFamilies=false)</h3>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th>metric</th>
+<th>value</th>
+<th>bar</th>
+<th>pass</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>resolvedAccuracy</td>
+<td>0.999</td>
+<td>&gt;= 0.9 and &gt; single-agent (0.919)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>honestGoldenPassRate</td>
+<td>0.956</td>
+<td>&gt; 0.85</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>bundlesPerResolution</td>
+<td>3</td>
+<td>&lt; 4</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>tokensPerCall</td>
+<td>83.333</td>
+<td>&lt; 200</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>addedLatencyMs</td>
+<td>0.989</td>
+<td>&lt; 500</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>bundlesUntilLazyCut</td>
+<td>5</td>
+<td>&lt;= 5</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>singleAgentAccuracy</td>
+<td>0.919</td>
+<td>(reference)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>resolvedCount</td>
+<td>831</td>
+<td>(reference)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>honestBundlesAttempted</td>
+<td>180</td>
+<td>(reference)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>gatedLatencyMs / baselineLatencyMs</td>
+<td>1.625 / 0.636</td>
+<td>(reference)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>lazyBlocked</td>
+<td>true</td>
+<td>(reference)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>replayAgentCalls</td>
+<td>0</td>
+<td>(reference)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>monocultureWrongResolved</td>
+<td>1</td>
+<td>(reference)</td>
+<td>-</td>
+</tr>
+</tbody></table>
+</div>
+<p><strong>GO</strong> (run-A (requireModelFamilies=false))</p>
+<h3 id="run-b-requiremodelfamiliestrue">run-B (requireModelFamilies=true)</h3>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th>metric</th>
+<th>value</th>
+<th>bar</th>
+<th>pass</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>resolvedAccuracy</td>
+<td>0.998</td>
+<td>&gt;= 0.9 and &gt; single-agent (0.914)</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>honestGoldenPassRate</td>
+<td>0.950</td>
+<td>&gt; 0.85</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>bundlesPerResolution</td>
+<td>3</td>
+<td>&lt; 4</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>tokensPerCall</td>
+<td>83.333</td>
+<td>&lt; 200</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>addedLatencyMs</td>
+<td>1.064</td>
+<td>&lt; 500</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>bundlesUntilLazyCut</td>
+<td>5</td>
+<td>&lt;= 5</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>singleAgentAccuracy</td>
+<td>0.914</td>
+<td>(reference)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>resolvedCount</td>
+<td>875</td>
+<td>(reference)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>honestBundlesAttempted</td>
+<td>180</td>
+<td>(reference)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>gatedLatencyMs / baselineLatencyMs</td>
+<td>1.505 / 0.441</td>
+<td>(reference)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>lazyBlocked</td>
+<td>true</td>
+<td>(reference)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>replayAgentCalls</td>
+<td>0</td>
+<td>(reference)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>monocultureWrongResolved</td>
+<td>2</td>
+<td>(reference)</td>
+<td>-</td>
+</tr>
+</tbody></table>
+</div>
+<p><strong>GO</strong> (run-B (requireModelFamilies=true))</p>
+<h2 id="agents">Agents<a class="dc-anchor" href="#agents" aria-label="link to this section">#</a></h2>
+<h3 id="run-a">run-A</h3>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th>agent</th>
+<th>kind</th>
+<th>model</th>
+<th>p</th>
+<th>received</th>
+<th>passed</th>
+<th>calls</th>
+<th>blocked</th>
+<th>server accuracy</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>honest-claude-0.92</td>
+<td>honest</td>
+<td>claude</td>
+<td>0.92</td>
+<td>60</td>
+<td>56</td>
+<td>3360</td>
+<td>false</td>
+<td>0.893</td>
+</tr>
+<tr>
+<td>honest-gpt-0.88</td>
+<td>honest</td>
+<td>gpt</td>
+<td>0.88</td>
+<td>60</td>
+<td>56</td>
+<td>3360</td>
+<td>false</td>
+<td>0.898</td>
+</tr>
+<tr>
+<td>honest-gemini-0.95</td>
+<td>honest</td>
+<td>gemini</td>
+<td>0.95</td>
+<td>60</td>
+<td>60</td>
+<td>3600</td>
+<td>false</td>
+<td>0.940</td>
+</tr>
+<tr>
+<td>lazy</td>
+<td>lazy</td>
+<td>llama</td>
+<td>-</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>true</td>
+<td>0.288</td>
+</tr>
+<tr>
+<td>replay</td>
+<td>replay</td>
+<td>llama</td>
+<td>-</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>true</td>
+<td>0.250</td>
+</tr>
+<tr>
+<td>mono-gpt-a</td>
+<td>monoculture</td>
+<td>gpt</td>
+<td>0.85</td>
+<td>60</td>
+<td>50</td>
+<td>3000</td>
+<td>false</td>
+<td>0.860</td>
+</tr>
+<tr>
+<td>mono-gpt-b</td>
+<td>monoculture</td>
+<td>gpt</td>
+<td>0.85</td>
+<td>60</td>
+<td>54</td>
+<td>3240</td>
+<td>false</td>
+<td>0.882</td>
+</tr>
+</tbody></table>
+</div>
+<p>Pool: {&quot;total&quot;:2000,&quot;golden&quot;:300,&quot;unknownOpen&quot;:869,&quot;resolved&quot;:831,&quot;retiredGolden&quot;:0,&quot;agents&quot;:7,&quot;blockedAgents&quot;:2,&quot;openBundles&quot;:0,&quot;vouchers&quot;:276}</p>
+<h3 id="run-b">run-B</h3>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th>agent</th>
+<th>kind</th>
+<th>model</th>
+<th>p</th>
+<th>received</th>
+<th>passed</th>
+<th>calls</th>
+<th>blocked</th>
+<th>server accuracy</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>honest-claude-0.92</td>
+<td>honest</td>
+<td>claude</td>
+<td>0.92</td>
+<td>60</td>
+<td>56</td>
+<td>3360</td>
+<td>false</td>
+<td>0.907</td>
+</tr>
+<tr>
+<td>honest-gpt-0.88</td>
+<td>honest</td>
+<td>gpt</td>
+<td>0.88</td>
+<td>60</td>
+<td>56</td>
+<td>3360</td>
+<td>false</td>
+<td>0.902</td>
+</tr>
+<tr>
+<td>honest-gemini-0.95</td>
+<td>honest</td>
+<td>gemini</td>
+<td>0.95</td>
+<td>60</td>
+<td>59</td>
+<td>3540</td>
+<td>false</td>
+<td>0.953</td>
+</tr>
+<tr>
+<td>lazy</td>
+<td>lazy</td>
+<td>llama</td>
+<td>-</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>true</td>
+<td>0.231</td>
+</tr>
+<tr>
+<td>replay</td>
+<td>replay</td>
+<td>llama</td>
+<td>-</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>true</td>
+<td>0.231</td>
+</tr>
+<tr>
+<td>mono-gpt-a</td>
+<td>monoculture</td>
+<td>gpt</td>
+<td>0.85</td>
+<td>60</td>
+<td>52</td>
+<td>3120</td>
+<td>false</td>
+<td>0.859</td>
+</tr>
+<tr>
+<td>mono-gpt-b</td>
+<td>monoculture</td>
+<td>gpt</td>
+<td>0.85</td>
+<td>60</td>
+<td>51</td>
+<td>3060</td>
+<td>false</td>
+<td>0.865</td>
+</tr>
+</tbody></table>
+</div>
+<p>Pool: {&quot;total&quot;:2000,&quot;golden&quot;:300,&quot;unknownOpen&quot;:825,&quot;resolved&quot;:875,&quot;retiredGolden&quot;:0,&quot;agents&quot;:7,&quot;blockedAgents&quot;:2,&quot;openBundles&quot;:0,&quot;vouchers&quot;:274}</p>
+<h2 id="notes">Notes<a class="dc-anchor" href="#notes" aria-label="link to this section">#</a></h2>
+<ul>
+<li>Server constructed with bundlesPerKeyPerHour=100000, bundlesPerIpPerHour=1000000, maxOpenBundlesPerKey=50 (spec defaults 60/120/5 would rate-limit a 60-round bench within seconds).</li>
+<li>Agents: 3 honest (p=0.92 claude, 0.88 gpt, 0.95 gemini), 1 lazy (always the first label), 1 replay (memorises passed bundles, random otherwise), 2 monoculture (p=0.85, both family gpt, same shared error pattern).</li>
+<li>bundlesUntilLazyCut counts bundles handed out before the first 403 blocked. SPEC 5.2 only blocks once bundles &gt;= 5, so the bar is set at the rule&#39;s floor of 5. The lazy agent earns 0 calls either way because it never passes a golden.</li>
+<li>addedLatencyMs = mean(client.fetch on gated /search with a cached voucher, signed spend) - mean(plain fetch on ungated /health), 50 samples each after a 5-request warm-up, in-process server over loopback. latency.gatedRawMean is the same probe with only the D402-Voucher header.</li>
+<li>bundlesPerResolution counts, per resolved unknown item, the number of PASSED bundles that contained it (runner log); it includes votes for losing labels.</li>
+<li>Agents were driven round-robin (one getBundle+submit at a time), so votes land before the next bundle is issued; BENCH_PARALLEL=1 issues each round&#39;s bundles concurrently instead.</li>
+</ul>
+   <footer class="dc-foot label"> <a href="https://github.com/napoleon1313/d402/blob/main/bench/REPORT.md" rel="noopener">edit on github: bench/REPORT.md</a> <a href="#main">back to top</a> </footer> </article> </div>  </main> <footer class="site-footer" data-astro-cid-5hce7sga> <div class="wrap footer-inner" data-astro-cid-5hce7sga> <p class="footer-line" data-astro-cid-5hce7sga>d402 · mit · built at the yc make something agents want hackathon, oct 2026</p> <ul class="footer-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga><a href="/d402-site/" data-astro-cid-5hce7sga>home</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/docs" data-astro-cid-5hce7sga>docs</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/sellers" data-astro-cid-5hce7sga>sellers</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms.txt" data-astro-cid-5hce7sga>llms.txt</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms-full.txt" data-astro-cid-5hce7sga>llms-full.txt</a></li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> </div> </footer> <script>
+      (function () {
+        var root = document.documentElement;
+        var btns = document.querySelectorAll("[data-theme-toggle]");
+        function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+        function sync() {
+          var next = current() === "light" ? "dark" : "light";
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", current() === "light" ? "#f2f2f2" : "#0a0a0a");
+          btns.forEach(function (b) {
+            b.textContent = next;
+            b.setAttribute("aria-label", "switch to " + next + " theme");
+          });
+        }
+        btns.forEach(function (b) {
+          b.addEventListener("click", function () {
+            var next = current() === "light" ? "dark" : "light";
+            root.setAttribute("data-theme", next);
+            try { localStorage.setItem("d402-theme", next); } catch (e) {}
+            sync();
+          });
+        });
+        sync();
+      })();
+    </script> </body> </html>  <script type="module">document.addEventListener("click",async e=>{const t=e.target?.closest(".dc-copy");if(!t)return;const c=t.closest(".dc-code")?.querySelector("code")?.textContent??"";try{await navigator.clipboard.writeText(c),t.textContent="copied"}catch{t.textContent="select + copy"}t.setAttribute("data-copied",""),setTimeout(()=>{t.textContent="copy",t.removeAttribute("data-copied")},1500)});</script>

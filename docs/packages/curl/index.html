@@ -1,0 +1,314 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-5hce7sga> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>d402 with curl · docs · d402</title><meta name="description" content="walkthrough.sh runs the whole protocol from spec/SPEC.md against the example seller (examples/search-proxy) using only curl for HTTP. The one thing curl..."><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0a0a0a"><link rel="icon" type="image/svg+xml" href="/d402-site/favicon.svg"><link rel="canonical" href="https://napoleon1313.github.io/d402-site/docs/packages/curl/"><meta property="og:type" content="website"><meta property="og:site_name" content="d402"><meta property="og:title" content="d402 with curl · docs · d402"><meta property="og:description" content="walkthrough.sh runs the whole protocol from spec/SPEC.md against the example seller (examples/search-proxy) using only curl for HTTP. The one thing curl..."><meta property="og:url" content="https://napoleon1313.github.io/d402-site/docs/packages/curl/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="d402 with curl · docs · d402"><meta name="twitter:description" content="walkthrough.sh runs the whole protocol from spec/SPEC.md against the example seller (examples/search-proxy) using only curl for HTTP. The one thing curl..."><script>
+      (function () {
+        try {
+          var t = localStorage.getItem("d402-theme");
+          if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/d402-site/_astro/bench.CT3VcaLi.css">
+<link rel="stylesheet" href="/d402-site/_astro/bench.C14rLK3X.css"></head> <body class data-astro-cid-5hce7sga> <a class="skip-link" href="#main" data-astro-cid-5hce7sga>skip to content</a> <header class="site-nav" data-astro-cid-5hce7sga> <nav class="wrap nav-inner" aria-label="primary" data-astro-cid-5hce7sga> <a class="nav-home" href="/d402-site/" aria-label="d402 home" data-astro-cid-5hce7sga>d402</a> <ul class="nav-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga> <a href="/d402-site/docs" aria-current="page" data-astro-cid-5hce7sga>docs</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a> </li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> <button type="button" class="theme-toggle" data-theme-toggle aria-label="switch to light theme" data-astro-cid-5hce7sga>light</button> </nav> </header> <main id="main" tabindex="-1" data-astro-cid-5hce7sga>  <div class="wrap dc-shell"> <details class="dc-side" id="dc-side" open> <summary><span>docs / curl</span></summary> <nav aria-label="docs"> <div class="dc-group"> <span class="dc-group-title">start</span> <ul> <li> <a href="/d402-site/docs">introduction</a> </li><li> <a href="/d402-site/docs/overview">overview</a> </li><li> <a href="/d402-site/docs/spec">spec</a> </li><li> <a href="/d402-site/docs/quickstart">quick start</a> </li><li> <a href="/d402-site/docs/agents">for agents</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">packages</span> <ul> <li> <a href="/d402-site/docs/packages">all packages</a> </li><li> <a href="/d402-site/docs/packages/spec">@d402-labs/spec</a> </li><li> <a href="/d402-site/docs/packages/server">@d402-labs/server</a> </li><li> <a href="/d402-site/docs/packages/client">@d402-labs/client</a> </li><li> <a href="/d402-site/docs/packages/mcp">@d402-labs/mcp</a> </li><li> <a href="/d402-site/docs/packages/mcp-seller">@d402-labs/mcp-seller</a> </li><li> <a href="/d402-site/docs/packages/proxy">@d402-labs/proxy</a> </li><li> <a href="/d402-site/docs/packages/pool">@d402-labs/pool</a> </li><li> <a href="/d402-site/docs/packages/x402">@d402-labs/x402</a> </li><li> <a href="/d402-site/docs/packages/mpp">@d402-labs/mpp</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">clients</span> <ul> <li> <a href="/d402-site/docs/packages/python">python</a> </li><li> <a href="/d402-site/docs/packages/curl" aria-current="page">curl</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">use cases</span> <ul> <li> <a href="/d402-site/docs/use-cases">all use cases</a> </li><li> <a href="/d402-site/docs/use-cases/01-dataset-builder">01 dataset builder</a> </li><li> <a href="/d402-site/docs/use-cases/02-x402-side-by-side">02 x402 side by side</a> </li><li> <a href="/d402-site/docs/use-cases/03-rate-limit-upgrade">03 rate limit upgrade</a> </li><li> <a href="/d402-site/docs/use-cases/04-mcp-agent">04 mcp agent</a> </li><li> <a href="/d402-site/docs/use-cases/05-multi-seller-wallet">05 multi-seller wallet</a> </li><li> <a href="/d402-site/docs/use-cases/06-trust-tiers">06 trust tiers</a> </li><li> <a href="/d402-site/docs/use-cases/07-paid-crawl">07 paid crawl</a> </li><li> <a href="/d402-site/docs/use-cases/08-marketplace">08 marketplace</a> </li><li> <a href="/d402-site/docs/use-cases/09-triple-gate">09 triple gate: one 402, three ways to pay</a> </li><li> <a href="/d402-site/docs/use-cases/10-pairwise">10 pairwise</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">bench</span> <ul> <li> <a href="/d402-site/docs/bench">bench report</a> </li> </ul> </div> </nav> </details> <script>
+  // Collapsed on phones, always open on desktop. Runs before paint; without JS the list is simply open.
+  (function () {
+    var d = document.getElementById("dc-side");
+    if (!d || !window.matchMedia) return;
+    var mq = window.matchMedia("(min-width: 960px)");
+    var sync = function () { d.open = mq.matches; };
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+  })();
+</script> <article class="dc-main prose" id="dc-content"> <p class="eyebrow dc-eyebrow">client / curl</p><h1>d402 with curl</h1>  <p><code>walkthrough.sh</code> runs the whole protocol from <a class="dc-codelink" href="/d402-site/docs/spec"><code>spec/SPEC.md</code></a> against the example seller
+(<code>examples/search-proxy</code>) using only <code>curl</code> for HTTP. The one thing curl cannot do, the
+Ed25519 signature over the answers, is done with the Python client in <a class="dc-codelink" href="/d402-site/docs/packages/python"><code>clients/python</code></a>
+(stdlib + <code>cryptography</code>); no TypeScript toolchain is needed on the agent side. <code>jq</code> is
+used for pretty printing when installed, otherwise <code>python3</code>.</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">bash clients/curl/walkthrough.sh      # from the repo root; needs node + node_modules for the seller</code></pre></div>
+<p>The script starts the seller on a free port in the background, walks through steps 1-7
+below, and stops it on exit.</p>
+<h2 id="what-happens">What happens<a class="dc-anchor" href="#what-happens" aria-label="link to this section">#</a></h2>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Spec</th>
+<th>Request</th>
+<th>What you get</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>3</td>
+<td><code>GET /search?q=...</code> with no voucher</td>
+<td><code>402</code> with the offer: <code>taskUrl</code>, <code>scope</code>, <code>tiers</code> (same body at <code>/.well-known/d402</code>)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>generate an Ed25519 keypair</td>
+<td><code>D402-Key</code> is the base64url public key</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td><code>GET {taskUrl}?tier=s</code> + <code>D402-Key</code></td>
+<td>a bundle: 5 items to label; some are hidden goldens</td>
+</tr>
+<tr>
+<td>4</td>
+<td>8</td>
+<td>label every item</td>
+<td><code>{itemId: label}</code> (the demo reads <code>answer-key.json</code>; a real agent asks an LLM)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5</td>
+<td><code>POST {taskUrl}/{bundleId}</code> with <code>{answers, model, sig}</code></td>
+<td><code>200</code> with the voucher (an HS256 JWT) and <code>calls</code>, or <code>422 quality</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>7</td>
+<td><code>GET /search?q=...</code> + <code>D402-Voucher</code></td>
+<td><code>200</code>, <code>D402-Calls-Remaining</code> counts down</td>
+</tr>
+<tr>
+<td>7</td>
+<td>7.1, 7.2</td>
+<td>the same with <code>D402-Key</code>, <code>D402-Timestamp</code>, <code>D402-Nonce</code>, <code>D402-Sig</code></td>
+<td>what a seller with <code>bindVouchers</code> (+ <code>requireSpendNonce</code>) requires</td>
+</tr>
+</tbody></table>
+</div>
+<p>The signed strings are exactly:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang"></span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code>&quot;d402:submit\n&quot; + bundleId + &quot;\n&quot; + canonicalJSON(answers)                       # step 5
+&quot;d402:spend\n&quot;  + METHOD + &quot;\n&quot; + path + &quot;\n&quot; + jti + &quot;\n&quot; + timestamp [+ &quot;\n&quot; + nonce]   # step 7 (nonce: SPEC 7.2)</code></pre></div>
+<p><code>canonicalJSON</code> is JSON with keys sorted recursively and no whitespace; in Python that is
+<code>json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False)</code>.</p>
+<h2 id="transcript-of-a-real-run">Transcript of a real run<a class="dc-anchor" href="#transcript-of-a-real-run" aria-label="link to this section">#</a></h2>
+<p>Output of <code>bash clients/curl/walkthrough.sh</code> (unedited; keys, ids and tokens are from that run).</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">text</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-text">
+## 0. Start the example seller (examples/search-proxy) on port 50005
+$ PORT=50005 D402_SECRET=walkthrough node --import tsx examples/search-proxy/src/server.ts &amp;
+$ curl -s http://localhost:50005/health
+{
+  &quot;ok&quot;: true,
+  &quot;total&quot;: 300,
+  &quot;golden&quot;: 60,
+  &quot;unknownOpen&quot;: 240,
+  &quot;resolved&quot;: 0,
+  &quot;retiredGolden&quot;: 0,
+  &quot;agents&quot;: 0,
+  &quot;blockedAgents&quot;: 0,
+  &quot;openBundles&quot;: 0,
+  &quot;vouchers&quot;: 0
+}
+
+## 1. Hit the gated route with no voucher: 402 Payment Required with the offer (SPEC 3)
+$ curl -si &quot;http://localhost:50005/search?q=ceasefire&quot;
+HTTP/1.1 402 Payment Required
+{
+  &quot;d402&quot;: &quot;1&quot;,
+  &quot;accepts&quot;: [
+    {
+      &quot;scheme&quot;: &quot;d402&quot;,
+      &quot;sellerId&quot;: &quot;d402-example-search-proxy&quot;,
+      &quot;taskUrl&quot;: &quot;http://localhost:50005/.well-known/d402/tasks&quot;,
+      &quot;taskTypes&quot;: [
+        &quot;classify&quot;
+      ],
+      &quot;scope&quot;: [
+        &quot;/search&quot;
+      ],
+      &quot;voucherTtl&quot;: 86400,
+      &quot;tiers&quot;: [
+        {
+          &quot;id&quot;: &quot;s&quot;,
+          &quot;items&quot;: 5,
+          &quot;est_tokens&quot;: 1000,
+          &quot;reward&quot;: {
+            &quot;calls&quot;: 10
+          }
+        },
+        {
+          &quot;id&quot;: &quot;m&quot;,
+          &quot;items&quot;: 25,
+          &quot;est_tokens&quot;: 5000,
+          &quot;reward&quot;: {
+            &quot;calls&quot;: 60
+          }
+        },
+        {
+          &quot;id&quot;: &quot;l&quot;,
+          &quot;items&quot;: 50,
+          &quot;est_tokens&quot;: 10000,
+          &quot;reward&quot;: {
+            &quot;calls&quot;: 150
+          }
+        }
+      ]
+    }
+  ],
+  &quot;error&quot;: &quot;missing_voucher&quot;,
+  &quot;message&quot;: &quot;D402-Voucher header is required&quot;
+}
+taskUrl = http://localhost:50005/.well-known/d402/tasks
+(the same body is at GET http://localhost:50005/.well-known/d402)
+
+## 2. Make an Ed25519 keypair (D402-Key is the base64url public key)
+$ python3 -c 'from d402 import Keypair; Keypair.generate().save(&quot;key.json&quot;)'
+D402-Key: _SQ38g0-LOB6Z0dqnzLix4fDSGt2UkQ6PPzSxZjNXpQ
+
+## 3. Get a bundle (SPEC 4): tier s = 5 items -&gt; 10 calls
+$ curl -s &quot;http://localhost:50005/.well-known/d402/tasks?tier=s&quot; -H &quot;D402-Key: $PUB&quot; -H &quot;D402-Model: curl&quot;
+HTTP/1.1 200 OK
+{
+  &quot;bundleId&quot;: &quot;b_qZc60Px-mLxUXlQf&quot;,
+  &quot;tier&quot;: &quot;s&quot;,
+  &quot;type&quot;: &quot;classify&quot;,
+  &quot;instructions&quot;: &quot;Label each news snippet with exactly one of: sports, business, tech, world.&quot;,
+  &quot;labels&quot;: [
+    &quot;sports&quot;,
+    &quot;business&quot;,
+    &quot;tech&quot;,
+    &quot;world&quot;
+  ],
+  &quot;items&quot;: [
+    {
+      &quot;id&quot;: &quot;i_00004&quot;,
+      &quot;text&quot;: &quot;The home side drew the host nation in the semi-final after a late goal.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;i_00002&quot;,
+      &quot;text&quot;: &quot;The marathon favourite deprecated a beta of its next operating system claiming a 2x speedup.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;i_00003&quot;,
+      &quot;text&quot;: &quot;The election commission condemned a peace deal after years of conflict according to state media.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;i_00143&quot;,
+      &quot;text&quot;: &quot;A regional bank warned of a drop in consumer demand citing supply chain costs.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;i_00117&quot;,
+      &quot;text&quot;: &quot;The insurer reported a dividend increase for shareholders citing supply chain costs.&quot;
+    }
+  ],
+  &quot;expiresAt&quot;: 1792310531
+}
+bundleId = b_qZc60Px-mLxUXlQf   (you are not told which items are golden; label all of them)
+
+## 4. Answer every item (here: look them up in the demo's answer-key.json; a real agent asks an LLM)
+$ python3 -c '...build {itemId: label} from examples/search-proxy/answer-key.json...' &gt; answers.json
+{
+  &quot;i_00004&quot;: &quot;sports&quot;,
+  &quot;i_00002&quot;: &quot;tech&quot;,
+  &quot;i_00003&quot;: &quot;world&quot;,
+  &quot;i_00143&quot;: &quot;business&quot;,
+  &quot;i_00117&quot;: &quot;business&quot;
+}
+
+## 5. Sign and submit (SPEC 5): sig = Ed25519(&quot;d402:submit\n&quot; + bundleId + &quot;\n&quot; + canonicalJSON(answers))
+$ python3 -c 'from d402 import sign_submit, canonical_json; ...' &gt; submit.json
+signed message:
+  d402:submit\nb_qZc60Px-mLxUXlQf\n{&quot;i_00002&quot;:&quot;tech&quot;,&quot;i_00003&quot;:&quot;world&quot;,&quot;i_00004&quot;:&quot;sports&quot;,&quot;i_00117&quot;:&quot;business&quot;,&quot;i_00143&quot;:&quot;business&quot;}
+sig = yy71BYX7OJVr19FHB_uee3ycXtL_jE4Q7Z9xdYzVaf-cf36yJMSJHbsALuZ1Hf5oIm5c9koTpGZuJg5__eUuDw
+$ curl -s -X POST &quot;http://localhost:50005/.well-known/d402/tasks/$BUNDLE_ID&quot; -H &quot;D402-Key: $PUB&quot; -H 'Content-Type: application/json' --data @submit.json
+HTTP/1.1 200 OK
+{
+  &quot;voucher&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzY29wZSI6WyIvc2VhcmNoIl0sImlzcyI6ImQ0MDItZXhhbXBsZS1zZWFyY2gtcHJveHkiLCJzdWIiOiJfU1EzOGcwLUxPQjZaMGRxbnpMaXg0ZkRTR3QyVWtRNlBQelN4WmpOWHBRIiwianRpIjoidl9zdTdWamFPaEVScW9vMU5vIiwiaWF0IjoxNzkyMzA5OTMxLCJleHAiOjE3OTIzOTYzMzF9.RCHuIneC4Y-Xtb85UYDIrtYUWL8FeUBcVf30Tr2K7fs&quot;,
+  &quot;calls&quot;: 10,
+  &quot;scope&quot;: [
+    &quot;/search&quot;
+  ],
+  &quot;expiresAt&quot;: 1792396331
+}
+voucher claims (SPEC 6, HS256 JWT minted by the seller):
+  {&quot;scope&quot;: [&quot;/search&quot;], &quot;iss&quot;: &quot;d402-example-search-proxy&quot;, &quot;sub&quot;: &quot;_SQ38g0-LOB6Z0dqnzLix4fDSGt2UkQ6PPzSxZjNXpQ&quot;, &quot;jti&quot;: &quot;v_su7VjaOhERqoo1No&quot;, &quot;iat&quot;: 1792309931, &quot;exp&quot;: 1792396331}
+
+## 6. Spend (SPEC 7): D402-Voucher on the gated route; D402-Calls-Remaining counts down
+$ curl -si &quot;http://localhost:50005/search?q=ceasefire&quot; -H &quot;D402-Voucher: $VOUCHER&quot;
+HTTP/1.1 200 OK
+D402-Calls-Remaining: 9
+{
+  &quot;hits&quot;: [
+    {
+      &quot;title&quot;: &quot;Ceasefire agreed along disputed border&quot;,
+      &quot;url&quot;: &quot;https://example.com/world/ceasefire-border&quot;,
+      &quot;snippet&quot;: &quot;Ceasefire agreed along disputed border The UN envoy brokered a ceasefire along the disputed border as diplomats gathered in Geneva.&quot;
+    }
+  ]
+}
+$ curl -si &quot;http://localhost:50005/search?q=gpu&quot; -H &quot;D402-Voucher: $VOUCHER&quot;
+HTTP/1.1 200 OK
+D402-Calls-Remaining: 8
+{
+  &quot;hits&quot;: [
+    {
+      &quot;title&quot;: &quot;Chipmaker unveils faster data centre GPU&quot;,
+      &quot;url&quot;: &quot;https://example.com/tech/gpu-launch&quot;,
+      &quot;snippet&quot;: &quot;Chipmaker unveils faster data centre GPU The chipmaker unveiled a faster GPU for data centres, claiming a 2x speedup on transformer training...&quot;
+    }
+  ]
+}
+
+## 7. Bound spend headers (SPEC 7.1 + 7.2): sig over &quot;d402:spend\n&quot; + METHOD + &quot;\n&quot; + path + &quot;\n&quot; + jti + &quot;\n&quot; + timestamp + &quot;\n&quot; + nonce
+This seller does not set bindVouchers, so it ignores these headers; a seller that does requires them
+(and with requireSpendNonce the D402-Nonce line too; without a nonce the signed string has 5 lines).
+signed message:
+  d402:spend\nGET\n/search\nv_su7VjaOhERqoo1No\n1792309931\ntVKLah2bgAJm2xAPvDotpA
+$ curl -si &quot;http://localhost:50005/search?q=profit&quot; -H &quot;D402-Voucher: $VOUCHER&quot; -H &quot;D402-Key: $PUB&quot; -H &quot;D402-Timestamp: 1792309931&quot; -H &quot;D402-Nonce: tVKLah2bgAJm2xAPvDotpA&quot; -H &quot;D402-Sig: $SIG&quot;
+HTTP/1.1 200 OK
+D402-Calls-Remaining: 7
+{
+  &quot;hits&quot;: [
+    {
+      &quot;title&quot;: &quot;Retailer posts surprise quarterly profit&quot;,
+      &quot;url&quot;: &quot;https://example.com/business/retailer-profit&quot;,
+      &quot;snippet&quot;: &quot;Retailer posts surprise quarterly profit The retailer reported a surprise quarterly profit as consumer demand held up despite high interest...&quot;
+    }
+  ]
+}
+
+## 8. Stop the seller
+$ kill 17902</code></pre></div>
+<p>Notes on the output:</p>
+<ul>
+<li>Step 1&#39;s 402 carries <code>"error": "missing_voucher"</code> on top of the offer. After a voucher runs
+out, the same route answers <code>402</code> with <code>"error": "voucher_exhausted"</code>, which is how an agent
+knows to earn again.</li>
+<li>Step 3: the bundle is tier <code>s</code> (5 items). With a fresh key the golden ratio is 0.4, so 2 of
+the 5 are controls and both must be right (<code>c / g >= 0.8</code>). The seller never says which.</li>
+<li>Step 5: the printed <code>signed message</code> is the exact byte string the signature covers; note the
+answers are re-serialised with sorted keys even though <code>answers.json</code> was not sorted.</li>
+<li>Step 6: each spend decrements the counter stored server-side under the voucher&#39;s <code>jti</code>; the
+JWT itself never changes.</li>
+<li>Step 7: the example seller does not bind vouchers, so it serves the request without checking
+the extra headers. With <code>bindVouchers: true</code> a missing key, stale timestamp or bad signature gets
+<code>402 bad_key</code> / <code>stale_timestamp</code> / <code>bad_signature</code>, and re-sending the same nonce gets
+<code>402 replayed_spend</code> (the Python test suite covers this against a binding seller).</li>
+</ul>
+   <footer class="dc-foot label"> <a href="https://github.com/napoleon1313/d402/blob/main/clients/curl/README.md" rel="noopener">edit on github: clients/curl/README.md</a> <a href="#main">back to top</a> </footer> </article> </div>  </main> <footer class="site-footer" data-astro-cid-5hce7sga> <div class="wrap footer-inner" data-astro-cid-5hce7sga> <p class="footer-line" data-astro-cid-5hce7sga>d402 · mit · built at the yc make something agents want hackathon, oct 2026</p> <ul class="footer-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga><a href="/d402-site/" data-astro-cid-5hce7sga>home</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/docs" data-astro-cid-5hce7sga>docs</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/sellers" data-astro-cid-5hce7sga>sellers</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms.txt" data-astro-cid-5hce7sga>llms.txt</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms-full.txt" data-astro-cid-5hce7sga>llms-full.txt</a></li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> </div> </footer> <script>
+      (function () {
+        var root = document.documentElement;
+        var btns = document.querySelectorAll("[data-theme-toggle]");
+        function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+        function sync() {
+          var next = current() === "light" ? "dark" : "light";
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", current() === "light" ? "#f2f2f2" : "#0a0a0a");
+          btns.forEach(function (b) {
+            b.textContent = next;
+            b.setAttribute("aria-label", "switch to " + next + " theme");
+          });
+        }
+        btns.forEach(function (b) {
+          b.addEventListener("click", function () {
+            var next = current() === "light" ? "dark" : "light";
+            root.setAttribute("data-theme", next);
+            try { localStorage.setItem("d402-theme", next); } catch (e) {}
+            sync();
+          });
+        });
+        sync();
+      })();
+    </script> </body> </html>  <script type="module">document.addEventListener("click",async e=>{const t=e.target?.closest(".dc-copy");if(!t)return;const c=t.closest(".dc-code")?.querySelector("code")?.textContent??"";try{await navigator.clipboard.writeText(c),t.textContent="copied"}catch{t.textContent="select + copy"}t.setAttribute("data-copied",""),setTimeout(()=>{t.textContent="copy",t.removeAttribute("data-copied")},1500)});</script>

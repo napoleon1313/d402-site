@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-5hce7sga> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>d402 protocol, version 1 · docs · d402</title><meta name="description" content="d402 (&#34;data 402&#34;) is an HTTP payment scheme where an agent pays for API access by labelling data instead of sending money. It uses the same 402 Payment..."><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0a0a0a"><link rel="icon" type="image/svg+xml" href="/d402-site/favicon.svg"><link rel="canonical" href="https://napoleon1313.github.io/d402-site/docs/spec/"><meta property="og:type" content="website"><meta property="og:site_name" content="d402"><meta property="og:title" content="d402 protocol, version 1 · docs · d402"><meta property="og:description" content="d402 (&#34;data 402&#34;) is an HTTP payment scheme where an agent pays for API access by labelling data instead of sending money. It uses the same 402 Payment..."><meta property="og:url" content="https://napoleon1313.github.io/d402-site/docs/spec/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="d402 protocol, version 1 · docs · d402"><meta name="twitter:description" content="d402 (&#34;data 402&#34;) is an HTTP payment scheme where an agent pays for API access by labelling data instead of sending money. It uses the same 402 Payment..."><script>
+      (function () {
+        try {
+          var t = localStorage.getItem("d402-theme");
+          if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/d402-site/_astro/bench.CT3VcaLi.css">
+<link rel="stylesheet" href="/d402-site/_astro/bench.C14rLK3X.css"></head> <body class data-astro-cid-5hce7sga> <a class="skip-link" href="#main" data-astro-cid-5hce7sga>skip to content</a> <header class="site-nav" data-astro-cid-5hce7sga> <nav class="wrap nav-inner" aria-label="primary" data-astro-cid-5hce7sga> <a class="nav-home" href="/d402-site/" aria-label="d402 home" data-astro-cid-5hce7sga>d402</a> <ul class="nav-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga> <a href="/d402-site/docs" aria-current="page" data-astro-cid-5hce7sga>docs</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a> </li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> <button type="button" class="theme-toggle" data-theme-toggle aria-label="switch to light theme" data-astro-cid-5hce7sga>light</button> </nav> </header> <main id="main" tabindex="-1" data-astro-cid-5hce7sga>  <div class="wrap dc-shell"> <details class="dc-side" id="dc-side" open> <summary><span>docs / spec</span></summary> <nav aria-label="docs"> <div class="dc-group"> <span class="dc-group-title">start</span> <ul> <li> <a href="/d402-site/docs">introduction</a> </li><li> <a href="/d402-site/docs/overview">overview</a> </li><li> <a href="/d402-site/docs/spec" aria-current="page">spec</a> </li><li> <a href="/d402-site/docs/quickstart">quick start</a> </li><li> <a href="/d402-site/docs/agents">for agents</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">packages</span> <ul> <li> <a href="/d402-site/docs/packages">all packages</a> </li><li> <a href="/d402-site/docs/packages/spec">@d402-labs/spec</a> </li><li> <a href="/d402-site/docs/packages/server">@d402-labs/server</a> </li><li> <a href="/d402-site/docs/packages/client">@d402-labs/client</a> </li><li> <a href="/d402-site/docs/packages/mcp">@d402-labs/mcp</a> </li><li> <a href="/d402-site/docs/packages/mcp-seller">@d402-labs/mcp-seller</a> </li><li> <a href="/d402-site/docs/packages/proxy">@d402-labs/proxy</a> </li><li> <a href="/d402-site/docs/packages/pool">@d402-labs/pool</a> </li><li> <a href="/d402-site/docs/packages/x402">@d402-labs/x402</a> </li><li> <a href="/d402-site/docs/packages/mpp">@d402-labs/mpp</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">clients</span> <ul> <li> <a href="/d402-site/docs/packages/python">python</a> </li><li> <a href="/d402-site/docs/packages/curl">curl</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">use cases</span> <ul> <li> <a href="/d402-site/docs/use-cases">all use cases</a> </li><li> <a href="/d402-site/docs/use-cases/01-dataset-builder">01 dataset builder</a> </li><li> <a href="/d402-site/docs/use-cases/02-x402-side-by-side">02 x402 side by side</a> </li><li> <a href="/d402-site/docs/use-cases/03-rate-limit-upgrade">03 rate limit upgrade</a> </li><li> <a href="/d402-site/docs/use-cases/04-mcp-agent">04 mcp agent</a> </li><li> <a href="/d402-site/docs/use-cases/05-multi-seller-wallet">05 multi-seller wallet</a> </li><li> <a href="/d402-site/docs/use-cases/06-trust-tiers">06 trust tiers</a> </li><li> <a href="/d402-site/docs/use-cases/07-paid-crawl">07 paid crawl</a> </li><li> <a href="/d402-site/docs/use-cases/08-marketplace">08 marketplace</a> </li><li> <a href="/d402-site/docs/use-cases/09-triple-gate">09 triple gate: one 402, three ways to pay</a> </li><li> <a href="/d402-site/docs/use-cases/10-pairwise">10 pairwise</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">bench</span> <ul> <li> <a href="/d402-site/docs/bench">bench report</a> </li> </ul> </div> </nav> </details> <script>
+  // Collapsed on phones, always open on desktop. Runs before paint; without JS the list is simply open.
+  (function () {
+    var d = document.getElementById("dc-side");
+    if (!d || !window.matchMedia) return;
+    var mq = window.matchMedia("(min-width: 960px)");
+    var sync = function () { d.open = mq.matches; };
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+  })();
+</script> <article class="dc-main prose" id="dc-content"> <p class="eyebrow dc-eyebrow">protocol</p><h1>d402 protocol, version 1</h1>  <p>d402 (&quot;data 402&quot;) is an HTTP payment scheme where an agent pays for API access by
+labelling data instead of sending money. It uses the same <code>402 Payment Required</code>
+handshake and <code>accepts</code> array shape as x402, so a seller can offer USDC and d402
+side by side and the agent picks.</p>
+<p>The model is reCAPTCHA for agents:</p>
+<ol>
+<li>Gate. No access without a voucher.</li>
+<li>The challenge is useful work. The seller gets labelled data.</li>
+<li>Verification by control items. Every bundle mixes in &quot;golden&quot; items with known
+answers. The agent is never told which. Pass the goldens, get the voucher.
+Answers on unknown items become weighted votes.</li>
+<li>Trust. Keys with a clean history see fewer goldens and bigger rewards.</li>
+</ol>
+<h2 id="1-roles">1. Roles<a class="dc-anchor" href="#1-roles" aria-label="link to this section">#</a></h2>
+<ul>
+<li>Seller: runs an HTTP API, gates routes, owns a task pool, mints vouchers.</li>
+<li>Agent: holds an Ed25519 keypair, earns vouchers by answering bundles, spends them.</li>
+<li>Solver: the code inside the agent that turns a bundle into answers (usually an LLM call).</li>
+</ul>
+<h2 id="2-headers">2. Headers<a class="dc-anchor" href="#2-headers" aria-label="link to this section">#</a></h2>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Direction</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>D402-Key</code></td>
+<td>agent -&gt; seller</td>
+<td>base64url Ed25519 public key (32 raw bytes). Required on task endpoints. Optional on spend.</td>
+</tr>
+<tr>
+<td><code>D402-Voucher</code></td>
+<td>agent -&gt; seller</td>
+<td>the voucher JWT. Required on spend.</td>
+</tr>
+<tr>
+<td><code>D402-Model</code></td>
+<td>agent -&gt; seller</td>
+<td>optional model family string, e.g. <code>claude</code>, <code>gpt</code>, <code>gemini</code>, <code>llama</code>. Used for the diversity rule.</td>
+</tr>
+<tr>
+<td><code>D402-Timestamp</code></td>
+<td>agent -&gt; seller</td>
+<td>unix seconds. Required only when the seller binds spend to the key.</td>
+</tr>
+<tr>
+<td><code>D402-Sig</code></td>
+<td>agent -&gt; seller</td>
+<td>base64url Ed25519 signature. Required only when the seller binds spend to the key.</td>
+</tr>
+<tr>
+<td><code>D402-Nonce</code></td>
+<td>agent -&gt; seller</td>
+<td>16 random bytes, base64url. Recommended on bound spends; see 7.2.</td>
+</tr>
+<tr>
+<td><code>D402-Calls-Remaining</code></td>
+<td>seller -&gt; agent</td>
+<td>integer, on every successful spend.</td>
+</tr>
+</tbody></table>
+</div>
+<h2 id="3-discovery-and-the-402-offer">3. Discovery and the 402 offer<a class="dc-anchor" href="#3-discovery-and-the-402-offer" aria-label="link to this section">#</a></h2>
+<p>A gated route without a valid voucher returns <code>402</code> with this JSON body. The same
+body is served on <code>GET /.well-known/d402</code> so agents can earn ahead of time.</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">json</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-json">{
+  &quot;d402&quot;: &quot;1&quot;,
+  &quot;accepts&quot;: [
+    {
+      &quot;scheme&quot;: &quot;d402&quot;,
+      &quot;sellerId&quot;: &quot;api.example.com&quot;,
+      &quot;taskUrl&quot;: &quot;https://api.example.com/.well-known/d402/tasks&quot;,
+      &quot;taskTypes&quot;: [&quot;classify&quot;],
+      &quot;scope&quot;: [&quot;/search&quot;],
+      &quot;voucherTtl&quot;: 86400,
+      &quot;hint&quot;: &quot;No wallet needed. To get 10 calls on /search: GET .../tasks?tier=s with a D402-Key header, label the 5 items, POST signed answers, retry with the voucher.&quot;,
+      &quot;tiers&quot;: [
+        { &quot;id&quot;: &quot;s&quot;, &quot;items&quot;: 5,  &quot;est_tokens&quot;: 1000,  &quot;reward&quot;: { &quot;calls&quot;: 10 } },
+        { &quot;id&quot;: &quot;m&quot;, &quot;items&quot;: 25, &quot;est_tokens&quot;: 5000,  &quot;reward&quot;: { &quot;calls&quot;: 60 } },
+        { &quot;id&quot;: &quot;l&quot;, &quot;items&quot;: 50, &quot;est_tokens&quot;: 10000, &quot;reward&quot;: { &quot;calls&quot;: 150 } }
+      ]
+    }
+  ]
+}</code></pre></div>
+<ul>
+<li><code>taskUrl</code> is absolute.</li>
+<li><code>taskTypes</code> lists the task types (section 8) the seller&#39;s pool holds, <code>classify</code>
+first. A seller whose pool holds only classify items lists <code>["classify"]</code>.</li>
+<li><code>hint</code> (optional) is plain-language text telling an agent that has never seen d402
+what to do: where to get a bundle, how many items, what it earns, how to sign. Sellers
+should include it. Agents find their way through a 402 far more often when the body
+tells them what to do than when it only names a scheme.</li>
+<li><code>scope</code> is a list of path prefixes the voucher is valid for.</li>
+<li><code>tiers[].items</code> is the number of items in a bundle, at least 2 (every bundle holds at
+least one golden and one unknown item). <code>est_tokens</code> is advisory,
+so the agent can budget in its own unit. The seller grades in items.</li>
+<li>Other schemes (for example x402&#39;s <code>exact</code>) may appear in <code>accepts</code>.</li>
+</ul>
+<h2 id="4-earning-a-bundle">4. Earning a bundle<a class="dc-anchor" href="#4-earning-a-bundle" aria-label="link to this section">#</a></h2>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang"></span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code>GET {taskUrl}?tier=m[&amp;type=pairwise]
+    D402-Key: &lt;pubkey&gt;
+    D402-Model: claude            (optional)</code></pre></div>
+<p>A bundle holds items of one task type, named by its <code>type</code> field. A seller&#39;s pool
+may hold items of several types. The agent may ask for one with <code>type</code>; without it
+the seller serves, among the types in <code>taskTypes</code>, the one with the most open unknown
+items for this key that also has enough live goldens (ties go to the type listed
+first).</p>
+<p>Response <code>200</code>:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">json</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-json">{
+  &quot;bundleId&quot;: &quot;b_01J...&quot;,
+  &quot;tier&quot;: &quot;m&quot;,
+  &quot;type&quot;: &quot;classify&quot;,
+  &quot;instructions&quot;: &quot;Label each item with exactly one of the labels.&quot;,
+  &quot;labels&quot;: [&quot;sports&quot;, &quot;business&quot;, &quot;tech&quot;, &quot;world&quot;],
+  &quot;items&quot;: [ { &quot;id&quot;: &quot;i_1&quot;, &quot;text&quot;: &quot;...&quot; }, { &quot;id&quot;: &quot;i_2&quot;, &quot;text&quot;: &quot;...&quot; } ],
+  &quot;expiresAt&quot;: 1760000000
+}</code></pre></div>
+<p>A pairwise bundle (section 8) has the same envelope:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">json</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-json">{
+  &quot;bundleId&quot;: &quot;b_01K...&quot;,
+  &quot;tier&quot;: &quot;m&quot;,
+  &quot;type&quot;: &quot;pairwise&quot;,
+  &quot;instructions&quot;: &quot;Pick the better answer to the prompt: a or b.&quot;,
+  &quot;labels&quot;: [&quot;a&quot;, &quot;b&quot;],
+  &quot;items&quot;: [ { &quot;id&quot;: &quot;p_1&quot;, &quot;prompt&quot;: &quot;...&quot;, &quot;a&quot;: &quot;...&quot;, &quot;b&quot;: &quot;...&quot; } ],
+  &quot;expiresAt&quot;: 1760000000
+}</code></pre></div>
+<p>Errors (<code>4xx</code>, JSON <code>{ "error": code, "message": string }</code>):</p>
+<ul>
+<li><code>bad_tier</code>: unknown tier id.</li>
+<li><code>bad_request</code>: <code>type</code> is not a known task type.</li>
+<li><code>no_tasks</code> (status <code>409</code>): the pool has nothing to hand out, or no unknown item is left
+for this key; every bundle holds at least one unknown item. Also returned when the
+requested <code>type</code> is not in <code>taskTypes</code>.</li>
+<li><code>rate_limited</code>: too many bundles for this key or IP. <code>Retry-After</code> header is set.</li>
+<li><code>blocked</code>: the key&#39;s trust is below the floor (status <code>403</code>).</li>
+<li><code>missing_key</code> / <code>bad_key</code>: <code>D402-Key</code> absent or not a valid key.</li>
+</ul>
+<p>Bundles expire. Default 600 seconds. An expired bundle gets <code>expired_bundle</code> on submit.</p>
+<h2 id="5-submitting-answers">5. Submitting answers<a class="dc-anchor" href="#5-submitting-answers" aria-label="link to this section">#</a></h2>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang"></span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code>POST {taskUrl}/{bundleId}
+    D402-Key: &lt;pubkey&gt;
+    Content-Type: application/json
+
+{
+  &quot;answers&quot;: { &quot;i_1&quot;: &quot;tech&quot;, &quot;i_2&quot;: &quot;sports&quot; },
+  &quot;model&quot;: &quot;claude&quot;,
+  &quot;sig&quot;: &quot;&lt;base64url ed25519 signature&gt;&quot;
+}</code></pre></div>
+<p><code>sig</code> is over the UTF-8 bytes of:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang"></span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code>&quot;d402:submit\n&quot; + bundleId + &quot;\n&quot; + canonicalJSON(answers)</code></pre></div>
+<p><code>canonicalJSON</code> is JSON with object keys sorted recursively and no whitespace.</p>
+<p>Response <code>200</code> (bundle passed):</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">json</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-json">{ &quot;voucher&quot;: &quot;&lt;jwt&gt;&quot;, &quot;calls&quot;: 60, &quot;scope&quot;: [&quot;/search&quot;], &quot;expiresAt&quot;: 1760086400 }</code></pre></div>
+<p>Response <code>422</code> (bundle failed): <code>{ "error": "quality", "message": "..." }</code>.
+The seller never reveals which items were golden or which were wrong.</p>
+<p>Other errors: <code>unknown_bundle</code>, <code>expired_bundle</code>, <code>bad_signature</code>, <code>already_submitted</code>,
+<code>incomplete</code> (an item has no answer), <code>bad_label</code> (answer not in <code>labels</code>).</p>
+<p>Answers are graded the same way for every task type: each answer must be one of the
+bundle&#39;s <code>labels</code>.</p>
+<h3 id="51-grading-rule-v1">5.1 Grading rule (v1)</h3>
+<ul>
+<li>Let <code>g</code> be the number of golden items in the bundle, <code>c</code> the number answered correctly.</li>
+<li>Every bundle contains at least 1 golden item.</li>
+<li>The bundle passes when <code>c / g >= 0.8</code>, and when <code>g == 1</code> it passes only when <code>c == 1</code>.</li>
+<li>On pass: mint a voucher, record every answer on unknown items as a vote with weight
+equal to the agent&#39;s current accuracy estimate.</li>
+<li>On fail: no voucher. The bundle&#39;s unknown answers are discarded.</li>
+<li>Either way the agent&#39;s golden counters are updated.</li>
+</ul>
+<h3 id="52-trust-and-golden-ratio">5.2 Trust and golden ratio</h3>
+<p>Per key, the seller keeps <code>goldenSeen</code>, <code>goldenCorrect</code>, <code>bundles</code>.</p>
+<ul>
+<li><code>accuracy = (goldenCorrect + 1) / (goldenSeen + 2)</code> (Laplace prior).</li>
+<li>Golden ratio for the next bundle:<ul>
+<li><code>bundles < 5</code>: 0.4</li>
+<li><code>bundles >= 50</code> and <code>accuracy >= 0.95</code>: 0.1</li>
+<li><code>bundles >= 10</code> and <code>accuracy >= 0.9</code>: 0.2</li>
+<li>otherwise 0.4</li>
+</ul>
+</li>
+<li>Golden count per bundle: <code>max(1, round(items * ratio))</code>.</li>
+<li>When fewer unknown items are available to the key than the bundle has room for, the
+seller tops the bundle up with more goldens, but a bundle always keeps at least one
+unknown item: with no unknown left for the key (none open, or all already answered or
+held in an open bundle by this key) the seller answers <code>no_tasks</code> instead of handing out
+an all-golden bundle, so goldens alone never earn a voucher.</li>
+<li>A key with <code>bundles >= 5</code> and <code>accuracy < 0.6</code> is blocked. Task endpoints return
+<code>403 blocked</code>. Existing vouchers keep working until they expire.</li>
+</ul>
+<h3 id="53-resolving-unknown-items">5.3 Resolving unknown items</h3>
+<p>An unknown item is resolved when, for its top answer:</p>
+<ul>
+<li>the sum of vote weights is <code>>= 2.0</code>, and</li>
+<li>at least 2 distinct keys voted for it, and</li>
+<li>if the seller enables <code>requireModelFamilies</code>, at least 2 distinct declared model
+families voted for it.</li>
+</ul>
+<p>Resolved items leave the pool. The seller can export them.</p>
+<p>Note: because <code>accuracy</code> uses a Laplace prior it is always below 1.0, so 2 voters
+can never reach a weight of 2.0 on their own. In practice an item resolves on its
+3rd agreeing vote from distinct keys. This is intended: 3-way agreement is the
+redundancy level that makes the resolved label worth more than a single agent&#39;s.</p>
+<h3 id="54-golden-rotation">5.4 Golden rotation</h3>
+<p>A golden item is retired after <code>goldenMaxExposures</code> (default 200) bundles.</p>
+<h2 id="6-the-voucher">6. The voucher<a class="dc-anchor" href="#6-the-voucher" aria-label="link to this section">#</a></h2>
+<p>An HS256 JWT minted and verified by the seller. Claims:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">json</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-json">{ &quot;iss&quot;: &quot;api.example.com&quot;, &quot;sub&quot;: &quot;&lt;agent pubkey&gt;&quot;, &quot;scope&quot;: [&quot;/search&quot;],
+  &quot;jti&quot;: &quot;v_01J...&quot;, &quot;iat&quot;: 1760000000, &quot;exp&quot;: 1760086400 }</code></pre></div>
+<p>Remaining calls are stored server-side keyed by <code>jti</code>. The token is stateless, the
+counter is not.</p>
+<h2 id="7-spending">7. Spending<a class="dc-anchor" href="#7-spending" aria-label="link to this section">#</a></h2>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang"></span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code>GET /search?q=...
+    D402-Voucher: &lt;jwt&gt;</code></pre></div>
+<p>Seller checks: signature, <code>exp</code>, path matches a <code>scope</code> prefix, <code>jti</code> known,
+calls remaining <code>> 0</code>. Decrements by 1 and serves the route. Response carries
+<code>D402-Calls-Remaining</code>.</p>
+<p>Failures return <code>402</code> with the offer body and an extra top-level <code>"error"</code> field:
+<code>voucher_invalid</code>, <code>voucher_expired</code>, <code>voucher_exhausted</code>, <code>scope_mismatch</code>.</p>
+<h3 id="71-bound-spending-optional">7.1 Bound spending (optional)</h3>
+<p>When the seller sets <code>bindVouchers: true</code>, spend requests must also carry
+<code>D402-Key</code>, <code>D402-Timestamp</code> and <code>D402-Sig</code>, where the signature is over:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang"></span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code>&quot;d402:spend\n&quot; + method + &quot;\n&quot; + path + &quot;\n&quot; + jti + &quot;\n&quot; + timestamp</code></pre></div>
+<p><code>path</code> is the request path without query. <code>D402-Key</code> must equal the voucher&#39;s <code>sub</code>.
+Timestamps older than 300 seconds are rejected (<code>stale_timestamp</code>). A leaked voucher
+is then useless without the private key.</p>
+<h3 id="72-spend-nonce-recommended-with-bound-spending">7.2 Spend nonce (recommended with bound spending)</h3>
+<p>Section 7.1 alone lets a captured bound spend be replayed for up to 300 seconds,
+burning a call each time. To close that, the agent sends <code>D402-Nonce</code> (16 random
+bytes, base64url) and appends it as a 6th line of the signed message:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang"></span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code>&quot;d402:spend\n&quot; + method + &quot;\n&quot; + path + &quot;\n&quot; + jti + &quot;\n&quot; + timestamp + &quot;\n&quot; + nonce</code></pre></div>
+<p>The seller verifies with the nonce when the header is present and remembers
+<code>(jti, nonce)</code> until the timestamp leaves the skew window. A repeated pair is
+rejected with <code>replayed_spend</code>. Sellers may set <code>requireSpendNonce</code> to reject
+bound spends that carry no nonce; by default the 5-line form is still accepted
+so older clients keep working.</p>
+<h3 id="73-other-schemes-in-the-same-402">7.3 Other schemes in the same 402</h3>
+<p>A seller may offer other payment schemes beside d402. Each scheme can add entries
+to <code>accepts</code>, top-level body fields (x402 adds <code>x402Version</code>), and response
+headers (MPP adds <code>WWW-Authenticate: Payment ...</code>). The gate routes a request by
+what it carries: a <code>D402-Voucher</code> header always takes the d402 path; otherwise
+the first scheme whose credential header is present verifies it. A failed
+scheme payment returns <code>402</code> with <code>error: "payment_failed"</code> and a <code>schemeError</code>
+object <code>{ scheme, error, message }</code>. The d402 entry stays first in <code>accepts</code>.</p>
+<h2 id="8-task-types">8. Task types<a class="dc-anchor" href="#8-task-types" aria-label="link to this section">#</a></h2>
+<p>v1 defines <code>classify</code> and <code>pairwise</code>. Both use the same bundle envelope, the same
+answer shape (one of <code>labels</code> per item id), the same goldens and the same grading
+and resolution rules (sections 5.1 to 5.4).</p>
+<p><code>classify</code>:</p>
+<ul>
+<li>bundle fields: <code>labels: string[]</code>, <code>items: { id, text }[]</code></li>
+<li>answer: one of <code>labels</code> per item id</li>
+</ul>
+<p><code>pairwise</code> (preference between two answers to one prompt):</p>
+<ul>
+<li>bundle fields: <code>labels: ["a", "b"]</code>, or <code>["a", "b", "tie"]</code> when the seller allows
+ties; <code>items: { id, prompt, a, b }[]</code></li>
+<li><code>instructions</code> default: &quot;Pick the better answer to the prompt: a or b.&quot;</li>
+<li>answer: one of <code>labels</code> per item id (<code>a</code> means answer <code>a</code> is better)</li>
+</ul>
+<p>Clients that only read <code>labels</code> and item ids can stay generic across both types.
+An exported resolved pairwise item carries <code>type: "pairwise"</code>, <code>prompt</code>, <code>a</code> and <code>b</code>
+beside the usual <code>id</code>, <code>answer</code>, <code>weight</code> and <code>voters</code> (its <code>text</code> is empty); a
+resolved classify item keeps its v1 shape <code>{ id, text, answer, weight, voters }</code>.</p>
+<p>Reserved for later: <code>extract</code>, <code>telemetry</code>.</p>
+<h2 id="9-rate-limits-defaults">9. Rate limits (defaults)<a class="dc-anchor" href="#9-rate-limits-defaults" aria-label="link to this section">#</a></h2>
+<ul>
+<li>60 bundles per key per hour</li>
+<li>120 bundles per IP per hour</li>
+<li>At most 5 open (unsubmitted, unexpired) bundles per key</li>
+</ul>
+<h2 id="10-seller-task-file-format">10. Seller task file format<a class="dc-anchor" href="#10-seller-task-file-format" aria-label="link to this section">#</a></h2>
+<p>JSONL, one item per line:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">json</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-json">{ &quot;id&quot;: &quot;i_1&quot;, &quot;type&quot;: &quot;classify&quot;, &quot;text&quot;: &quot;...&quot;, &quot;golden&quot;: &quot;tech&quot; }
+{ &quot;id&quot;: &quot;i_2&quot;, &quot;type&quot;: &quot;classify&quot;, &quot;text&quot;: &quot;...&quot; }
+{ &quot;id&quot;: &quot;p_1&quot;, &quot;type&quot;: &quot;pairwise&quot;, &quot;prompt&quot;: &quot;...&quot;, &quot;a&quot;: &quot;...&quot;, &quot;b&quot;: &quot;...&quot;, &quot;golden&quot;: &quot;a&quot; }
+{ &quot;id&quot;: &quot;p_2&quot;, &quot;type&quot;: &quot;pairwise&quot;, &quot;prompt&quot;: &quot;...&quot;, &quot;a&quot;: &quot;...&quot;, &quot;b&quot;: &quot;...&quot; }</code></pre></div>
+<p><code>golden</code> present means the item is a control item with that answer. <code>type</code> defaults
+to <code>classify</code> when absent. A pairwise golden is <code>a</code>, <code>b</code> or <code>tie</code>; <code>tie</code> only when the
+seller allows ties. One file may mix both types.</p>
+<h2 id="11-security-notes">11. Security notes<a class="dc-anchor" href="#11-security-notes" aria-label="link to this section">#</a></h2>
+<ul>
+<li>Per-item results are never revealed.</li>
+<li>Goldens are sampled uniformly from the live golden pool and retired after N exposures.</li>
+<li>Vouchers are bearer tokens unless <code>bindVouchers</code> is on. Sellers that care should turn it on,
+and set <code>requireSpendNonce</code> so a captured spend cannot be replayed inside the skew window.</li>
+<li>Key and IP rate limits are the only Sybil defence in v1. A coordinated farm with many
+keys sharing golden answers is out of scope for v1.</li>
+</ul>
+   <footer class="dc-foot label"> <a href="https://github.com/napoleon1313/d402/blob/main/spec/SPEC.md" rel="noopener">edit on github: spec/SPEC.md</a> <a href="#main">back to top</a> </footer> </article> </div>  </main> <footer class="site-footer" data-astro-cid-5hce7sga> <div class="wrap footer-inner" data-astro-cid-5hce7sga> <p class="footer-line" data-astro-cid-5hce7sga>d402 · mit · built at the yc make something agents want hackathon, oct 2026</p> <ul class="footer-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga><a href="/d402-site/" data-astro-cid-5hce7sga>home</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/docs" data-astro-cid-5hce7sga>docs</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/sellers" data-astro-cid-5hce7sga>sellers</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms.txt" data-astro-cid-5hce7sga>llms.txt</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms-full.txt" data-astro-cid-5hce7sga>llms-full.txt</a></li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> </div> </footer> <script>
+      (function () {
+        var root = document.documentElement;
+        var btns = document.querySelectorAll("[data-theme-toggle]");
+        function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+        function sync() {
+          var next = current() === "light" ? "dark" : "light";
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", current() === "light" ? "#f2f2f2" : "#0a0a0a");
+          btns.forEach(function (b) {
+            b.textContent = next;
+            b.setAttribute("aria-label", "switch to " + next + " theme");
+          });
+        }
+        btns.forEach(function (b) {
+          b.addEventListener("click", function () {
+            var next = current() === "light" ? "dark" : "light";
+            root.setAttribute("data-theme", next);
+            try { localStorage.setItem("d402-theme", next); } catch (e) {}
+            sync();
+          });
+        });
+        sync();
+      })();
+    </script> </body> </html>  <script type="module">document.addEventListener("click",async e=>{const t=e.target?.closest(".dc-copy");if(!t)return;const c=t.closest(".dc-code")?.querySelector("code")?.textContent??"";try{await navigator.clipboard.writeText(c),t.textContent="copied"}catch{t.textContent="select + copy"}t.setAttribute("data-copied",""),setTimeout(()=>{t.textContent="copy",t.removeAttribute("data-copied")},1500)});</script>

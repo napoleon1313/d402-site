@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-5hce7sga> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>@d402-labs/client · docs · d402</title><meta name="description" content="Agent-side client for the d402 protocol: a drop-in fetch that earns vouchers by labelling data when a seller answers 402, caches them, and spends them on..."><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0a0a0a"><link rel="icon" type="image/svg+xml" href="/d402-site/favicon.svg"><link rel="canonical" href="https://napoleon1313.github.io/d402-site/docs/packages/client/"><meta property="og:type" content="website"><meta property="og:site_name" content="d402"><meta property="og:title" content="@d402-labs/client · docs · d402"><meta property="og:description" content="Agent-side client for the d402 protocol: a drop-in fetch that earns vouchers by labelling data when a seller answers 402, caches them, and spends them on..."><meta property="og:url" content="https://napoleon1313.github.io/d402-site/docs/packages/client/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="@d402-labs/client · docs · d402"><meta name="twitter:description" content="Agent-side client for the d402 protocol: a drop-in fetch that earns vouchers by labelling data when a seller answers 402, caches them, and spends them on..."><script>
+      (function () {
+        try {
+          var t = localStorage.getItem("d402-theme");
+          if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/d402-site/_astro/bench.CT3VcaLi.css">
+<link rel="stylesheet" href="/d402-site/_astro/bench.C14rLK3X.css"></head> <body class data-astro-cid-5hce7sga> <a class="skip-link" href="#main" data-astro-cid-5hce7sga>skip to content</a> <header class="site-nav" data-astro-cid-5hce7sga> <nav class="wrap nav-inner" aria-label="primary" data-astro-cid-5hce7sga> <a class="nav-home" href="/d402-site/" aria-label="d402 home" data-astro-cid-5hce7sga>d402</a> <ul class="nav-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga> <a href="/d402-site/docs" aria-current="page" data-astro-cid-5hce7sga>docs</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a> </li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> <button type="button" class="theme-toggle" data-theme-toggle aria-label="switch to light theme" data-astro-cid-5hce7sga>light</button> </nav> </header> <main id="main" tabindex="-1" data-astro-cid-5hce7sga>  <div class="wrap dc-shell"> <details class="dc-side" id="dc-side" open> <summary><span>docs / @d402-labs/client</span></summary> <nav aria-label="docs"> <div class="dc-group"> <span class="dc-group-title">start</span> <ul> <li> <a href="/d402-site/docs">introduction</a> </li><li> <a href="/d402-site/docs/overview">overview</a> </li><li> <a href="/d402-site/docs/spec">spec</a> </li><li> <a href="/d402-site/docs/quickstart">quick start</a> </li><li> <a href="/d402-site/docs/agents">for agents</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">packages</span> <ul> <li> <a href="/d402-site/docs/packages">all packages</a> </li><li> <a href="/d402-site/docs/packages/spec">@d402-labs/spec</a> </li><li> <a href="/d402-site/docs/packages/server">@d402-labs/server</a> </li><li> <a href="/d402-site/docs/packages/client" aria-current="page">@d402-labs/client</a> </li><li> <a href="/d402-site/docs/packages/mcp">@d402-labs/mcp</a> </li><li> <a href="/d402-site/docs/packages/mcp-seller">@d402-labs/mcp-seller</a> </li><li> <a href="/d402-site/docs/packages/proxy">@d402-labs/proxy</a> </li><li> <a href="/d402-site/docs/packages/pool">@d402-labs/pool</a> </li><li> <a href="/d402-site/docs/packages/x402">@d402-labs/x402</a> </li><li> <a href="/d402-site/docs/packages/mpp">@d402-labs/mpp</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">clients</span> <ul> <li> <a href="/d402-site/docs/packages/python">python</a> </li><li> <a href="/d402-site/docs/packages/curl">curl</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">use cases</span> <ul> <li> <a href="/d402-site/docs/use-cases">all use cases</a> </li><li> <a href="/d402-site/docs/use-cases/01-dataset-builder">01 dataset builder</a> </li><li> <a href="/d402-site/docs/use-cases/02-x402-side-by-side">02 x402 side by side</a> </li><li> <a href="/d402-site/docs/use-cases/03-rate-limit-upgrade">03 rate limit upgrade</a> </li><li> <a href="/d402-site/docs/use-cases/04-mcp-agent">04 mcp agent</a> </li><li> <a href="/d402-site/docs/use-cases/05-multi-seller-wallet">05 multi-seller wallet</a> </li><li> <a href="/d402-site/docs/use-cases/06-trust-tiers">06 trust tiers</a> </li><li> <a href="/d402-site/docs/use-cases/07-paid-crawl">07 paid crawl</a> </li><li> <a href="/d402-site/docs/use-cases/08-marketplace">08 marketplace</a> </li><li> <a href="/d402-site/docs/use-cases/09-triple-gate">09 triple gate: one 402, three ways to pay</a> </li><li> <a href="/d402-site/docs/use-cases/10-pairwise">10 pairwise</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">bench</span> <ul> <li> <a href="/d402-site/docs/bench">bench report</a> </li> </ul> </div> </nav> </details> <script>
+  // Collapsed on phones, always open on desktop. Runs before paint; without JS the list is simply open.
+  (function () {
+    var d = document.getElementById("dc-side");
+    if (!d || !window.matchMedia) return;
+    var mq = window.matchMedia("(min-width: 960px)");
+    var sync = function () { d.open = mq.matches; };
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+  })();
+</script> <article class="dc-main prose" id="dc-content"> <p class="eyebrow dc-eyebrow">package / @d402-labs/client</p><h1>@d402-labs/client</h1>  <p>Agent-side client for the <a href="/d402-site/docs/spec">d402 protocol</a>: a drop-in <code>fetch</code>
+that earns vouchers by labelling data when a seller answers <code>402</code>, caches them,
+and spends them on later calls.</p>
+<h2 id="quickstart">Quickstart<a class="dc-anchor" href="#quickstart" aria-label="link to this section">#</a></h2>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">ts</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-ts">import { createD402Client, createLlmSolver, loadOrCreateKeypair } from &quot;@d402-labs/client&quot;;
+
+const keypair = loadOrCreateKeypair(&quot;~/.d402/agent.json&quot;); // Ed25519, created on first run (mode 0600)
+
+const solver = createLlmSolver({
+  complete: async (prompt) =&gt; callYourModel(prompt), // returns the model's text
+});
+
+const client = createD402Client({ keypair, solver, model: &quot;claude&quot; });
+
+// Behaves like fetch. On 402 it earns a voucher, then retries once.
+const res = await client.fetch(&quot;https://api.example.com/search?q=hello&quot;);
+console.log(res.status, await res.json());
+
+// Earn ahead of time, or inspect what is cached.
+const offer = await client.discover(&quot;https://api.example.com&quot;);
+console.log(await client.status());</code></pre></div>
+<h2 id="options-created402client">Options (<code>createD402Client</code>)<a class="dc-anchor" href="#options-created402client" aria-label="link to this section">#</a></h2>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>keypair</code></td>
+<td>required</td>
+<td><code>{ publicKey, privateKey }</code> from <code>loadOrCreateKeypair</code> or <code>generateKeypair()</code></td>
+</tr>
+<tr>
+<td><code>solver</code></td>
+<td>none</td>
+<td><code>(bundle) => Promise<answers></code>; needed by <code>fetch()</code> and <code>earn()</code></td>
+</tr>
+<tr>
+<td><code>cache</code></td>
+<td><code>new MemoryVoucherCache()</code></td>
+<td>Voucher store; <code>FileVoucherCache(dir)</code> persists to one JSON file with atomic writes</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td>none</td>
+<td>Sent as <code>D402-Model</code> and <code>body.model</code> (used by sellers for model diversity)</td>
+</tr>
+<tr>
+<td><code>tier</code></td>
+<td>smallest tier by <code>items</code></td>
+<td>A tier id, or <code>(accept) => tierId</code></td>
+</tr>
+<tr>
+<td><code>fetch</code></td>
+<td><code>globalThis.fetch</code></td>
+<td>Transport to use underneath</td>
+</tr>
+<tr>
+<td><code>now</code></td>
+<td><code>Date.now()/1000</code></td>
+<td>Clock in unix seconds (handy in tests)</td>
+</tr>
+<tr>
+<td><code>maxEarnAttempts</code></td>
+<td><code>3</code></td>
+<td>Bundles to try when one fails with <code>422 quality</code></td>
+</tr>
+<tr>
+<td><code>signSpends</code></td>
+<td><code>true</code></td>
+<td>Send <code>D402-Key</code>, <code>D402-Timestamp</code>, <code>D402-Sig</code> on every spend (SPEC 7.1)</td>
+</tr>
+</tbody></table>
+</div>
+<h2 id="what-clientfetch-does">What <code>client.fetch</code> does<a class="dc-anchor" href="#what-clientfetch-does" aria-label="link to this section">#</a></h2>
+<ol>
+<li>Looks for a cached, unexpired voucher for the request&#39;s seller whose scope covers the path and attaches <code>D402-Voucher</code> (plus the 7.1 headers).</li>
+<li>Sends the request. Anything other than <code>402</code> is returned as is; <code>D402-Calls-Remaining</code> updates the cache.</li>
+<li>On a <code>402</code> with a d402 offer: evicts the voucher if the seller said it was exhausted, expired or invalid, runs <code>earn()</code> (bundle, solver, signed submit), and retries the original request once. A second <code>402</code> is returned, never looped on.</li>
+</ol>
+<p>Only protocol failures throw (<code>D402Error</code> with <code>code</code>, <code>status</code>, <code>body</code>): <code>earn_failed</code> after <code>maxEarnAttempts</code> quality failures, <code>bad_offer</code>, <code>bad_bundle</code>, <code>unreplayable_body</code> for stream bodies, <code>no_solver</code>, and seller error codes such as <code>bad_tier</code>, <code>blocked</code>, <code>rate_limited</code>. Network errors propagate untouched.</p>
+<h2 id="plugging-in-an-llm">Plugging in an LLM<a class="dc-anchor" href="#plugging-in-an-llm" aria-label="link to this section">#</a></h2>
+<p><code>createLlmSolver({ complete, maxRetries })</code> builds a prompt with <code>buildClassifyPrompt(bundle)</code> (instructions, allowed labels, numbered items with ids, and a request for a single JSON object <code>{ itemId: label }</code>), parses the reply with <code>parseClassifyAnswers(text, bundle)</code> (tolerates code fences and surrounding prose, matches labels case-insensitively), and re-asks with a short correction up to <code>maxRetries</code> times (default 2) when the reply is unusable.</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">ts</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-ts">import Anthropic from &quot;@anthropic-ai/sdk&quot;;
+const anthropic = new Anthropic();
+
+const solver = createLlmSolver({
+  complete: async (prompt) =&gt; {
+    const msg = await anthropic.messages.create({
+      model: &quot;claude-sonnet-4-5&quot;,
+      max_tokens: 1024,
+      messages: [{ role: &quot;user&quot;, content: prompt }],
+    });
+    return msg.content.map((c) =&gt; (c.type === &quot;text&quot; ? c.text : &quot;&quot;)).join(&quot;&quot;);
+  },
+});</code></pre></div>
+<p>For tests and benchmarks, <code>createLookupSolver(recordOrFn)</code> answers from a map of item id to label, or from <code>(item, bundle) => label</code>.</p>
+<h2 id="lower-level-api">Lower-level API<a class="dc-anchor" href="#lower-level-api" aria-label="link to this section">#</a></h2>
+<ul>
+<li><code>client.discover(baseUrl)</code>: <code>GET {base}/.well-known/d402</code>, returns the parsed <code>Offer</code>.</li>
+<li><code>client.getBundle(taskUrl, tier)</code>: <code>GET taskUrl?tier=...</code> with <code>D402-Key</code>.</li>
+<li><code>client.submit(taskUrl, bundle, answers, accept?)</code>: signs with <code>signSubmit</code>, POSTs, stores and returns the <code>StoredVoucher</code>.</li>
+<li><code>client.earn(accept, tier?)</code>: the three steps above with retries on <code>quality</code>.</li>
+<li><code>client.status()</code>: everything in the cache.</li>
+</ul>
+<h2 id="cli-d402-agent">CLI: <code>d402-agent</code><a class="dc-anchor" href="#cli-d402-agent" aria-label="link to this section">#</a></h2>
+<p>The package ships a <code>d402-agent</code> binary (zero extra dependencies) that drives the same client
+from a shell. It is not called <code>d402</code>: an unrelated package of that name exists on npm,
+so <code>npx d402</code> runs someone else&#39;s code. The packages are not published yet; the release
+workflow is ready. Until then run it from the repo as <code>node packages/client/dist/cli.js</code>
+after <code>pnpm build</code>. Once published: <code>npm i -g @d402-labs/client</code> (then <code>d402-agent ...</code>) or
+<code>npx -p @d402-labs/client d402-agent ...</code>.</p>
+<p>State lives in <code>$D402_HOME</code> (default <code>~/.d402</code>): <code>keypair.json</code>,
+<code>vouchers.json</code> (a <code>FileVoucherCache</code>) and <code>pending/<bundleId>.json</code>.</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">d402-agent keygen                                   # create $D402_HOME/keypair.json, print the public key
+d402-agent discover http://localhost:8787           # the seller's d402 accept as JSON
+d402-agent bundle http://localhost:8787 --tier s    # print a bundle; also saved under $D402_HOME/pending/
+d402-agent submit &lt;bundleId&gt; --answers answers.json # sign + submit the pending bundle, print the voucher summary
+d402-agent earn http://localhost:8787 --tier s --answers key.json      # bundle -&gt; solve -&gt; submit in one go
+d402-agent earn http://localhost:8787 --solver-cmd &quot;python solve.py&quot;  # ...with a command as the solver
+d402-agent fetch &quot;http://localhost:8787/search?q=gpu&quot;                 # spend a cached voucher (prints status, headers, body)
+d402-agent fetch &quot;http://localhost:8787/search?q=gpu&quot; --auto-earn --solver-cmd &quot;python solve.py&quot;
+d402-agent fetch http://localhost:8787/search -X POST -d '{&quot;q&quot;:&quot;gpu&quot;}' -H &quot;X-Trace: 1&quot;
+d402-agent status                                   # public key, cached vouchers, pending bundles</code></pre></div>
+<p>Solvers:</p>
+<ul>
+<li><code>--answers <file></code>: a JSON object <code>{ "<itemId>": "<label>" }</code>. Every item in the bundle
+must be present (<code>solver_missing_answer</code> otherwise); extra ids are ignored.</li>
+<li><code>--solver-cmd "<cmd>"</code>: the command gets the bundle JSON on stdin and must print
+<code>{ "<itemId>": "<label>" }</code> (or <code>{ "answers": {...} }</code>) on stdout. Same contract as the
+MCP package&#39;s <code>D402_SOLVER_CMD</code>.</li>
+</ul>
+<p>Environment: <code>D402_HOME</code>, <code>D402_MODEL</code> (sent as <code>D402-Model</code>), <code>D402_TIER</code> (default tier;
+<code>--tier</code> wins). <code>--home <dir></code> overrides <code>D402_HOME</code>. A leading <code>~</code> in either is the home
+directory (<code>$HOME</code>), as it is in <code>loadOrCreateKeypair("~/.d402/agent.json")</code>.</p>
+<p>Exit codes: <code>0</code> ok (any HTTP status from <code>fetch</code> counts as ok), <code>1</code> protocol error with
+<code>error: <code> <message></code> on stderr (<code>bad_tier</code>, <code>quality</code>, <code>earn_failed</code>, <code>unknown_bundle</code>,
+<code>solver_failed</code>, ...), <code>2</code> usage.</p>
+<p><code>fetch</code> without <code>--auto-earn</code> only spends: it attaches the best cached voucher for the
+seller (with the SPEC 7.1 signed headers) and prints whatever comes back, including a <code>402</code>.
+With <code>--auto-earn</code> it is <code>client.fetch</code>: a <code>402</code> triggers earn and one retry.</p>
+<p>For tests, <code>main(argv, { stdout, stderr, env, fetch, now })</code> is exported from
+<code>@d402-labs/client/dist/cli.js</code>&#39;s source (<code>src/cli.ts</code>) and returns the exit code; <code>fetch</code> can be a
+Hono <code>app.request</code> wrapper.</p>
+   <footer class="dc-foot label"> <a href="https://github.com/napoleon1313/d402/blob/main/packages/client/README.md" rel="noopener">edit on github: packages/client/README.md</a> <a href="#main">back to top</a> </footer> </article> </div>  </main> <footer class="site-footer" data-astro-cid-5hce7sga> <div class="wrap footer-inner" data-astro-cid-5hce7sga> <p class="footer-line" data-astro-cid-5hce7sga>d402 · mit · built at the yc make something agents want hackathon, oct 2026</p> <ul class="footer-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga><a href="/d402-site/" data-astro-cid-5hce7sga>home</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/docs" data-astro-cid-5hce7sga>docs</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/sellers" data-astro-cid-5hce7sga>sellers</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms.txt" data-astro-cid-5hce7sga>llms.txt</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms-full.txt" data-astro-cid-5hce7sga>llms-full.txt</a></li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> </div> </footer> <script>
+      (function () {
+        var root = document.documentElement;
+        var btns = document.querySelectorAll("[data-theme-toggle]");
+        function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+        function sync() {
+          var next = current() === "light" ? "dark" : "light";
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", current() === "light" ? "#f2f2f2" : "#0a0a0a");
+          btns.forEach(function (b) {
+            b.textContent = next;
+            b.setAttribute("aria-label", "switch to " + next + " theme");
+          });
+        }
+        btns.forEach(function (b) {
+          b.addEventListener("click", function () {
+            var next = current() === "light" ? "dark" : "light";
+            root.setAttribute("data-theme", next);
+            try { localStorage.setItem("d402-theme", next); } catch (e) {}
+            sync();
+          });
+        });
+        sync();
+      })();
+    </script> </body> </html>  <script type="module">document.addEventListener("click",async e=>{const t=e.target?.closest(".dc-copy");if(!t)return;const c=t.closest(".dc-code")?.querySelector("code")?.textContent??"";try{await navigator.clipboard.writeText(c),t.textContent="copied"}catch{t.textContent="select + copy"}t.setAttribute("data-copied",""),setTimeout(()=>{t.textContent="copy",t.removeAttribute("data-copied")},1500)});</script>

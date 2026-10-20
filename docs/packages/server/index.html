@@ -1,0 +1,269 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-5hce7sga> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>@d402-labs/server · docs · d402</title><meta name="description" content="Seller-side middleware for the d402 protocol: gate Hono routes behind labelled-data vouchers, hand out classify or pairwise bundles seeded with golden..."><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0a0a0a"><link rel="icon" type="image/svg+xml" href="/d402-site/favicon.svg"><link rel="canonical" href="https://napoleon1313.github.io/d402-site/docs/packages/server/"><meta property="og:type" content="website"><meta property="og:site_name" content="d402"><meta property="og:title" content="@d402-labs/server · docs · d402"><meta property="og:description" content="Seller-side middleware for the d402 protocol: gate Hono routes behind labelled-data vouchers, hand out classify or pairwise bundles seeded with golden..."><meta property="og:url" content="https://napoleon1313.github.io/d402-site/docs/packages/server/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="@d402-labs/server · docs · d402"><meta name="twitter:description" content="Seller-side middleware for the d402 protocol: gate Hono routes behind labelled-data vouchers, hand out classify or pairwise bundles seeded with golden..."><script>
+      (function () {
+        try {
+          var t = localStorage.getItem("d402-theme");
+          if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/d402-site/_astro/bench.CT3VcaLi.css">
+<link rel="stylesheet" href="/d402-site/_astro/bench.C14rLK3X.css"></head> <body class data-astro-cid-5hce7sga> <a class="skip-link" href="#main" data-astro-cid-5hce7sga>skip to content</a> <header class="site-nav" data-astro-cid-5hce7sga> <nav class="wrap nav-inner" aria-label="primary" data-astro-cid-5hce7sga> <a class="nav-home" href="/d402-site/" aria-label="d402 home" data-astro-cid-5hce7sga>d402</a> <ul class="nav-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga> <a href="/d402-site/docs" aria-current="page" data-astro-cid-5hce7sga>docs</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a> </li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> <button type="button" class="theme-toggle" data-theme-toggle aria-label="switch to light theme" data-astro-cid-5hce7sga>light</button> </nav> </header> <main id="main" tabindex="-1" data-astro-cid-5hce7sga>  <div class="wrap dc-shell"> <details class="dc-side" id="dc-side" open> <summary><span>docs / @d402-labs/server</span></summary> <nav aria-label="docs"> <div class="dc-group"> <span class="dc-group-title">start</span> <ul> <li> <a href="/d402-site/docs">introduction</a> </li><li> <a href="/d402-site/docs/overview">overview</a> </li><li> <a href="/d402-site/docs/spec">spec</a> </li><li> <a href="/d402-site/docs/quickstart">quick start</a> </li><li> <a href="/d402-site/docs/agents">for agents</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">packages</span> <ul> <li> <a href="/d402-site/docs/packages">all packages</a> </li><li> <a href="/d402-site/docs/packages/spec">@d402-labs/spec</a> </li><li> <a href="/d402-site/docs/packages/server" aria-current="page">@d402-labs/server</a> </li><li> <a href="/d402-site/docs/packages/client">@d402-labs/client</a> </li><li> <a href="/d402-site/docs/packages/mcp">@d402-labs/mcp</a> </li><li> <a href="/d402-site/docs/packages/mcp-seller">@d402-labs/mcp-seller</a> </li><li> <a href="/d402-site/docs/packages/proxy">@d402-labs/proxy</a> </li><li> <a href="/d402-site/docs/packages/pool">@d402-labs/pool</a> </li><li> <a href="/d402-site/docs/packages/x402">@d402-labs/x402</a> </li><li> <a href="/d402-site/docs/packages/mpp">@d402-labs/mpp</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">clients</span> <ul> <li> <a href="/d402-site/docs/packages/python">python</a> </li><li> <a href="/d402-site/docs/packages/curl">curl</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">use cases</span> <ul> <li> <a href="/d402-site/docs/use-cases">all use cases</a> </li><li> <a href="/d402-site/docs/use-cases/01-dataset-builder">01 dataset builder</a> </li><li> <a href="/d402-site/docs/use-cases/02-x402-side-by-side">02 x402 side by side</a> </li><li> <a href="/d402-site/docs/use-cases/03-rate-limit-upgrade">03 rate limit upgrade</a> </li><li> <a href="/d402-site/docs/use-cases/04-mcp-agent">04 mcp agent</a> </li><li> <a href="/d402-site/docs/use-cases/05-multi-seller-wallet">05 multi-seller wallet</a> </li><li> <a href="/d402-site/docs/use-cases/06-trust-tiers">06 trust tiers</a> </li><li> <a href="/d402-site/docs/use-cases/07-paid-crawl">07 paid crawl</a> </li><li> <a href="/d402-site/docs/use-cases/08-marketplace">08 marketplace</a> </li><li> <a href="/d402-site/docs/use-cases/09-triple-gate">09 triple gate: one 402, three ways to pay</a> </li><li> <a href="/d402-site/docs/use-cases/10-pairwise">10 pairwise</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">bench</span> <ul> <li> <a href="/d402-site/docs/bench">bench report</a> </li> </ul> </div> </nav> </details> <script>
+  // Collapsed on phones, always open on desktop. Runs before paint; without JS the list is simply open.
+  (function () {
+    var d = document.getElementById("dc-side");
+    if (!d || !window.matchMedia) return;
+    var mq = window.matchMedia("(min-width: 960px)");
+    var sync = function () { d.open = mq.matches; };
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+  })();
+</script> <article class="dc-main prose" id="dc-content"> <p class="eyebrow dc-eyebrow">package / @d402-labs/server</p><h1>@d402-labs/server</h1>  <p>Seller-side middleware for the <a href="/d402-site/docs/spec">d402 protocol</a>: gate Hono
+routes behind labelled-data vouchers, hand out classify or pairwise bundles
+seeded with golden items, grade them, and turn agents&#39; answers into weighted votes.</p>
+<p>Storage is SQLite via Node&#39;s built-in <code>node:sqlite</code> (Node 22+). It prints an
+<code>ExperimentalWarning</code> on start; that is expected.</p>
+<h2 id="install">Install<a class="dc-anchor" href="#install" aria-label="link to this section">#</a></h2>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">pnpm add @d402-labs/server hono</code></pre></div>
+<h2 id="usage">Usage<a class="dc-anchor" href="#usage" aria-label="link to this section">#</a></h2>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">ts</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-ts">import { Hono } from &quot;hono&quot;;
+import { createD402 } from &quot;@d402-labs/server&quot;;
+
+const d = createD402({
+  sellerId: &quot;api.example.com&quot;,
+  taskUrl: &quot;http://localhost:8787/.well-known/d402/tasks&quot;,
+  scope: [&quot;/search&quot;],
+  tiers: [{ id: &quot;s&quot;, items: 5, est_tokens: 1000, reward: { calls: 10 } }],
+  secret: process.env.D402_SECRET!,
+  labels: [&quot;sports&quot;, &quot;business&quot;, &quot;tech&quot;, &quot;world&quot;],
+  db: &quot;./d402.db&quot;,
+});
+d.tasks.loadFile(&quot;./tasks.jsonl&quot;);
+
+const app = new Hono();
+app.route(&quot;/&quot;, d.routes);                                  // /.well-known/d402 + task endpoints
+app.use(&quot;/search&quot;, d.gate); app.use(&quot;/search/*&quot;, d.gate);  // 402 without a valid voucher
+app.get(&quot;/search&quot;, (c) =&gt; c.json({ hits: [] }));</code></pre></div>
+<p><code>d.gate</code> verifies the voucher, checks scope and remaining calls, decrements
+atomically, sets <code>D402-Calls-Remaining</code> and calls the route. Any failure is a
+<code>402</code> whose body is the offer plus <code>error</code> (and <code>message</code>). Mounting the gate on
+both <code>/search</code> and <code>/search/*</code> is safe: it runs once per request.</p>
+<h2 id="options">Options<a class="dc-anchor" href="#options" aria-label="link to this section">#</a></h2>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>sellerId</code></td>
+<td>required</td>
+<td><code>iss</code> of vouchers and <code>sellerId</code> in the offer</td>
+</tr>
+<tr>
+<td><code>taskUrl</code></td>
+<td>required</td>
+<td>absolute URL of the task endpoint</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td>required</td>
+<td>path prefixes vouchers are valid for</td>
+</tr>
+<tr>
+<td><code>tiers</code></td>
+<td>required</td>
+<td>bundle sizes and rewards (SPEC 3); <code>items</code> must be at least 2</td>
+</tr>
+<tr>
+<td><code>secret</code></td>
+<td>required</td>
+<td>HMAC secret for HS256 vouchers</td>
+</tr>
+<tr>
+<td><code>labels</code></td>
+<td>required unless <code>pairwise</code> is set</td>
+<td>classify labels (at least 2); without them the seller serves pairwise only</td>
+</tr>
+<tr>
+<td><code>instructions</code></td>
+<td><code>"Label each item with exactly one of the labels."</code></td>
+<td>shown in every classify bundle</td>
+</tr>
+<tr>
+<td><code>pairwise</code></td>
+<td>unset</td>
+<td><code>{ allowTie?, instructions? }</code> for pairwise bundles (SPEC 8): labels <code>["a","b"]</code>, plus <code>"tie"</code> with <code>allowTie</code>. Pairwise items are served whether or not this is set</td>
+</tr>
+<tr>
+<td><code>db</code></td>
+<td><code>":memory:"</code></td>
+<td>SQLite path</td>
+</tr>
+<tr>
+<td><code>voucherTtl</code></td>
+<td><code>86400</code></td>
+<td>voucher lifetime, seconds</td>
+</tr>
+<tr>
+<td><code>bundleTtl</code></td>
+<td><code>600</code></td>
+<td>bundle lifetime, seconds</td>
+</tr>
+<tr>
+<td><code>goldenMaxExposures</code></td>
+<td><code>200</code></td>
+<td>a golden is retired after this many bundles</td>
+</tr>
+<tr>
+<td><code>bundlesPerKeyPerHour</code></td>
+<td><code>60</code></td>
+<td>rate limit per key</td>
+</tr>
+<tr>
+<td><code>bundlesPerIpPerHour</code></td>
+<td><code>120</code></td>
+<td>rate limit per IP (<code>x-forwarded-for</code>, then the socket address)</td>
+</tr>
+<tr>
+<td><code>maxOpenBundlesPerKey</code></td>
+<td><code>5</code></td>
+<td>unsubmitted, unexpired bundles per key</td>
+</tr>
+<tr>
+<td><code>requireModelFamilies</code></td>
+<td><code>false</code></td>
+<td>resolution also needs 2 distinct <code>D402-Model</code> families</td>
+</tr>
+<tr>
+<td><code>bindVouchers</code></td>
+<td><code>false</code></td>
+<td>SPEC 7.1: spends must carry <code>D402-Key</code>, <code>D402-Timestamp</code>, <code>D402-Sig</code></td>
+</tr>
+<tr>
+<td><code>requireSpendNonce</code></td>
+<td><code>false</code></td>
+<td>with <code>bindVouchers</code>: bound spends must also carry a <code>D402-Nonce</code> (SPEC 7.2)</td>
+</tr>
+<tr>
+<td><code>now</code></td>
+<td><code>Date.now()/1000</code></td>
+<td>clock, unix seconds (inject in tests)</td>
+</tr>
+<tr>
+<td><code>random</code></td>
+<td><code>Math.random</code></td>
+<td>RNG for golden sampling and shuffling</td>
+</tr>
+<tr>
+<td><code>otherAccepts</code></td>
+<td><code>[]</code></td>
+<td>extra entries appended to <code>offer.accepts</code> (e.g. an x402 <code>exact</code> scheme)</td>
+</tr>
+</tbody></table>
+</div>
+<h2 id="server-object">Server object<a class="dc-anchor" href="#server-object" aria-label="link to this section">#</a></h2>
+<ul>
+<li><code>routes</code>: <code>GET /.well-known/d402</code>, <code>GET /.well-known/d402/tasks?tier=<id></code>, <code>POST /.well-known/d402/tasks/:bundleId</code></li>
+<li><code>gate</code>: middleware for gated routes</li>
+<li><code>offer(error?, message?)</code>: the SPEC 3 body</li>
+<li><code>tasks.load(items)</code> / <code>tasks.loadFile(path)</code> / <code>tasks.exportResolved()</code> / <code>tasks.stats()</code></li>
+<li><code>agents.get(publicKey)</code> / <code>agents.list()</code></li>
+<li><code>vouchers.get(jti)</code></li>
+<li><code>close()</code></li>
+</ul>
+<h2 id="behaviour-notes">Behaviour notes<a class="dc-anchor" href="#behaviour-notes" aria-label="link to this section">#</a></h2>
+<ul>
+<li>Vote weight is the agent&#39;s accuracy estimate computed <strong>before</strong> the submitted
+bundle&#39;s golden counters are folded in, so a bundle cannot raise its own weight
+with the goldens it just answered. The first bundle of a key votes at the prior
+<code>0.5</code>.</li>
+<li>An agent is never re-handed an unknown item from a bundle it submitted or that
+is still open. Unknowns with the fewest votes are handed out first.</li>
+<li>Every bundle holds at least one golden and at least one unknown item. When unknowns
+run short the bundle is topped up with more goldens; when none is left for the key
+the task endpoint answers <code>409 no_tasks</code> rather than an all-golden bundle, so an
+agent that memorised the goldens cannot keep earning from an exhausted pool.</li>
+<li><code>tier</code> defaults to the first tier when the query parameter is omitted.</li>
+<li><code>D402-Timestamp</code> on a bound spend must be within <code>spendTimestampSkew</code> (300 s) of
+the server clock in either direction.</li>
+<li>A blocked key gets <code>403 blocked</code> on both task endpoints; its vouchers keep working.</li>
+</ul>
+<h2 id="cli">CLI<a class="dc-anchor" href="#cli" aria-label="link to this section">#</a></h2>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">d402-tasks load &lt;db&gt; &lt;file.jsonl&gt;   # insert items (duplicate ids are ignored)
+d402-tasks export &lt;db&gt;              # resolved unknown items as JSONL
+d402-tasks stats &lt;db&gt;               # pool statistics as JSON</code></pre></div>
+<p>Task file lines follow SPEC 10: <code>{"id":"i_1","type":"classify","text":"...","golden":"tech"}</code> or
+<code>{"id":"p_1","type":"pairwise","prompt":"...","a":"...","b":"...","golden":"a"}</code>. A pool may hold both
+types; each bundle holds one. Agents pick with <code>?type=pairwise</code> or <code>?type=classify</code>; without it the
+seller serves the type with the most open unknown items for the key. Opening a database made by an
+older version adds the pairwise columns (<code>prompt</code>, <code>a</code>, <code>b</code>) in place.</p>
+<h2 id="admin-endpoints">Admin endpoints<a class="dc-anchor" href="#admin-endpoints" aria-label="link to this section">#</a></h2>
+<p>Set <code>adminToken</code> and four read-only routes are mounted next to the task routes. Every
+request must carry <code>Authorization: Bearer <adminToken></code>; anything else is
+<code>401 { "error": "unauthorized" }</code>. Without <code>adminToken</code> the routes do not exist (404).</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">ts</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-ts">const d402 = createD402({ ...opts, adminToken: process.env.D402_ADMIN_TOKEN });</code></pre></div>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Body</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>GET /.well-known/d402/admin/stats</code></td>
+<td><code>{ stats: tasks.stats(), agents: agents.list(), resolvedCount, now }</code></td>
+</tr>
+<tr>
+<td><code>GET /.well-known/d402/admin/export</code></td>
+<td><code>tasks.exportResolved()</code> as JSONL (<code>application/x-ndjson</code>), one <code>{ id, text, answer, weight, voters }</code> per line; pairwise rows add <code>type: "pairwise"</code>, <code>prompt</code>, <code>a</code>, <code>b</code></td>
+</tr>
+<tr>
+<td><code>GET /.well-known/d402/admin/agents</code></td>
+<td><code>agents.list()</code></td>
+</tr>
+<tr>
+<td><code>GET /.well-known/d402/admin/events?since=<unix></code></td>
+<td><code>{ events, now }</code>: the last 200 events at or after <code>since</code>, oldest first</td>
+</tr>
+</tbody></table>
+</div>
+<p>An event is <code>{ t, type, key?, bundleId?, itemId?, tier?, jti?, calls?, answer?, voters? }</code> with
+<code>type</code> one of <code>bundle_issued</code>, <code>bundle_passed</code>, <code>bundle_failed</code>, <code>voucher_issued</code>,
+<code>item_resolved</code>, <code>agent_blocked</code>.</p>
+<p>Limitation: there is no event log. Events are reconstructed from the store on every
+request (bundles&#39; <code>issued_at</code>/<code>submitted_at</code>, vouchers, votes, resolved items, blocked
+agents), which keeps the grading path untouched but means:</p>
+<ul>
+<li>voucher <em>spends</em> are not visible as events (<code>stats.vouchers</code> and <code>vouchers.get(jti)</code> are);</li>
+<li>a resolved item is dated by the latest bundle that voted for the winning answer;</li>
+<li>a blocked agent is dated by its last submission;</li>
+<li>only <code>SqliteStore</code> supports the table-backed events; another <code>Store</code> yields <code>agent_blocked</code> only.</li>
+</ul>
+<p><code>curl -s -H "Authorization: Bearer $TOKEN" http://localhost:8787/.well-known/d402/admin/export > resolved.jsonl</code>
+is the quickest way to pull labelled data out of a running seller.</p>
+   <footer class="dc-foot label"> <a href="https://github.com/napoleon1313/d402/blob/main/packages/server/README.md" rel="noopener">edit on github: packages/server/README.md</a> <a href="#main">back to top</a> </footer> </article> </div>  </main> <footer class="site-footer" data-astro-cid-5hce7sga> <div class="wrap footer-inner" data-astro-cid-5hce7sga> <p class="footer-line" data-astro-cid-5hce7sga>d402 · mit · built at the yc make something agents want hackathon, oct 2026</p> <ul class="footer-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga><a href="/d402-site/" data-astro-cid-5hce7sga>home</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/docs" data-astro-cid-5hce7sga>docs</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/sellers" data-astro-cid-5hce7sga>sellers</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms.txt" data-astro-cid-5hce7sga>llms.txt</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms-full.txt" data-astro-cid-5hce7sga>llms-full.txt</a></li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> </div> </footer> <script>
+      (function () {
+        var root = document.documentElement;
+        var btns = document.querySelectorAll("[data-theme-toggle]");
+        function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+        function sync() {
+          var next = current() === "light" ? "dark" : "light";
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", current() === "light" ? "#f2f2f2" : "#0a0a0a");
+          btns.forEach(function (b) {
+            b.textContent = next;
+            b.setAttribute("aria-label", "switch to " + next + " theme");
+          });
+        }
+        btns.forEach(function (b) {
+          b.addEventListener("click", function () {
+            var next = current() === "light" ? "dark" : "light";
+            root.setAttribute("data-theme", next);
+            try { localStorage.setItem("d402-theme", next); } catch (e) {}
+            sync();
+          });
+        });
+        sync();
+      })();
+    </script> </body> </html>  <script type="module">document.addEventListener("click",async e=>{const t=e.target?.closest(".dc-copy");if(!t)return;const c=t.closest(".dc-code")?.querySelector("code")?.textContent??"";try{await navigator.clipboard.writeText(c),t.textContent="copied"}catch{t.textContent="select + copy"}t.setAttribute("data-copied",""),setTimeout(()=>{t.textContent="copy",t.removeAttribute("data-copied")},1500)});</script>

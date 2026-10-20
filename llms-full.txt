@@ -1,0 +1,432 @@
+# d402
+
+> d402 ("data 402") lets an agent pay for API access by labelling data instead of sending money.
+> A gated route answers `402 Payment Required` with an offer in the same `accepts` shape as x402.
+> The agent labels a small bundle of items (some are hidden control items), signs its answers with an Ed25519 key, gets a voucher worth N calls, and retries with it.
+
+No wallet, no account, no API key. The seller gets a labelled dataset. Protocol version 1. The full spec is inlined in https://napoleon1313.github.io/d402-site/llms-full.txt
+
+## If you are an agent and you just got a 402 with d402 in accepts, do this
+
+Find the entry in `accepts` whose `scheme` is `"d402"`. Read its `hint`: it says the same as this paragraph for that seller. Make an Ed25519 keypair once and keep it (your trust history is tied to the key). `GET {taskUrl}?tier={smallest tier id}` with header `D402-Key: <your public key, base64url, no padding>`. You get a bundle: `bundleId`, `labels`, `items`. Label every item with exactly one of `labels`; you are not told which items are controls, so label all of them honestly. `POST {taskUrl}/{bundleId}` with header `D402-Key` and JSON body `{"answers": {"<itemId>": "<label>", ...}, "sig": "<signature>"}`, where the signature is over `"d402:submit\n" + bundleId + "\n" + canonicalJSON(answers)`. On `200` you get `{voucher, calls, scope, expiresAt}`. Retry the original request with header `D402-Voucher: <voucher>`. Keep the voucher and reuse it for later calls on any path in `scope` until `D402-Calls-Remaining` reaches 0 or a spend answers 402 again. On `422 quality`, get a new bundle and label more carefully.
+
+## The 402 offer
+
+Served on any gated route without a valid voucher, and on `GET /.well-known/d402` (so you can earn before you need it).
+
+```json
+{
+  "d402": "1",
+  "accepts": [
+    {
+      "scheme": "d402",
+      "sellerId": "api.example.com",
+      "taskUrl": "https://api.example.com/.well-known/d402/tasks",
+      "taskTypes": ["classify"],
+      "scope": ["/search"],
+      "voucherTtl": 86400,
+      "hint": "No wallet needed. To get 10 calls on /search: GET .../tasks?tier=s with a D402-Key header, ...",
+      "tiers": [
+        { "id": "s", "items": 5,  "est_tokens": 1000,  "reward": { "calls": 10 } },
+        { "id": "m", "items": 25, "est_tokens": 5000,  "reward": { "calls": 60 } }
+      ]
+    }
+  ],
+  "error": "missing_voucher"
+}
+```
+
+- `taskUrl`: absolute URL of the task endpoint.
+- `scope`: path prefixes the voucher is valid for.
+- `tiers[].items`: bundle size; `reward.calls`: calls the voucher is worth; `est_tokens`: advisory cost.
+- `hint`: plain-language instructions for this seller. Follow it.
+- `error` (only on a 402 from a gated route): `missing_voucher`, `voucher_invalid`, `voucher_expired`, `voucher_exhausted`, `scope_mismatch`, and on sellers that bind vouchers `bad_key`, `stale_timestamp`, `bad_signature`, `replayed_spend`.
+- Other schemes may sit beside d402 in `accepts` (x402 `exact`, `mpp`). The d402 entry is first.
+
+## Task endpoints
+
+- `GET {taskUrl}?tier=<id>` with `D402-Key` (and optional `D402-Model: claude|gpt|gemini|llama|...`). Returns `{bundleId, tier, type, instructions, labels, items: [{id, text}], expiresAt}`. Bundles expire after 600 s by default.
+- `POST {taskUrl}/{bundleId}` with `D402-Key` and `Content-Type: application/json`, body `{answers, model?, sig}`. Returns `200 {voucher, calls, scope, expiresAt}` or an error.
+- Errors are JSON `{"error": code, "message": string}`: `bad_tier` (400), `no_tasks` (409), `rate_limited` (429, honour `Retry-After`), `blocked` (403), `missing_key` / `bad_key` (400), `unknown_bundle` (404), `expired_bundle` (410), `bad_signature` (401), `already_submitted` (409), `incomplete` / `bad_label` (400), `quality` (422: the bundle failed; the seller never says which items were wrong).
+
+## Headers
+
+| Header | Direction | Value |
+|---|---|---|
+| `D402-Key` | agent to seller | base64url Ed25519 public key (32 raw bytes, no padding). Required on task endpoints. |
+| `D402-Voucher` | agent to seller | the voucher JWT. Required on spend. |
+| `D402-Model` | agent to seller | optional model family. |
+| `D402-Timestamp` | agent to seller | unix seconds. Bound spends only. |
+| `D402-Nonce` | agent to seller | 16 random bytes, base64url. Bound spends, recommended. |
+| `D402-Sig` | agent to seller | base64url Ed25519 signature. Bound spends only. |
+| `D402-Calls-Remaining` | seller to agent | calls left on the voucher, on every successful spend. |
+
+## Signing
+
+Ed25519 over the UTF-8 bytes of these strings; signatures are base64url without padding. `\n` is a newline byte.
+
+```
+submit:      "d402:submit\n" + bundleId + "\n" + canonicalJSON(answers)
+bound spend: "d402:spend\n" + METHOD + "\n" + path + "\n" + jti + "\n" + timestamp + "\n" + nonce
+```
+
+- `canonicalJSON`: JSON with object keys sorted recursively and no whitespace. Python: `json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False)`.
+- Bound spends are needed only when the seller sets `bindVouchers`. Send `D402-Key` (must equal the voucher's `sub`), `D402-Timestamp` (within 300 s of the seller's clock), `D402-Nonce` (fresh per request) and `D402-Sig`. `path` is the request path without the query; `jti` is the voucher JWT's `jti` claim. Without a nonce the signed string has 5 lines (no trailing nonce line). Sending these headers to a seller that does not bind vouchers is harmless.
+
+## Vouchers
+
+`D402-Voucher: <jwt>` on any request whose path starts with a `scope` prefix. The JWT (HS256, minted by the seller) has claims `iss`, `sub` (your public key), `scope`, `jti`, `iat`, `exp`. The calls counter lives on the seller under `jti`. One voucher is valid only at the seller that minted it.
+
+## Docs
+
+- [Spec on the site](https://napoleon1313.github.io/d402-site/docs/spec): the protocol, version 1.
+- [Spec on GitHub](https://github.com/napoleon1313/d402/blob/main/spec/SPEC.md): the source of truth.
+- [For agents](https://napoleon1313.github.io/d402-site/docs/agents): the protocol step by step, every error code and what to do.
+- [Integrate in 10 minutes](https://napoleon1313.github.io/d402-site/integrate): seller and agent snippets.
+- [Seller registry](https://napoleon1313.github.io/d402-site/sellers.json): JSON list of known d402 sellers. At the time of writing it lists only a local demo; there are no public live sellers.
+
+## Optional
+
+- [Full text for LLMs](https://napoleon1313.github.io/d402-site/llms-full.txt): this file plus the whole spec.
+- [Python client](https://github.com/napoleon1313/d402/tree/main/clients/python): `pip install "git+https://github.com/napoleon1313/d402#subdirectory=clients/python"`.
+- [MCP server for agents](https://github.com/napoleon1313/d402/tree/main/packages/mcp): tools `d402_fetch`, `d402_get_bundle`, `d402_submit`, `d402_discover`, `d402_status`.
+- [curl walkthrough](https://github.com/napoleon1313/d402/tree/main/clients/curl): the whole protocol with curl and one signing call.
+
+---
+
+<!-- spec/SPEC.md, inlined verbatim at build time from https://github.com/napoleon1313/d402/blob/main/spec/SPEC.md -->
+
+# d402 protocol, version 1
+
+d402 ("data 402") is an HTTP payment scheme where an agent pays for API access by
+labelling data instead of sending money. It uses the same `402 Payment Required`
+handshake and `accepts` array shape as x402, so a seller can offer USDC and d402
+side by side and the agent picks.
+
+The model is reCAPTCHA for agents:
+
+1. Gate. No access without a voucher.
+2. The challenge is useful work. The seller gets labelled data.
+3. Verification by control items. Every bundle mixes in "golden" items with known
+   answers. The agent is never told which. Pass the goldens, get the voucher.
+   Answers on unknown items become weighted votes.
+4. Trust. Keys with a clean history see fewer goldens and bigger rewards.
+
+## 1. Roles
+
+- Seller: runs an HTTP API, gates routes, owns a task pool, mints vouchers.
+- Agent: holds an Ed25519 keypair, earns vouchers by answering bundles, spends them.
+- Solver: the code inside the agent that turns a bundle into answers (usually an LLM call).
+
+## 2. Headers
+
+| Header | Direction | Value |
+|---|---|---|
+| `D402-Key` | agent -> seller | base64url Ed25519 public key (32 raw bytes). Required on task endpoints. Optional on spend. |
+| `D402-Voucher` | agent -> seller | the voucher JWT. Required on spend. |
+| `D402-Model` | agent -> seller | optional model family string, e.g. `claude`, `gpt`, `gemini`, `llama`. Used for the diversity rule. |
+| `D402-Timestamp` | agent -> seller | unix seconds. Required only when the seller binds spend to the key. |
+| `D402-Sig` | agent -> seller | base64url Ed25519 signature. Required only when the seller binds spend to the key. |
+| `D402-Nonce` | agent -> seller | 16 random bytes, base64url. Recommended on bound spends; see 7.2. |
+| `D402-Calls-Remaining` | seller -> agent | integer, on every successful spend. |
+
+## 3. Discovery and the 402 offer
+
+A gated route without a valid voucher returns `402` with this JSON body. The same
+body is served on `GET /.well-known/d402` so agents can earn ahead of time.
+
+```json
+{
+  "d402": "1",
+  "accepts": [
+    {
+      "scheme": "d402",
+      "sellerId": "api.example.com",
+      "taskUrl": "https://api.example.com/.well-known/d402/tasks",
+      "taskTypes": ["classify"],
+      "scope": ["/search"],
+      "voucherTtl": 86400,
+      "hint": "No wallet needed. To get 10 calls on /search: GET .../tasks?tier=s with a D402-Key header, label the 5 items, POST signed answers, retry with the voucher.",
+      "tiers": [
+        { "id": "s", "items": 5,  "est_tokens": 1000,  "reward": { "calls": 10 } },
+        { "id": "m", "items": 25, "est_tokens": 5000,  "reward": { "calls": 60 } },
+        { "id": "l", "items": 50, "est_tokens": 10000, "reward": { "calls": 150 } }
+      ]
+    }
+  ]
+}
+```
+
+- `taskUrl` is absolute.
+- `taskTypes` lists the task types (section 8) the seller's pool holds, `classify`
+  first. A seller whose pool holds only classify items lists `["classify"]`.
+- `hint` (optional) is plain-language text telling an agent that has never seen d402
+  what to do: where to get a bundle, how many items, what it earns, how to sign. Sellers
+  should include it. Agents find their way through a 402 far more often when the body
+  tells them what to do than when it only names a scheme.
+- `scope` is a list of path prefixes the voucher is valid for.
+- `tiers[].items` is the number of items in a bundle, at least 2 (every bundle holds at
+  least one golden and one unknown item). `est_tokens` is advisory,
+  so the agent can budget in its own unit. The seller grades in items.
+- Other schemes (for example x402's `exact`) may appear in `accepts`.
+
+## 4. Earning a bundle
+
+```
+GET {taskUrl}?tier=m[&type=pairwise]
+    D402-Key: <pubkey>
+    D402-Model: claude            (optional)
+```
+
+A bundle holds items of one task type, named by its `type` field. A seller's pool
+may hold items of several types. The agent may ask for one with `type`; without it
+the seller serves, among the types in `taskTypes`, the one with the most open unknown
+items for this key that also has enough live goldens (ties go to the type listed
+first).
+
+Response `200`:
+
+```json
+{
+  "bundleId": "b_01J...",
+  "tier": "m",
+  "type": "classify",
+  "instructions": "Label each item with exactly one of the labels.",
+  "labels": ["sports", "business", "tech", "world"],
+  "items": [ { "id": "i_1", "text": "..." }, { "id": "i_2", "text": "..." } ],
+  "expiresAt": 1760000000
+}
+```
+
+A pairwise bundle (section 8) has the same envelope:
+
+```json
+{
+  "bundleId": "b_01K...",
+  "tier": "m",
+  "type": "pairwise",
+  "instructions": "Pick the better answer to the prompt: a or b.",
+  "labels": ["a", "b"],
+  "items": [ { "id": "p_1", "prompt": "...", "a": "...", "b": "..." } ],
+  "expiresAt": 1760000000
+}
+```
+
+Errors (`4xx`, JSON `{ "error": code, "message": string }`):
+
+- `bad_tier`: unknown tier id.
+- `bad_request`: `type` is not a known task type.
+- `no_tasks` (status `409`): the pool has nothing to hand out, or no unknown item is left
+  for this key; every bundle holds at least one unknown item. Also returned when the
+  requested `type` is not in `taskTypes`.
+- `rate_limited`: too many bundles for this key or IP. `Retry-After` header is set.
+- `blocked`: the key's trust is below the floor (status `403`).
+- `missing_key` / `bad_key`: `D402-Key` absent or not a valid key.
+
+Bundles expire. Default 600 seconds. An expired bundle gets `expired_bundle` on submit.
+
+## 5. Submitting answers
+
+```
+POST {taskUrl}/{bundleId}
+    D402-Key: <pubkey>
+    Content-Type: application/json
+
+{
+  "answers": { "i_1": "tech", "i_2": "sports" },
+  "model": "claude",
+  "sig": "<base64url ed25519 signature>"
+}
+```
+
+`sig` is over the UTF-8 bytes of:
+
+```
+"d402:submit\n" + bundleId + "\n" + canonicalJSON(answers)
+```
+
+`canonicalJSON` is JSON with object keys sorted recursively and no whitespace.
+
+Response `200` (bundle passed):
+
+```json
+{ "voucher": "<jwt>", "calls": 60, "scope": ["/search"], "expiresAt": 1760086400 }
+```
+
+Response `422` (bundle failed): `{ "error": "quality", "message": "..." }`.
+The seller never reveals which items were golden or which were wrong.
+
+Other errors: `unknown_bundle`, `expired_bundle`, `bad_signature`, `already_submitted`,
+`incomplete` (an item has no answer), `bad_label` (answer not in `labels`).
+
+Answers are graded the same way for every task type: each answer must be one of the
+bundle's `labels`.
+
+### 5.1 Grading rule (v1)
+
+- Let `g` be the number of golden items in the bundle, `c` the number answered correctly.
+- Every bundle contains at least 1 golden item.
+- The bundle passes when `c / g >= 0.8`, and when `g == 1` it passes only when `c == 1`.
+- On pass: mint a voucher, record every answer on unknown items as a vote with weight
+  equal to the agent's current accuracy estimate.
+- On fail: no voucher. The bundle's unknown answers are discarded.
+- Either way the agent's golden counters are updated.
+
+### 5.2 Trust and golden ratio
+
+Per key, the seller keeps `goldenSeen`, `goldenCorrect`, `bundles`.
+
+- `accuracy = (goldenCorrect + 1) / (goldenSeen + 2)` (Laplace prior).
+- Golden ratio for the next bundle:
+  - `bundles < 5`: 0.4
+  - `bundles >= 50` and `accuracy >= 0.95`: 0.1
+  - `bundles >= 10` and `accuracy >= 0.9`: 0.2
+  - otherwise 0.4
+- Golden count per bundle: `max(1, round(items * ratio))`.
+- When fewer unknown items are available to the key than the bundle has room for, the
+  seller tops the bundle up with more goldens, but a bundle always keeps at least one
+  unknown item: with no unknown left for the key (none open, or all already answered or
+  held in an open bundle by this key) the seller answers `no_tasks` instead of handing out
+  an all-golden bundle, so goldens alone never earn a voucher.
+- A key with `bundles >= 5` and `accuracy < 0.6` is blocked. Task endpoints return
+  `403 blocked`. Existing vouchers keep working until they expire.
+
+### 5.3 Resolving unknown items
+
+An unknown item is resolved when, for its top answer:
+
+- the sum of vote weights is `>= 2.0`, and
+- at least 2 distinct keys voted for it, and
+- if the seller enables `requireModelFamilies`, at least 2 distinct declared model
+  families voted for it.
+
+Resolved items leave the pool. The seller can export them.
+
+Note: because `accuracy` uses a Laplace prior it is always below 1.0, so 2 voters
+can never reach a weight of 2.0 on their own. In practice an item resolves on its
+3rd agreeing vote from distinct keys. This is intended: 3-way agreement is the
+redundancy level that makes the resolved label worth more than a single agent's.
+
+### 5.4 Golden rotation
+
+A golden item is retired after `goldenMaxExposures` (default 200) bundles.
+
+## 6. The voucher
+
+An HS256 JWT minted and verified by the seller. Claims:
+
+```json
+{ "iss": "api.example.com", "sub": "<agent pubkey>", "scope": ["/search"],
+  "jti": "v_01J...", "iat": 1760000000, "exp": 1760086400 }
+```
+
+Remaining calls are stored server-side keyed by `jti`. The token is stateless, the
+counter is not.
+
+## 7. Spending
+
+```
+GET /search?q=...
+    D402-Voucher: <jwt>
+```
+
+Seller checks: signature, `exp`, path matches a `scope` prefix, `jti` known,
+calls remaining `> 0`. Decrements by 1 and serves the route. Response carries
+`D402-Calls-Remaining`.
+
+Failures return `402` with the offer body and an extra top-level `"error"` field:
+`voucher_invalid`, `voucher_expired`, `voucher_exhausted`, `scope_mismatch`.
+
+### 7.1 Bound spending (optional)
+
+When the seller sets `bindVouchers: true`, spend requests must also carry
+`D402-Key`, `D402-Timestamp` and `D402-Sig`, where the signature is over:
+
+```
+"d402:spend\n" + method + "\n" + path + "\n" + jti + "\n" + timestamp
+```
+
+`path` is the request path without query. `D402-Key` must equal the voucher's `sub`.
+Timestamps older than 300 seconds are rejected (`stale_timestamp`). A leaked voucher
+is then useless without the private key.
+
+### 7.2 Spend nonce (recommended with bound spending)
+
+Section 7.1 alone lets a captured bound spend be replayed for up to 300 seconds,
+burning a call each time. To close that, the agent sends `D402-Nonce` (16 random
+bytes, base64url) and appends it as a 6th line of the signed message:
+
+```
+"d402:spend\n" + method + "\n" + path + "\n" + jti + "\n" + timestamp + "\n" + nonce
+```
+
+The seller verifies with the nonce when the header is present and remembers
+`(jti, nonce)` until the timestamp leaves the skew window. A repeated pair is
+rejected with `replayed_spend`. Sellers may set `requireSpendNonce` to reject
+bound spends that carry no nonce; by default the 5-line form is still accepted
+so older clients keep working.
+
+### 7.3 Other schemes in the same 402
+
+A seller may offer other payment schemes beside d402. Each scheme can add entries
+to `accepts`, top-level body fields (x402 adds `x402Version`), and response
+headers (MPP adds `WWW-Authenticate: Payment ...`). The gate routes a request by
+what it carries: a `D402-Voucher` header always takes the d402 path; otherwise
+the first scheme whose credential header is present verifies it. A failed
+scheme payment returns `402` with `error: "payment_failed"` and a `schemeError`
+object `{ scheme, error, message }`. The d402 entry stays first in `accepts`.
+
+## 8. Task types
+
+v1 defines `classify` and `pairwise`. Both use the same bundle envelope, the same
+answer shape (one of `labels` per item id), the same goldens and the same grading
+and resolution rules (sections 5.1 to 5.4).
+
+`classify`:
+
+- bundle fields: `labels: string[]`, `items: { id, text }[]`
+- answer: one of `labels` per item id
+
+`pairwise` (preference between two answers to one prompt):
+
+- bundle fields: `labels: ["a", "b"]`, or `["a", "b", "tie"]` when the seller allows
+  ties; `items: { id, prompt, a, b }[]`
+- `instructions` default: "Pick the better answer to the prompt: a or b."
+- answer: one of `labels` per item id (`a` means answer `a` is better)
+
+Clients that only read `labels` and item ids can stay generic across both types.
+An exported resolved pairwise item carries `type: "pairwise"`, `prompt`, `a` and `b`
+beside the usual `id`, `answer`, `weight` and `voters` (its `text` is empty); a
+resolved classify item keeps its v1 shape `{ id, text, answer, weight, voters }`.
+
+Reserved for later: `extract`, `telemetry`.
+
+## 9. Rate limits (defaults)
+
+- 60 bundles per key per hour
+- 120 bundles per IP per hour
+- At most 5 open (unsubmitted, unexpired) bundles per key
+
+## 10. Seller task file format
+
+JSONL, one item per line:
+
+```json
+{ "id": "i_1", "type": "classify", "text": "...", "golden": "tech" }
+{ "id": "i_2", "type": "classify", "text": "..." }
+{ "id": "p_1", "type": "pairwise", "prompt": "...", "a": "...", "b": "...", "golden": "a" }
+{ "id": "p_2", "type": "pairwise", "prompt": "...", "a": "...", "b": "..." }
+```
+
+`golden` present means the item is a control item with that answer. `type` defaults
+to `classify` when absent. A pairwise golden is `a`, `b` or `tie`; `tie` only when the
+seller allows ties. One file may mix both types.
+
+## 11. Security notes
+
+- Per-item results are never revealed.
+- Goldens are sampled uniformly from the live golden pool and retired after N exposures.
+- Vouchers are bearer tokens unless `bindVouchers` is on. Sellers that care should turn it on,
+  and set `requireSpendNonce` so a captured spend cannot be replayed inside the skew window.
+- Key and IP rate limits are the only Sybil defence in v1. A coordinated farm with many
+  keys sharing golden answers is out of scope for v1.

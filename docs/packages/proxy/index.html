@@ -1,0 +1,384 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-5hce7sga> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>@d402-labs/proxy · docs · d402</title><meta name="description" content="Put a d402 gate in front of any existing HTTP API with one command. No code on the seller side: the proxy sits between agents and your API, answers 402..."><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0a0a0a"><link rel="icon" type="image/svg+xml" href="/d402-site/favicon.svg"><link rel="canonical" href="https://napoleon1313.github.io/d402-site/docs/packages/proxy/"><meta property="og:type" content="website"><meta property="og:site_name" content="d402"><meta property="og:title" content="@d402-labs/proxy · docs · d402"><meta property="og:description" content="Put a d402 gate in front of any existing HTTP API with one command. No code on the seller side: the proxy sits between agents and your API, answers 402..."><meta property="og:url" content="https://napoleon1313.github.io/d402-site/docs/packages/proxy/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="@d402-labs/proxy · docs · d402"><meta name="twitter:description" content="Put a d402 gate in front of any existing HTTP API with one command. No code on the seller side: the proxy sits between agents and your API, answers 402..."><script>
+      (function () {
+        try {
+          var t = localStorage.getItem("d402-theme");
+          if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/d402-site/_astro/bench.CT3VcaLi.css">
+<link rel="stylesheet" href="/d402-site/_astro/bench.C14rLK3X.css"></head> <body class data-astro-cid-5hce7sga> <a class="skip-link" href="#main" data-astro-cid-5hce7sga>skip to content</a> <header class="site-nav" data-astro-cid-5hce7sga> <nav class="wrap nav-inner" aria-label="primary" data-astro-cid-5hce7sga> <a class="nav-home" href="/d402-site/" aria-label="d402 home" data-astro-cid-5hce7sga>d402</a> <ul class="nav-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga> <a href="/d402-site/docs" aria-current="page" data-astro-cid-5hce7sga>docs</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a> </li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> <button type="button" class="theme-toggle" data-theme-toggle aria-label="switch to light theme" data-astro-cid-5hce7sga>light</button> </nav> </header> <main id="main" tabindex="-1" data-astro-cid-5hce7sga>  <div class="wrap dc-shell"> <details class="dc-side" id="dc-side" open> <summary><span>docs / @d402-labs/proxy</span></summary> <nav aria-label="docs"> <div class="dc-group"> <span class="dc-group-title">start</span> <ul> <li> <a href="/d402-site/docs">introduction</a> </li><li> <a href="/d402-site/docs/overview">overview</a> </li><li> <a href="/d402-site/docs/spec">spec</a> </li><li> <a href="/d402-site/docs/quickstart">quick start</a> </li><li> <a href="/d402-site/docs/agents">for agents</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">packages</span> <ul> <li> <a href="/d402-site/docs/packages">all packages</a> </li><li> <a href="/d402-site/docs/packages/spec">@d402-labs/spec</a> </li><li> <a href="/d402-site/docs/packages/server">@d402-labs/server</a> </li><li> <a href="/d402-site/docs/packages/client">@d402-labs/client</a> </li><li> <a href="/d402-site/docs/packages/mcp">@d402-labs/mcp</a> </li><li> <a href="/d402-site/docs/packages/mcp-seller">@d402-labs/mcp-seller</a> </li><li> <a href="/d402-site/docs/packages/proxy" aria-current="page">@d402-labs/proxy</a> </li><li> <a href="/d402-site/docs/packages/pool">@d402-labs/pool</a> </li><li> <a href="/d402-site/docs/packages/x402">@d402-labs/x402</a> </li><li> <a href="/d402-site/docs/packages/mpp">@d402-labs/mpp</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">clients</span> <ul> <li> <a href="/d402-site/docs/packages/python">python</a> </li><li> <a href="/d402-site/docs/packages/curl">curl</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">use cases</span> <ul> <li> <a href="/d402-site/docs/use-cases">all use cases</a> </li><li> <a href="/d402-site/docs/use-cases/01-dataset-builder">01 dataset builder</a> </li><li> <a href="/d402-site/docs/use-cases/02-x402-side-by-side">02 x402 side by side</a> </li><li> <a href="/d402-site/docs/use-cases/03-rate-limit-upgrade">03 rate limit upgrade</a> </li><li> <a href="/d402-site/docs/use-cases/04-mcp-agent">04 mcp agent</a> </li><li> <a href="/d402-site/docs/use-cases/05-multi-seller-wallet">05 multi-seller wallet</a> </li><li> <a href="/d402-site/docs/use-cases/06-trust-tiers">06 trust tiers</a> </li><li> <a href="/d402-site/docs/use-cases/07-paid-crawl">07 paid crawl</a> </li><li> <a href="/d402-site/docs/use-cases/08-marketplace">08 marketplace</a> </li><li> <a href="/d402-site/docs/use-cases/09-triple-gate">09 triple gate: one 402, three ways to pay</a> </li><li> <a href="/d402-site/docs/use-cases/10-pairwise">10 pairwise</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">bench</span> <ul> <li> <a href="/d402-site/docs/bench">bench report</a> </li> </ul> </div> </nav> </details> <script>
+  // Collapsed on phones, always open on desktop. Runs before paint; without JS the list is simply open.
+  (function () {
+    var d = document.getElementById("dc-side");
+    if (!d || !window.matchMedia) return;
+    var mq = window.matchMedia("(min-width: 960px)");
+    var sync = function () { d.open = mq.matches; };
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+  })();
+</script> <article class="dc-main prose" id="dc-content"> <p class="eyebrow dc-eyebrow">package / @d402-labs/proxy</p><h1>@d402-labs/proxy</h1>  <p>Put a <a href="/d402-site/docs/spec">d402</a> gate in front of any existing HTTP API with
+one command. No code on the seller side: the proxy sits between agents and
+your API, answers <code>402 Payment Required</code> with a d402 offer, hands out classify
+bundles, grades them, and forwards paid requests to your API unchanged.</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">npx -p @d402-labs/proxy d402-proxy --upstream https://api.example.com --tasks ./tasks.jsonl --labels sports,business,tech,world</code></pre></div>
+<p>Use <code>npx -p @d402-labs/proxy d402-proxy</code>, not <code>npx d402-proxy</code>: the unscoped name
+is not ours on npm, and anyone could publish it. The package is not on npm
+yet; until it is, run <code>node packages/proxy/dist/cli.js</code> after <code>pnpm build</code> in
+a clone.</p>
+<h2 id="put-d402-in-front-of-your-api-in-60-seconds">Put d402 in front of your API in 60 seconds<a class="dc-anchor" href="#put-d402-in-front-of-your-api-in-60-seconds" aria-label="link to this section">#</a></h2>
+<ol>
+<li>Write a JSONL task file: one <code>{"id","type":"classify","text"}</code> per line, some with a <code>"golden"</code> label (SPEC 10). To try the proxy first, use the sample that ships with the package: <code>--tasks node_modules/@d402-labs/proxy/examples/tasks.sample.jsonl</code> after <code>npm i @d402-labs/proxy</code>, or <a href="https://github.com/napoleon1313/d402/blob/main/packages/proxy/examples/tasks.sample.jsonl" rel="noopener"><code>packages/proxy/examples/tasks.sample.jsonl</code></a> in a clone (60 headlines, labels <code>sports,business,tech,world</code>, 20 golden). Item ids and texts are shown to agents. Use random ids; never encode golden/unknown in the id or the text.</li>
+<li><code>export D402_SECRET=$(openssl rand -hex 32)</code></li>
+<li><code>npx -p @d402-labs/proxy d402-proxy --upstream https://api.example.com --tasks ./tasks.jsonl --labels a,b,c --public-url https://d402.example.com</code></li>
+<li>Point agents (or your DNS) at the proxy instead of the API, and make sure they cannot reach the API itself (next section). <code>curl -i https://d402.example.com/anything</code> now returns a 402 with the offer.</li>
+<li>Agents label bundles, earn vouchers and call through. Resolved labels: <code>curl -H 'Authorization: Bearer $TOKEN' https://d402.example.com/.well-known/d402/admin/export</code> (with <code>--admin-token $TOKEN</code>).</li>
+</ol>
+<p>Without <code>--public-url</code> the offer&#39;s <code>taskUrl</code> is <code>http://localhost:<port></code>, and
+the proxy warns at boot: <code>--public-url not given; taskUrl is http://localhost:<port>, which remote agents cannot reach</code>. Behind a reverse
+proxy that sets <code>X-Forwarded-Host</code> and <code>X-Forwarded-Proto</code>, <code>--trust-proxy</code>
+builds <code>taskUrl</code> from those headers per request instead. <code>--public-url</code> is
+still the better choice, because <code>sellerId</code> (the voucher issuer) defaults to
+its host and should not change between requests.</p>
+<h3 id="where-tasks-come-from">Where tasks come from</h3>
+<p>The task file is the labelling work agents pay with. It can be your own data
+(rows you want labelled, plus a few dozen you already know the answer to as
+goldens), work leased from a d402 pool (<code>--pool-url</code>, below), or the sample
+above to see the flow end to end. No public pool is hosted yet: <code>--pool-url</code>
+needs a pool you or a partner runs (<a class="dc-codelink" href="/d402-site/docs/packages/pool"><code>@d402-labs/pool</code></a>).</p>
+<p>Each tier needs enough goldens: a bundle for a new agent holds
+<code>max(1, round(items * 0.4))</code> of them, so the default tiers need 2, 10 and 20.
+At boot the proxy warns <code>tier <id> needs >= N goldens for new agents, pool has M</code> for each tier it cannot serve; with <code>--strict-tiers</code> it leaves those
+tiers out of the offer instead (and refuses to start if none is left).</p>
+<h2 id="the-proxy-is-only-a-gate-if-agents-cannot-reach-the-upstream-directly">The proxy is only a gate if agents cannot reach the upstream directly<a class="dc-anchor" href="#the-proxy-is-only-a-gate-if-agents-cannot-reach-the-upstream-directly" aria-label="link to this section">#</a></h2>
+<p>The proxy forwards to <code>--upstream</code>; it cannot stop anyone from calling that
+URL themselves. The offer never names the upstream (<code>sellerId</code> defaults to the
+host of <code>--public-url</code>), but the upstream must still refuse traffic that did
+not come through the proxy. Two ways:</p>
+<ol>
+<li><p><strong>Private network.</strong> Run the upstream where only the proxy can reach it: bound
+to <code>127.0.0.1</code>, a private subnet or a container network, with no public
+address or DNS name.</p>
+</li>
+<li><p><strong>A shared header.</strong> Give the proxy a secret header that it adds to every
+forwarded request, and have the upstream reject requests without it:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">export D402_PROXY_SECRET=$(openssl rand -hex 32)
+d402-proxy --upstream https://api-origin.example.com --tasks ./tasks.jsonl \
+  --public-url https://api.example.com --upstream-header &quot;X-D402-Proxy: $D402_PROXY_SECRET&quot;</code></pre></div>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">js</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-js">// in the upstream, before any route
+app.use((req, res, next) =&gt;
+  req.get(&quot;X-D402-Proxy&quot;) === process.env.D402_PROXY_SECRET ? next() : res.status(403).end());</code></pre></div>
+<p>The proxy sets the header after copying the client&#39;s headers, so a client
+cannot supply its own value. <code>--upstream-header</code> is repeatable. Use TLS to
+the upstream when the header crosses a network you do not control.</p>
+</li>
+</ol>
+<h2 id="what-it-does">What it does<a class="dc-anchor" href="#what-it-does" aria-label="link to this section">#</a></h2>
+<ul>
+<li>Mounts the d402 routes: <code>GET /.well-known/d402</code> (the offer), <code>GET /.well-known/d402/tasks?tier=</code>, <code>POST /.well-known/d402/tasks/:bundleId</code>.</li>
+<li>Runs <code>d402.gate</code> on every request whose path starts with a <code>--scope</code> prefix (default: everything except <code>/.well-known/*</code> and <code>--open</code> paths). No valid voucher means <code>402</code> with the offer; a valid one is decremented and the request goes through with <code>D402-Calls-Remaining</code> on the response.</li>
+<li>Forwards every request, gated or open, to <code>--upstream</code>: same method, path, query, headers and body (streamed). Hop-by-hop headers and <code>D402-Voucher</code> are dropped, <code>Host</code> becomes the upstream host, and <code>X-Forwarded-For</code>, <code>X-Forwarded-Proto</code>, <code>X-Forwarded-Host</code>, <code>Via</code> and every <code>--upstream-header</code> are added. The upstream status, headers and body come back unchanged except for hop-by-hop headers.</li>
+<li>Logs one line per request to stderr: <code>GET /v1/items 200 12ms paid</code> (<code>paid</code>, <code>open</code> or <code>402</code>).</li>
+<li>Keeps the pool, agents and vouchers in SQLite (<code>--db</code>), in memory by default.</li>
+</ul>
+<h2 id="flags">Flags<a class="dc-anchor" href="#flags" aria-label="link to this section">#</a></h2>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>--upstream <url></code></td>
+<td>required</td>
+<td>base URL of the API to gate; a path prefix is kept (<code>https://x/base</code> + <code>/v1</code> -&gt; <code>https://x/base/v1</code>)</td>
+</tr>
+<tr>
+<td><code>--tasks <file.jsonl></code></td>
+<td>none</td>
+<td>classify task file loaded at boot (SPEC 10)</td>
+</tr>
+<tr>
+<td><code>--scope <prefix,...></code></td>
+<td><a class="dc-codelink" href="/d402-site/docs"><code>/</code></a></td>
+<td>path prefixes to gate; also the voucher scope in the offer</td>
+</tr>
+<tr>
+<td><code>--labels <a,b,...></code></td>
+<td>derived</td>
+<td>classify labels, at least 2; when absent the distinct <code>golden</code> values of the task file are used (a warning says so)</td>
+</tr>
+<tr>
+<td><code>--seller-id <id></code></td>
+<td>host of <code>--public-url</code></td>
+<td><code>sellerId</code> in the offer and <code>iss</code> of vouchers (never the upstream host, which would tell agents where to go around the gate)</td>
+</tr>
+<tr>
+<td><code>--public-url <url></code></td>
+<td><code>http://localhost:<port></code></td>
+<td>public base URL of the proxy; <code>taskUrl</code> is <code><public-url>/.well-known/d402/tasks</code>. Without it the proxy warns that remote agents cannot reach <code>taskUrl</code></td>
+</tr>
+<tr>
+<td><code>--trust-proxy</code></td>
+<td>off</td>
+<td>without <code>--public-url</code>: build <code>taskUrl</code> per request from <code>X-Forwarded-Host</code> / <code>X-Forwarded-Proto</code>. Only behind a reverse proxy that sets them</td>
+</tr>
+<tr>
+<td><code>--upstream-header "Name: value"</code></td>
+<td>none</td>
+<td>added to every forwarded request, overriding a client-sent header of the same name; repeatable. See &quot;The proxy is only a gate...&quot; above</td>
+</tr>
+<tr>
+<td><code>--secret <s></code></td>
+<td>env <code>D402_SECRET</code></td>
+<td>voucher HMAC secret; with neither, a random one is generated and a warning says vouchers will not survive a restart</td>
+</tr>
+<tr>
+<td><code>--port <n></code></td>
+<td><code>8787</code></td>
+<td>listen port (<code>0</code> picks a free one and prints it)</td>
+</tr>
+<tr>
+<td><code>--tier <id:items:est_tokens:calls></code></td>
+<td><code>s:5:1000:10 m:25:5000:60 l:50:10000:150</code></td>
+<td>a tier; repeat the flag for several</td>
+</tr>
+<tr>
+<td><code>--strict-tiers</code></td>
+<td>off</td>
+<td>leave out of the offer every tier the pool has too few goldens for (<code>max(1, round(items * 0.4))</code> per bundle for a new agent); without it the proxy only warns</td>
+</tr>
+<tr>
+<td><code>--db <path></code></td>
+<td>in memory</td>
+<td>SQLite path</td>
+</tr>
+<tr>
+<td><code>--bind-vouchers</code></td>
+<td>off</td>
+<td>SPEC 7.1: spends must carry <code>D402-Key</code>, <code>D402-Timestamp</code>, <code>D402-Sig</code></td>
+</tr>
+<tr>
+<td><code>--require-spend-nonce</code></td>
+<td>off</td>
+<td>with <code>--bind-vouchers</code>: bound spends must also carry a fresh <code>D402-Nonce</code> (SPEC 7.2), so a captured spend cannot be replayed</td>
+</tr>
+<tr>
+<td><code>--require-model-families</code></td>
+<td>off</td>
+<td>an item resolves only with votes from 2 distinct <code>D402-Model</code> families</td>
+</tr>
+<tr>
+<td><code>--x402-pay-to <0x..></code></td>
+<td>off</td>
+<td>also accept USDC over x402: every 402 gets <code>x402Version</code> and an <code>exact</code> entry paying this address. Needs <a class="dc-codelink" href="/d402-site/docs/packages/x402"><code>@d402-labs/x402</code></a> installed</td>
+</tr>
+<tr>
+<td><code>--x402-price <usd></code></td>
+<td><code>$0.007</code></td>
+<td>x402 price per request</td>
+</tr>
+<tr>
+<td><code>--x402-network <name></code></td>
+<td><code>base-sepolia</code></td>
+<td>x402 network (EVM networks of the x402 v1 SDK)</td>
+</tr>
+<tr>
+<td><code>--x402-facilitator <url></code></td>
+<td><code>https://x402.org/facilitator</code></td>
+<td>x402 facilitator that verifies and settles payments</td>
+</tr>
+<tr>
+<td><code>--mpp-tempo-recipient <0x..></code></td>
+<td>off</td>
+<td>also accept MPP: every 402 gets a <code>WWW-Authenticate: Payment</code> challenge for a Tempo stablecoin charge to this address. Needs <a class="dc-codelink" href="/d402-site/docs/packages/mpp"><code>@d402-labs/mpp</code></a> installed</td>
+</tr>
+<tr>
+<td><code>--mpp-amount <usd></code></td>
+<td><code>0.007</code></td>
+<td>MPP amount per request</td>
+</tr>
+<tr>
+<td><code>--mpp-stripe-key <sk_..></code></td>
+<td>off</td>
+<td>adds a Stripe card method to the MPP challenge (on its own it turns MPP on too); <code>MPP_SECRET_KEY</code> and <code>STRIPE_SECRET_KEY</code> from <a class="dc-codelink" href="/d402-site/docs/packages/mpp"><code>@d402-labs/mpp</code></a> apply as well</td>
+</tr>
+<tr>
+<td><code>--admin-token <t></code></td>
+<td>off</td>
+<td>enables the admin endpoints below</td>
+</tr>
+<tr>
+<td><code>--open <prefix,...></code></td>
+<td>none</td>
+<td>path prefixes that are never gated, e.g. <code>/health,/docs</code></td>
+</tr>
+<tr>
+<td><code>--instructions <text></code></td>
+<td>SPEC default</td>
+<td>instructions shown in every bundle</td>
+</tr>
+<tr>
+<td><code>--pool-url <url></code></td>
+<td>none</td>
+<td>a <a class="dc-codelink" href="/d402-site/docs/packages/pool"><code>@d402-labs/pool</code></a> to lease labelling work from, for a site with no data of its own; see below</td>
+</tr>
+<tr>
+<td><code>--site-key <key></code></td>
+<td>env <code>D402_SITE_KEY</code></td>
+<td>site key issued by the pool admin</td>
+</tr>
+<tr>
+<td><code>--config <file.json></code></td>
+<td>none</td>
+<td>JSON config file, see below</td>
+</tr>
+<tr>
+<td><code>-h</code>, <code>--help</code></td>
+<td></td>
+<td>usage</td>
+</tr>
+</tbody></table>
+</div>
+<p>Prefix matching is the same rule the server uses for voucher scope: <code>--scope /v1</code>
+gates <code>/v1</code>, <code>/v1/items</code> and <code>/v1x</code>.</p>
+<p>Paths are normalised before the gate looks at them, and the upstream receives the
+normalised path: repeated slashes are collapsed and <code>.</code>/<code>..</code> segments resolved
+(<code>//v1/items</code> and <code>/x/../v1/items</code> both become <code>/v1/items</code>); percent-encoding is
+kept as sent. A path that still looks odd (a backslash, NUL, or an encoded <a class="dc-codelink" href="/d402-site/docs"><code>/</code></a>,
+<code>\</code>, <code>.</code> or NUL such as <code>/v1%2Fitems</code>) is always gated and forwarded as sent.
+Matching is case-sensitive, so <code>/V1/items</code> is outside <code>--scope /v1</code>: if your
+upstream treats paths case-insensitively, gate with <code>--scope /</code> (and <code>--open</code> for
+the free paths).</p>
+<h3 id="every-payment-option-zero-code">Every payment option, zero code</h3>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">d402-proxy --upstream https://api.example.com --tasks ./tasks.jsonl --scope /v1 --open /health \
+  --bind-vouchers --require-spend-nonce --require-model-families \
+  --x402-pay-to 0xYourUsdcAddress --x402-price '$0.007' \
+  --mpp-tempo-recipient 0xYourTempoAddress --mpp-amount 0.007</code></pre></div>
+<p>One 402 then offers labels (d402), USDC (x402 <code>exact</code>) and MPP (<code>WWW-Authenticate: Payment</code>). A <code>D402-Voucher</code> always takes the d402 path; otherwise an <code>X-PAYMENT</code>
+or <code>Authorization: Payment</code> credential is verified by its scheme.</p>
+<p><a class="dc-codelink" href="/d402-site/docs/packages/x402"><code>@d402-labs/x402</code></a> and <a class="dc-codelink" href="/d402-site/docs/packages/mpp"><code>@d402-labs/mpp</code></a> are optional dependencies: they pull in the
+x402 and MPP SDKs, which are most of the install size. The proxy imports them
+only when an <code>--x402-*</code> or <code>--mpp-*</code> flag is set. If your package manager
+skipped them (<code>npm i --omit=optional</code>), install the one you need:
+<code>npm i @d402-labs/x402</code> or <code>npm i @d402-labs/mpp</code>. Without it the proxy exits with code
+2 and <code>install @d402-labs/x402 to use --x402-pay-to</code> (or the MPP equivalent).</p>
+<h2 id="a-site-with-no-data-of-its-own">A site with no data of its own<a class="dc-anchor" href="#a-site-with-no-data-of-its-own" aria-label="link to this section">#</a></h2>
+<p>With <code>--pool-url</code> and <code>--site-key</code> and no <code>--tasks</code>/<code>--labels</code>, the proxy
+leases its first batch of work from the pool at boot, builds the d402 server
+with that lease&#39;s labels and instructions, and keeps syncing: it leases more
+when it runs low, pushes the votes its agents produce (agent keys hashed), and
+marks items the pool resolved. Boot fails if the pool is unreachable or has no
+open work, because there would be no label set to serve an offer with.</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">d402-proxy --upstream https://api.example.com --scope /v1 --pool-url https://pool.example.com --site-key $SITE_KEY</code></pre></div>
+<p>The boot line reads <code>pool: 200 items (50 golden) leased from https://pool.example.com</code>.
+<code>--tasks</code>/<code>--labels</code> still win when given; the sync then only loads leases
+whose labels match. See <a href="/d402-site/docs/packages/pool"><code>@d402-labs/pool</code></a>.</p>
+<h2 id="config-file">Config file<a class="dc-anchor" href="#config-file" aria-label="link to this section">#</a></h2>
+<p>The same keys in camelCase. Flags override the file; the file overrides env
+<code>D402_SECRET</code>. <code>tiers</code> entries may be <code>"id:items:est_tokens:calls"</code> strings or
+SPEC 3 tier objects; <code>scope</code>, <code>labels</code> and <code>open</code> may be arrays or comma lists.</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">json</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-json">{
+  &quot;upstream&quot;: &quot;https://api.example.com&quot;,
+  &quot;tasks&quot;: &quot;./tasks.jsonl&quot;,
+  &quot;scope&quot;: [&quot;/v1&quot;],
+  &quot;labels&quot;: [&quot;sports&quot;, &quot;business&quot;, &quot;tech&quot;, &quot;world&quot;],
+  &quot;sellerId&quot;: &quot;d402.example.com&quot;,
+  &quot;publicUrl&quot;: &quot;https://d402.example.com&quot;,
+  &quot;trustProxy&quot;: false,
+  &quot;upstreamHeaders&quot;: [&quot;X-D402-Proxy: change-me&quot;],
+  &quot;port&quot;: 8787,
+  &quot;tiers&quot;: [&quot;s:5:1000:10&quot;, { &quot;id&quot;: &quot;m&quot;, &quot;items&quot;: 25, &quot;est_tokens&quot;: 5000, &quot;reward&quot;: { &quot;calls&quot;: 60 } }],
+  &quot;strictTiers&quot;: false,
+  &quot;db&quot;: &quot;./d402.db&quot;,
+  &quot;bindVouchers&quot;: false,
+  &quot;requireSpendNonce&quot;: false,
+  &quot;requireModelFamilies&quot;: false,
+  &quot;x402PayTo&quot;: &quot;0x...&quot;,
+  &quot;x402Price&quot;: &quot;$0.007&quot;,
+  &quot;mppTempoRecipient&quot;: &quot;0x...&quot;,
+  &quot;mppAmount&quot;: &quot;0.007&quot;,
+  &quot;adminToken&quot;: &quot;change-me&quot;,
+  &quot;open&quot;: [&quot;/health&quot;, &quot;/docs&quot;],
+  &quot;poolUrl&quot;: &quot;https://pool.example.com&quot;,
+  &quot;siteKey&quot;: &quot;...&quot;
+}</code></pre></div>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">d402-proxy --config d402.json --port 9000</code></pre></div>
+<h2 id="admin-endpoints">Admin endpoints<a class="dc-anchor" href="#admin-endpoints" aria-label="link to this section">#</a></h2>
+<p>Only mounted when <code>--admin-token</code> is set. Both need <code>Authorization: Bearer <token></code>;
+anything else is <code>401</code>.</p>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>GET /.well-known/d402/admin/stats</code></td>
+<td><code>{ stats, agents, resolved }</code>: pool stats (<code>tasks.stats()</code>), every agent with its accuracy and block state (<code>agents.list()</code>), and the count of resolved items</td>
+</tr>
+<tr>
+<td><code>GET /.well-known/d402/admin/export</code></td>
+<td>the resolved unknown items as JSONL (<code>application/x-ndjson</code>), one <code>{ id, text, answer, weight, voters }</code> per line</td>
+</tr>
+</tbody></table>
+</div>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">curl -s -H &quot;Authorization: Bearer $TOKEN&quot; http://localhost:8787/.well-known/d402/admin/stats | jq
+curl -s -H &quot;Authorization: Bearer $TOKEN&quot; http://localhost:8787/.well-known/d402/admin/export &gt; resolved.jsonl</code></pre></div>
+<h2 id="as-a-library">As a library<a class="dc-anchor" href="#as-a-library" aria-label="link to this section">#</a></h2>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">ts</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-ts">import { serve } from &quot;@hono/node-server&quot;;
+import { createProxyApp, parseArgs } from &quot;@d402-labs/proxy&quot;;
+
+const { app, d402 } = createProxyApp({
+  upstream: &quot;https://api.example.com&quot;,
+  tasks: &quot;./tasks.jsonl&quot;,
+  labels: [&quot;sports&quot;, &quot;business&quot;, &quot;tech&quot;, &quot;world&quot;],
+  scope: [&quot;/v1&quot;],
+  open: [&quot;/health&quot;],
+  publicUrl: &quot;https://d402.example.com&quot;,
+  secret: process.env.D402_SECRET,
+});
+serve({ fetch: app.fetch, port: 8787 });
+// d402.tasks.stats(), d402.agents.list(), d402.tasks.exportResolved(), d402.close()</code></pre></div>
+<p><code>createProxyApp(opts)</code> is pure apart from opening the SQLite store, so it can be
+driven with <code>app.request()</code> in tests; <code>log</code>, <code>warn</code> and <code>fetch</code> are injectable.
+It is synchronous and does not import the optional payment packages, so it
+throws on <code>x402PayTo</code> / <code>mppTempoRecipient</code> / <code>mppStripeKey</code>; use
+<code>buildProxyApp</code> for those. <code>buildProxyApp(opts)</code> is what the CLI runs: it
+imports <a class="dc-codelink" href="/d402-site/docs/packages/x402"><code>@d402-labs/x402</code></a> / <a class="dc-codelink" href="/d402-site/docs/packages/mpp"><code>@d402-labs/mpp</code></a> when their options are set, then does the
+same plus the pool boot path (<code>poolUrl</code>, <code>siteKey</code>, injectable <code>poolFetch</code>),
+returning <code>{ app, d402, sync? }</code>.
+<code>parseArgs(argv, env?)</code> turns CLI flags into the same options object.</p>
+<h2 id="notes">Notes<a class="dc-anchor" href="#notes" aria-label="link to this section">#</a></h2>
+<ul>
+<li>The proxy decodes compressed upstream bodies (<code>fetch</code> does), so <code>Content-Encoding</code> and <code>Content-Length</code> are dropped from such responses; everything else passes through.</li>
+<li><code>X-Forwarded-For</code> is appended to when the request already carries one. The server&#39;s per-IP rate limit reads the first entry.</li>
+<li>The proxy needs Node 22+ for <code>node:sqlite</code>. The CLI hides the <code>node:sqlite</code> <code>ExperimentalWarning</code>; other warnings still print.</li>
+</ul>
+   <footer class="dc-foot label"> <a href="https://github.com/napoleon1313/d402/blob/main/packages/proxy/README.md" rel="noopener">edit on github: packages/proxy/README.md</a> <a href="#main">back to top</a> </footer> </article> </div>  </main> <footer class="site-footer" data-astro-cid-5hce7sga> <div class="wrap footer-inner" data-astro-cid-5hce7sga> <p class="footer-line" data-astro-cid-5hce7sga>d402 · mit · built at the yc make something agents want hackathon, oct 2026</p> <ul class="footer-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga><a href="/d402-site/" data-astro-cid-5hce7sga>home</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/docs" data-astro-cid-5hce7sga>docs</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/sellers" data-astro-cid-5hce7sga>sellers</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms.txt" data-astro-cid-5hce7sga>llms.txt</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms-full.txt" data-astro-cid-5hce7sga>llms-full.txt</a></li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> </div> </footer> <script>
+      (function () {
+        var root = document.documentElement;
+        var btns = document.querySelectorAll("[data-theme-toggle]");
+        function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+        function sync() {
+          var next = current() === "light" ? "dark" : "light";
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", current() === "light" ? "#f2f2f2" : "#0a0a0a");
+          btns.forEach(function (b) {
+            b.textContent = next;
+            b.setAttribute("aria-label", "switch to " + next + " theme");
+          });
+        }
+        btns.forEach(function (b) {
+          b.addEventListener("click", function () {
+            var next = current() === "light" ? "dark" : "light";
+            root.setAttribute("data-theme", next);
+            try { localStorage.setItem("d402-theme", next); } catch (e) {}
+            sync();
+          });
+        });
+        sync();
+      })();
+    </script> </body> </html>  <script type="module">document.addEventListener("click",async e=>{const t=e.target?.closest(".dc-copy");if(!t)return;const c=t.closest(".dc-code")?.querySelector("code")?.textContent??"";try{await navigator.clipboard.writeText(c),t.textContent="copied"}catch{t.textContent="select + copy"}t.setAttribute("data-copied",""),setTimeout(()=>{t.textContent="copy",t.removeAttribute("data-copied")},1500)});</script>

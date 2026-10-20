@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-5hce7sga> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>d402 client for Python · docs · d402</title><meta name="description" content="A minimal agent-side implementation of spec/SPEC.md sections 2-7.2: discover an offer, earn a voucher by labelling a bundle, and spend it through a requests..."><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0a0a0a"><link rel="icon" type="image/svg+xml" href="/d402-site/favicon.svg"><link rel="canonical" href="https://napoleon1313.github.io/d402-site/docs/packages/python/"><meta property="og:type" content="website"><meta property="og:site_name" content="d402"><meta property="og:title" content="d402 client for Python · docs · d402"><meta property="og:description" content="A minimal agent-side implementation of spec/SPEC.md sections 2-7.2: discover an offer, earn a voucher by labelling a bundle, and spend it through a requests..."><meta property="og:url" content="https://napoleon1313.github.io/d402-site/docs/packages/python/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="d402 client for Python · docs · d402"><meta name="twitter:description" content="A minimal agent-side implementation of spec/SPEC.md sections 2-7.2: discover an offer, earn a voucher by labelling a bundle, and spend it through a requests..."><script>
+      (function () {
+        try {
+          var t = localStorage.getItem("d402-theme");
+          if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/d402-site/_astro/bench.CT3VcaLi.css">
+<link rel="stylesheet" href="/d402-site/_astro/bench.C14rLK3X.css"></head> <body class data-astro-cid-5hce7sga> <a class="skip-link" href="#main" data-astro-cid-5hce7sga>skip to content</a> <header class="site-nav" data-astro-cid-5hce7sga> <nav class="wrap nav-inner" aria-label="primary" data-astro-cid-5hce7sga> <a class="nav-home" href="/d402-site/" aria-label="d402 home" data-astro-cid-5hce7sga>d402</a> <ul class="nav-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga> <a href="/d402-site/docs" aria-current="page" data-astro-cid-5hce7sga>docs</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a> </li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> <button type="button" class="theme-toggle" data-theme-toggle aria-label="switch to light theme" data-astro-cid-5hce7sga>light</button> </nav> </header> <main id="main" tabindex="-1" data-astro-cid-5hce7sga>  <div class="wrap dc-shell"> <details class="dc-side" id="dc-side" open> <summary><span>docs / python</span></summary> <nav aria-label="docs"> <div class="dc-group"> <span class="dc-group-title">start</span> <ul> <li> <a href="/d402-site/docs">introduction</a> </li><li> <a href="/d402-site/docs/overview">overview</a> </li><li> <a href="/d402-site/docs/spec">spec</a> </li><li> <a href="/d402-site/docs/quickstart">quick start</a> </li><li> <a href="/d402-site/docs/agents">for agents</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">packages</span> <ul> <li> <a href="/d402-site/docs/packages">all packages</a> </li><li> <a href="/d402-site/docs/packages/spec">@d402-labs/spec</a> </li><li> <a href="/d402-site/docs/packages/server">@d402-labs/server</a> </li><li> <a href="/d402-site/docs/packages/client">@d402-labs/client</a> </li><li> <a href="/d402-site/docs/packages/mcp">@d402-labs/mcp</a> </li><li> <a href="/d402-site/docs/packages/mcp-seller">@d402-labs/mcp-seller</a> </li><li> <a href="/d402-site/docs/packages/proxy">@d402-labs/proxy</a> </li><li> <a href="/d402-site/docs/packages/pool">@d402-labs/pool</a> </li><li> <a href="/d402-site/docs/packages/x402">@d402-labs/x402</a> </li><li> <a href="/d402-site/docs/packages/mpp">@d402-labs/mpp</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">clients</span> <ul> <li> <a href="/d402-site/docs/packages/python" aria-current="page">python</a> </li><li> <a href="/d402-site/docs/packages/curl">curl</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">use cases</span> <ul> <li> <a href="/d402-site/docs/use-cases">all use cases</a> </li><li> <a href="/d402-site/docs/use-cases/01-dataset-builder">01 dataset builder</a> </li><li> <a href="/d402-site/docs/use-cases/02-x402-side-by-side">02 x402 side by side</a> </li><li> <a href="/d402-site/docs/use-cases/03-rate-limit-upgrade">03 rate limit upgrade</a> </li><li> <a href="/d402-site/docs/use-cases/04-mcp-agent">04 mcp agent</a> </li><li> <a href="/d402-site/docs/use-cases/05-multi-seller-wallet">05 multi-seller wallet</a> </li><li> <a href="/d402-site/docs/use-cases/06-trust-tiers">06 trust tiers</a> </li><li> <a href="/d402-site/docs/use-cases/07-paid-crawl">07 paid crawl</a> </li><li> <a href="/d402-site/docs/use-cases/08-marketplace">08 marketplace</a> </li><li> <a href="/d402-site/docs/use-cases/09-triple-gate">09 triple gate: one 402, three ways to pay</a> </li><li> <a href="/d402-site/docs/use-cases/10-pairwise">10 pairwise</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">bench</span> <ul> <li> <a href="/d402-site/docs/bench">bench report</a> </li> </ul> </div> </nav> </details> <script>
+  // Collapsed on phones, always open on desktop. Runs before paint; without JS the list is simply open.
+  (function () {
+    var d = document.getElementById("dc-side");
+    if (!d || !window.matchMedia) return;
+    var mq = window.matchMedia("(min-width: 960px)");
+    var sync = function () { d.open = mq.matches; };
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+  })();
+</script> <article class="dc-main prose" id="dc-content"> <p class="eyebrow dc-eyebrow">client / python</p><h1>d402 client for Python</h1>  <p>A minimal agent-side implementation of <a href="https://github.com/napoleon1313/d402/blob/main/spec/SPEC.md" rel="noopener"><code>spec/SPEC.md</code></a> sections 2-7.2:
+discover an offer, earn a voucher by labelling a bundle, and spend it through a
+<code>requests</code> wrapper that handles the 402 handshake for you.</p>
+<p>Dependencies: Python 3.10+, <code>cryptography</code>, <code>requests</code>. No build step.</p>
+<p>Project site: <a href="https://napoleon1313.github.io/d402-site/" rel="noopener">https://napoleon1313.github.io/d402-site/</a> . Source: <a href="https://github.com/napoleon1313/d402" rel="noopener">https://github.com/napoleon1313/d402</a> .</p>
+<h2 id="install-from-pypi-once-published">Install from PyPI (once published)<a class="dc-anchor" href="#install-from-pypi-once-published" aria-label="link to this section">#</a></h2>
+<p>The package is prepared for PyPI under the name <code>d402</code> but has not been uploaded yet, so this
+does not work today. Once it is published:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">pip install d402              # gives you `import d402` and the `d402-agent-py` command
+d402-agent-py --help</code></pre></div>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">python</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-python">from d402 import D402Client, Keypair, llm_solver
+client = D402Client(Keypair.load_or_create(&quot;~/.d402/keypair.json&quot;),   # my_llm: prompt str -&gt; reply str
+                    solver=llm_solver(my_llm), cache_path=&quot;~/.d402&quot;)
+res = client.fetch(&quot;http://localhost:8787/search?q=gpu&quot;)   # 402 -&gt; earn -&gt; retry
+print(res.status_code, res.json())</code></pre></div>
+<p><strong>For AI agents:</strong> the <code>hint</code> in the seller&#39;s 402 response plus <code>d402.D402Client(...).fetch(url)</code>
+is the whole integration. <code>fetch</code> reads the 402 offer, earns a voucher with your solver, retries,
+and caches the voucher for later calls. <code>help(d402)</code> prints the same in ten lines.</p>
+<p>Release steps for maintainers are in <a href="https://github.com/napoleon1313/d402/blob/main/clients/python/RELEASING.md" rel="noopener"><code>RELEASING.md</code></a>.</p>
+<h2 id="install-from-the-repository">Install from the repository<a class="dc-anchor" href="#install-from-the-repository" aria-label="link to this section">#</a></h2>
+<p>Either copy the <code>d402/</code> folder next to your code, or:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">cd clients/python &amp;&amp; pip install -e .     # gives you `import d402` and the `d402-agent-py` command</code></pre></div>
+<p>The TypeScript client&#39;s CLI is <code>d402-agent</code> (<a class="dc-codelink" href="/d402-site/docs/packages/client"><code>@d402-labs/client</code></a>), not <code>d402</code>; both read the same <code>$D402_HOME</code>.</p>
+<h2 id="usage">Usage<a class="dc-anchor" href="#usage" aria-label="link to this section">#</a></h2>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">python</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-python">from d402 import D402Client, Keypair, lookup_solver, llm_solver
+
+keypair = Keypair.load_or_create(&quot;~/.d402/keypair.json&quot;)          # Ed25519, created on first run (0600)
+solver = llm_solver(lambda prompt: my_llm(prompt))                # or lookup_solver({&quot;i_1&quot;: &quot;tech&quot;, ...})
+client = D402Client(keypair, solver=solver, model=&quot;claude&quot;, cache_path=&quot;~/.d402&quot;)
+
+res = client.fetch(&quot;http://localhost:8787/search?q=gpu&quot;)          # 402 -&gt; earn (get bundle, solve, sign, submit) -&gt; retry
+print(res.status_code, res.headers[&quot;D402-Calls-Remaining&quot;], res.json())
+
+res = client.fetch(&quot;http://localhost:8787/search?q=ceasefire&quot;)    # cached voucher, no earning
+for v in client.status():
+    print(v.sellerId, v.jti, v.calls, &quot;calls left&quot;)</code></pre></div>
+<p><code>fetch(url, method="GET", **requests_kwargs)</code> returns a plain <code>requests.Response</code>. Lower-level
+pieces are there too: <code>discover(base)</code>, <code>get_bundle(task_url, tier)</code>, <code>submit(task_url, bundle, answers)</code>,
+<code>earn(accept, tier=None)</code>, and the signing helpers <code>sign_submit</code>, <code>sign_spend</code>, <code>canonical_json</code>.
+Protocol failures raise <code>D402Error(code, message, status, body)</code>; an ordinary non-2xx from the
+gated route is just returned.</p>
+<h2 id="command-line">Command line<a class="dc-anchor" href="#command-line" aria-label="link to this section">#</a></h2>
+<p>Installed, the command is <code>d402-agent-py</code>; from a checkout without installing, <code>python -m d402</code>
+runs the same thing.</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">export D402_HOME=~/.d402                               # default; holds keypair.json and vouchers.json
+d402-agent-py keygen                                   # prints the public key
+d402-agent-py discover http://localhost:8787
+d402-agent-py earn http://localhost:8787 --tier s --answers answers.json   # answers.json: {&quot;i_1&quot;: &quot;tech&quot;, ...}
+d402-agent-py fetch &quot;http://localhost:8787/search?q=gpu&quot;
+d402-agent-py status
+d402-agent-py --version</code></pre></div>
+<p><code>earn</code> and <code>fetch</code> take <code>--answers</code> (a lookup file) because the CLI has no LLM; in code you pass
+<code>llm_solver</code>. <code>status</code> prints <code>jti</code>, <code>sellerId</code>, <code>calls</code>, <code>expiresAt</code> and <code>scope</code> for each cached
+voucher, never the token, since the token is a bearer credential.</p>
+<h2 id="shared-identity-and-cache-with-the-typescript-client">Shared identity and cache with the TypeScript client<a class="dc-anchor" href="#shared-identity-and-cache-with-the-typescript-client" aria-label="link to this section">#</a></h2>
+<p>The file formats are identical to <a class="dc-codelink" href="/d402-site/docs/packages/client"><code>@d402-labs/client</code></a>, so both clients can run as the same agent:</p>
+<ul>
+<li><code>keypair.json</code> is <code>{"publicKey", "privateKey"}</code> with base64url raw 32-byte keys, the file
+<code>loadOrCreateKeypair(path)</code> reads and writes.</li>
+<li><code>cache_path</code> pointing at a directory uses <code><dir>/vouchers.json</code>, the file <code>FileVoucherCache(dir)</code>
+uses: <code>{"version": 1, "vouchers": [{jti, sellerId, token, scope, calls, expiresAt, sub, taskUrl}]}</code>.
+Writes are atomic (temp file + rename) and the file is re-read on every operation, so a voucher
+earned from Python is spent from TypeScript and vice versa. <code>D402_HOME</code> is the same convention
+the d402 MCP server uses.</li>
+</ul>
+<p><code>canonical_json</code> is <code>json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False)</code>
+and is byte-identical to the TS <code>canonicalJSON</code> for strings, ints, bools, null, lists and objects
+(the test suite checks both signatures against vectors generated by the TS implementation).</p>
+<p>Bound spends (SPEC 7.1) are signed by default (<code>sign_spends=True</code>) and carry the SPEC 7.2
+<code>D402-Nonce</code> (<code>spend_nonce=True</code>), the same as the TS client; sellers that do not bind vouchers
+ignore the extra headers. <code>sign_spend(..., nonce=None)</code> gives the 5-line form for a seller that
+predates 7.2.</p>
+<h2 id="tests">Tests<a class="dc-anchor" href="#tests" aria-label="link to this section">#</a></h2>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">cd clients/python &amp;&amp; python3 -m unittest -v          # or: python3 -m pytest -q
+pip install -e '.[dev]'                              # installs pytest</code></pre></div>
+<p>The integration tests start <code>examples/search-proxy</code> as a subprocess (needs <code>node</code> and the repo&#39;s
+<code>node_modules</code>); they are skipped when the repo is not there.</p>
+   <footer class="dc-foot label"> <a href="https://github.com/napoleon1313/d402/blob/main/clients/python/README.md" rel="noopener">edit on github: clients/python/README.md</a> <a href="#main">back to top</a> </footer> </article> </div>  </main> <footer class="site-footer" data-astro-cid-5hce7sga> <div class="wrap footer-inner" data-astro-cid-5hce7sga> <p class="footer-line" data-astro-cid-5hce7sga>d402 · mit · built at the yc make something agents want hackathon, oct 2026</p> <ul class="footer-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga><a href="/d402-site/" data-astro-cid-5hce7sga>home</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/docs" data-astro-cid-5hce7sga>docs</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/sellers" data-astro-cid-5hce7sga>sellers</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms.txt" data-astro-cid-5hce7sga>llms.txt</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms-full.txt" data-astro-cid-5hce7sga>llms-full.txt</a></li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> </div> </footer> <script>
+      (function () {
+        var root = document.documentElement;
+        var btns = document.querySelectorAll("[data-theme-toggle]");
+        function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+        function sync() {
+          var next = current() === "light" ? "dark" : "light";
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", current() === "light" ? "#f2f2f2" : "#0a0a0a");
+          btns.forEach(function (b) {
+            b.textContent = next;
+            b.setAttribute("aria-label", "switch to " + next + " theme");
+          });
+        }
+        btns.forEach(function (b) {
+          b.addEventListener("click", function () {
+            var next = current() === "light" ? "dark" : "light";
+            root.setAttribute("data-theme", next);
+            try { localStorage.setItem("d402-theme", next); } catch (e) {}
+            sync();
+          });
+        });
+        sync();
+      })();
+    </script> </body> </html>  <script type="module">document.addEventListener("click",async e=>{const t=e.target?.closest(".dc-copy");if(!t)return;const c=t.closest(".dc-code")?.querySelector("code")?.textContent??"";try{await navigator.clipboard.writeText(c),t.textContent="copied"}catch{t.textContent="select + copy"}t.setAttribute("data-copied",""),setTimeout(()=>{t.textContent="copy",t.removeAttribute("data-copied")},1500)});</script>

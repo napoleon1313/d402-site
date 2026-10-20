@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-5hce7sga> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>@d402-labs/mcp-seller · docs · d402</title><meta name="description" content="The seller side of d402 as a remote MCP server. Your tools are paid for in labelled data: an agent calls a paid tool, gets the d402 offer back, labels a..."><meta name="color-scheme" content="dark light"><meta name="theme-color" content="#0a0a0a"><link rel="icon" type="image/svg+xml" href="/d402-site/favicon.svg"><link rel="canonical" href="https://napoleon1313.github.io/d402-site/docs/packages/mcp-seller/"><meta property="og:type" content="website"><meta property="og:site_name" content="d402"><meta property="og:title" content="@d402-labs/mcp-seller · docs · d402"><meta property="og:description" content="The seller side of d402 as a remote MCP server. Your tools are paid for in labelled data: an agent calls a paid tool, gets the d402 offer back, labels a..."><meta property="og:url" content="https://napoleon1313.github.io/d402-site/docs/packages/mcp-seller/"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="@d402-labs/mcp-seller · docs · d402"><meta name="twitter:description" content="The seller side of d402 as a remote MCP server. Your tools are paid for in labelled data: an agent calls a paid tool, gets the d402 offer back, labels a..."><script>
+      (function () {
+        try {
+          var t = localStorage.getItem("d402-theme");
+          if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script><link rel="stylesheet" href="/d402-site/_astro/bench.CT3VcaLi.css">
+<link rel="stylesheet" href="/d402-site/_astro/bench.C14rLK3X.css"></head> <body class data-astro-cid-5hce7sga> <a class="skip-link" href="#main" data-astro-cid-5hce7sga>skip to content</a> <header class="site-nav" data-astro-cid-5hce7sga> <nav class="wrap nav-inner" aria-label="primary" data-astro-cid-5hce7sga> <a class="nav-home" href="/d402-site/" aria-label="d402 home" data-astro-cid-5hce7sga>d402</a> <ul class="nav-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga> <a href="/d402-site/docs" aria-current="page" data-astro-cid-5hce7sga>docs</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a> </li><li data-astro-cid-5hce7sga> <a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a> </li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> <button type="button" class="theme-toggle" data-theme-toggle aria-label="switch to light theme" data-astro-cid-5hce7sga>light</button> </nav> </header> <main id="main" tabindex="-1" data-astro-cid-5hce7sga>  <div class="wrap dc-shell"> <details class="dc-side" id="dc-side" open> <summary><span>docs / @d402-labs/mcp-seller</span></summary> <nav aria-label="docs"> <div class="dc-group"> <span class="dc-group-title">start</span> <ul> <li> <a href="/d402-site/docs">introduction</a> </li><li> <a href="/d402-site/docs/overview">overview</a> </li><li> <a href="/d402-site/docs/spec">spec</a> </li><li> <a href="/d402-site/docs/quickstart">quick start</a> </li><li> <a href="/d402-site/docs/agents">for agents</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">packages</span> <ul> <li> <a href="/d402-site/docs/packages">all packages</a> </li><li> <a href="/d402-site/docs/packages/spec">@d402-labs/spec</a> </li><li> <a href="/d402-site/docs/packages/server">@d402-labs/server</a> </li><li> <a href="/d402-site/docs/packages/client">@d402-labs/client</a> </li><li> <a href="/d402-site/docs/packages/mcp">@d402-labs/mcp</a> </li><li> <a href="/d402-site/docs/packages/mcp-seller" aria-current="page">@d402-labs/mcp-seller</a> </li><li> <a href="/d402-site/docs/packages/proxy">@d402-labs/proxy</a> </li><li> <a href="/d402-site/docs/packages/pool">@d402-labs/pool</a> </li><li> <a href="/d402-site/docs/packages/x402">@d402-labs/x402</a> </li><li> <a href="/d402-site/docs/packages/mpp">@d402-labs/mpp</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">clients</span> <ul> <li> <a href="/d402-site/docs/packages/python">python</a> </li><li> <a href="/d402-site/docs/packages/curl">curl</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">use cases</span> <ul> <li> <a href="/d402-site/docs/use-cases">all use cases</a> </li><li> <a href="/d402-site/docs/use-cases/01-dataset-builder">01 dataset builder</a> </li><li> <a href="/d402-site/docs/use-cases/02-x402-side-by-side">02 x402 side by side</a> </li><li> <a href="/d402-site/docs/use-cases/03-rate-limit-upgrade">03 rate limit upgrade</a> </li><li> <a href="/d402-site/docs/use-cases/04-mcp-agent">04 mcp agent</a> </li><li> <a href="/d402-site/docs/use-cases/05-multi-seller-wallet">05 multi-seller wallet</a> </li><li> <a href="/d402-site/docs/use-cases/06-trust-tiers">06 trust tiers</a> </li><li> <a href="/d402-site/docs/use-cases/07-paid-crawl">07 paid crawl</a> </li><li> <a href="/d402-site/docs/use-cases/08-marketplace">08 marketplace</a> </li><li> <a href="/d402-site/docs/use-cases/09-triple-gate">09 triple gate: one 402, three ways to pay</a> </li><li> <a href="/d402-site/docs/use-cases/10-pairwise">10 pairwise</a> </li> </ul> </div><div class="dc-group"> <span class="dc-group-title">bench</span> <ul> <li> <a href="/d402-site/docs/bench">bench report</a> </li> </ul> </div> </nav> </details> <script>
+  // Collapsed on phones, always open on desktop. Runs before paint; without JS the list is simply open.
+  (function () {
+    var d = document.getElementById("dc-side");
+    if (!d || !window.matchMedia) return;
+    var mq = window.matchMedia("(min-width: 960px)");
+    var sync = function () { d.open = mq.matches; };
+    sync();
+    if (mq.addEventListener) mq.addEventListener("change", sync);
+  })();
+</script> <article class="dc-main prose" id="dc-content"> <p class="eyebrow dc-eyebrow">package / @d402-labs/mcp-seller</p><h1>@d402-labs/mcp-seller</h1>  <p>The seller side of d402 as a remote MCP server. Your tools are paid for in
+labelled data: an agent calls a paid tool, gets the d402 offer back, labels a
+bundle of items, earns a voucher worth N calls, and calls the tool again with
+the voucher. No wallet, no API key. You get a labelled dataset.</p>
+<p>It is a plain Streamable HTTP MCP server, so it runs anywhere one does. The
+vouchers are the same HS256 JWTs <a class="dc-codelink" href="/d402-site/docs/packages/server"><code>@d402-labs/server</code></a> mints for HTTP routes, so one
+voucher works on both the HTTP routes and the MCP tools of the same seller.</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">pnpm install &amp;&amp; pnpm build    # from the repo root, once
+node packages/mcp-seller/dist/cli.js --tasks tasks.jsonl --labels sports,business,tech,world --scope /mcp/search --port 8788 --secret $D402_SECRET</code></pre></div>
+<p>The package is not on npm yet. Once it is, the same command is
+<code>npx -p @d402-labs/mcp-seller d402-mcp-seller ...</code>. After <code>pnpm build</code>, a second <code>pnpm install</code> also
+links <code>d402-mcp-seller</code> as a workspace bin.</p>
+<p>That is a complete paid MCP server: four <code>d402_*</code> tools for earning, a demo
+<code>search</code> tool over a built-in 10-document corpus, and the d402 HTTP routes at
+<code>/.well-known/d402*</code>. Without <code>--tasks</code> it loads a built-in 20-item pool so it
+runs with no files at all.</p>
+<h2 id="tools">Tools<a class="dc-anchor" href="#tools" aria-label="link to this section">#</a></h2>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>d402_offer</code></td>
+<td>The offer (same JSON as <code>GET /.well-known/d402</code>) plus a one-line <code>how</code>.</td>
+</tr>
+<tr>
+<td><code>d402_get_bundle { tier?, key?, model? }</code></td>
+<td>A bundle of items to label.</td>
+</tr>
+<tr>
+<td><code>d402_submit { bundleId, answers, sig?, key?, model? }</code></td>
+<td>Grades the bundle; returns <code>{ voucher, calls, scope, expiresAt }</code> or <code>isError</code> with code <code>quality</code>.</td>
+</tr>
+<tr>
+<td><code>d402_status { voucher? }</code></td>
+<td>Calls left on a voucher (default: the session&#39;s last one), the session public key, pending bundles.</td>
+</tr>
+<tr>
+<td>your gated tools</td>
+<td>Each takes its own args plus <code>d402_voucher</code> (and the four bound-spend args, see below).</td>
+</tr>
+</tbody></table>
+</div>
+<p>A gated tool called without <code>d402_voucher</code> returns the offer, not an error:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">json</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-json">{ &quot;paymentRequired&quot;: true, &quot;d402&quot;: { &quot;d402&quot;: &quot;1&quot;, &quot;accepts&quot;: [ ... ] }, &quot;how&quot;: &quot;Call d402_get_bundle, label the items, call d402_submit, then call the paid tool with the voucher.&quot; }</code></pre></div>
+<p>That is the structured content. The text content starts with
+<code>Payment required.</code>, then the offer&#39;s <code>hint</code>, which describes the HTTP route
+(GET the <code>taskUrl</code>, POST <code>{answers, sig}</code>), and only then the MCP instructions
+from <code>how</code> on the next line. An agent in an MCP client should follow the <code>how</code>
+line and use the <code>d402_*</code> tools.</p>
+<p>With a voucher it runs your handler and appends <code>d402_calls_remaining</code> to the
+structured content and a <code>calls remaining: N</code> text line. A spend that fails
+(<code>voucher_exhausted</code>, <code>voucher_expired</code>, <code>scope_mismatch</code>, ...) returns the same
+payment-required shape with <code>error</code> set.</p>
+<h2 id="two-identity-modes">Two identity modes<a class="dc-anchor" href="#two-identity-modes" aria-label="link to this section">#</a></h2>
+<p><strong>Session mode</strong> (default). The agent passes no key. The server generates a
+real Ed25519 keypair per MCP session, earns bundles under it, signs
+submissions and bound spends with it. Zero setup for the agent. The trade-off:
+trust (fewer control items, bigger rewards as a key builds a clean history)
+resets with every session, because the key does.</p>
+<p><strong>Key mode.</strong> The agent passes <code>key</code> (its base64url Ed25519 public key) to
+<code>d402_get_bundle</code> and <code>key</code> + <code>sig</code> to <code>d402_submit</code>, where <code>sig</code> is its
+signature over <code>"d402:submit\n{bundleId}\n{canonical JSON of answers}"</code> (spec
+section 5). Trust follows the key across sellers, sessions and harnesses, and
+the same key works on the HTTP routes. <a class="dc-codelink" href="/d402-site/docs/packages/spec"><code>@d402-labs/spec</code></a> has <code>generateKeypair</code> and
+<code>signSubmit</code>; <a class="dc-codelink" href="/d402-site/docs/packages/client"><code>@d402-labs/client</code></a> persists a keypair file.</p>
+<p><code>sessionKeys: false</code> (CLI <code>--no-session-keys</code>) turns session mode off: every
+earning tool then requires <code>key</code>.</p>
+<h3 id="bound-vouchers">Bound vouchers</h3>
+<p>With <code>bindVouchers: true</code> on the seller (spec 7.1, 7.2) every spend must be
+signed by the voucher&#39;s key. In session mode the server does this itself
+(timestamp, fresh nonce, signature with the session key). In key mode the agent
+passes four extra args on every gated tool call:</p>
+<div class="dc-table"><table>
+<thead>
+<tr>
+<th>Arg</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>d402_key</code></td>
+<td>its public key, equal to the voucher&#39;s <code>sub</code></td>
+</tr>
+<tr>
+<td><code>d402_timestamp</code></td>
+<td>unix seconds, within 300s of the server</td>
+</tr>
+<tr>
+<td><code>d402_nonce</code></td>
+<td>16 random bytes, base64url, never reused</td>
+</tr>
+<tr>
+<td><code>d402_sig</code></td>
+<td>Ed25519 over <code>"d402:spend\nTOOL\n{scope path}\n{jti}\n{timestamp}\n{nonce}"</code></td>
+</tr>
+</tbody></table>
+</div>
+<p>The method is the literal string <code>TOOL</code> and the path is the tool&#39;s scope path
+(<code>/mcp/<name></code> by default). A reused nonce is <code>replayed_spend</code>.</p>
+<h2 id="one-voucher-across-http-and-mcp">One voucher across HTTP and MCP<a class="dc-anchor" href="#one-voucher-across-http-and-mcp" aria-label="link to this section">#</a></h2>
+<p>Vouchers carry a <code>scope</code> of path prefixes. Each gated MCP tool spends against a
+path, <code>/mcp/<tool name></code> by default (override with <code>scope</code> in the tool config).
+List both prefixes in the seller&#39;s <code>scope</code> and one voucher covers both:</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">ts</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-ts">const d402 = createD402({
+  sellerId: &quot;api.example.com&quot;,
+  taskUrl: &quot;https://api.example.com/.well-known/d402/tasks&quot;,
+  scope: [&quot;/search&quot;, &quot;/mcp/search&quot;],   // HTTP route and MCP tool
+  secret: process.env.D402_SECRET!,
+  labels: [&quot;sports&quot;, &quot;business&quot;, &quot;tech&quot;, &quot;world&quot;],
+  tiers: [{ id: &quot;s&quot;, items: 5, est_tokens: 1000, reward: { calls: 10 } }],
+});</code></pre></div>
+<p>An agent can then earn over <code>GET /.well-known/d402/tasks</code> with curl and spend
+on the MCP <code>search</code> tool, or earn through <code>d402_get_bundle</code> in Claude and spend
+on <code>GET /search</code> with a <code>D402-Voucher</code> header. The calls counter is shared.</p>
+<h2 id="programmatic-use">Programmatic use<a class="dc-anchor" href="#programmatic-use" aria-label="link to this section">#</a></h2>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">ts</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-ts">import { createD402 } from &quot;@d402-labs/server&quot;;
+import { createD402McpServer, createStreamableHttpApp } from &quot;@d402-labs/mcp-seller&quot;;
+import { serve } from &quot;@hono/node-server&quot;;
+import { z } from &quot;zod&quot;;
+
+const d402 = createD402({ /* as above */ });
+d402.tasks.loadFile(&quot;tasks.jsonl&quot;);
+
+function makeMcp() {
+  const { server, gated } = createD402McpServer({ d402 });
+  gated(
+    &quot;search&quot;,
+    { description: &quot;Search the index.&quot;, inputSchema: { q: z.string() } },   // scope defaults to /mcp/search
+    async ({ q }) =&gt; ({ content: [{ type: &quot;text&quot;, text: `hits for ${q}` }], structuredContent: { hits: [] } }),
+  );
+  return server;
+}
+
+const { app } = createStreamableHttpApp({ d402, mcp: makeMcp });   // /.well-known/d402* and /mcp
+app.use(&quot;/search&quot;, d402.gate);                                      // the HTTP twin, same vouchers
+app.get(&quot;/search&quot;, (c) =&gt; c.json({ hits: [] }));
+serve({ fetch: app.fetch, port: Number(process.env.PORT ?? 8788) });</code></pre></div>
+<p><code>createD402McpServer</code> returns <code>{ server, gated, sessions }</code>. <code>createStreamableHttpApp</code>
+returns <code>{ app, sessions, path, close }</code>. <code>mcp</code> is a factory called once per MCP
+session, which is the SDK&#39;s recommended pattern (one <code>McpServer</code> and one
+transport per session); a single instance is accepted but serves one session.</p>
+<p>The MCP endpoint uses the SDK&#39;s <code>WebStandardStreamableHTTPServerTransport</code>. It
+takes a web-standard <code>Request</code> and returns a <code>Response</code>, so Hono&#39;s <code>c.req.raw</code>
+goes straight in: no Node <code>req</code>/<code>res</code> conversion, no <code>fetch-to-node</code>, and the
+same code runs under <code>@hono/node-server</code>, Cloudflare Workers, Deno or Bun. The
+<code>StreamableHTTPServerTransport</code> in the SDK&#39;s examples is a thin Node wrapper
+around this same class.</p>
+<p>These methods on <a class="dc-codelink" href="/d402-site/docs/packages/server"><code>@d402-labs/server</code></a> back the tools, so anything the HTTP routes can
+do, the MCP tools can: <code>d402.issueBundle(...)</code>, <code>d402.submitBundle(...)</code> (both
+throw <code>TaskError</code> with the route&#39;s <code>code</code> and <code>status</code>) and <code>d402.spend(...)</code>
+(the gate&#39;s checks and decrement, returning <code>{ remaining, claims }</code> or
+<code>{ error, message }</code>).</p>
+<h2 id="hosting">Hosting<a class="dc-anchor" href="#hosting" aria-label="link to this section">#</a></h2>
+<p>The binary is a plain Streamable HTTP MCP server on <code>PORT</code> with no state
+outside the SQLite file (<code>--db</code>; in memory by default), so it deploys on any
+MCP host from this repo: Manufact, Cloudflare, Fly, a container. Set
+<code>D402_SECRET</code> so vouchers survive restarts and <code>--public-url</code> to the URL agents
+see, since it is written into the offer&#39;s <code>taskUrl</code>.</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">pnpm --filter @d402-labs/mcp-seller run start -- --tasks tasks.jsonl --labels a,b   # local
+PORT=8788 D402_SECRET=... node packages/mcp-seller/dist/cli.js --db /data/d402.sqlite --public-url https://seller.example</code></pre></div>
+<p>The per-IP rate limit reads <code>X-Forwarded-For</code> (or <code>X-Real-IP</code>) on the MCP
+side; behind a host&#39;s proxy that is the agent&#39;s IP, bare on a socket it is
+<code>unknown</code> for everyone, and the per-key limits still apply.</p>
+<h2 id="cli-flags">CLI flags<a class="dc-anchor" href="#cli-flags" aria-label="link to this section">#</a></h2>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang"></span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code>--tasks &lt;file.jsonl&gt;        classify task file (SPEC 10); default: a built-in 20-item demo pool
+--labels &lt;a,b,...&gt;          classify labels, at least 2 (default: derived from the task file's goldens)
+--scope &lt;prefix,...&gt;        voucher scope prefixes (default: /mcp/search); list /search too to share vouchers with HTTP routes
+--port &lt;n&gt;                  listen port (default: env PORT, else 8788; 0 picks a free port)
+--secret &lt;s&gt;                voucher HMAC secret (default: env D402_SECRET, else random with a warning)
+--seller-id &lt;id&gt;            sellerId in the offer (default: d402-mcp-seller)
+--public-url &lt;url&gt;          public base URL, for taskUrl (default: http://localhost:&lt;port&gt;)
+--tier &lt;id:items:tokens:calls&gt;  a tier; repeatable (default: s:5:1000:10 m:25:5000:60 l:50:10000:150)
+--db &lt;path&gt;                 SQLite path (default: in memory)
+--path &lt;p&gt;                  MCP endpoint path (default: /mcp)
+--tools-module &lt;file.js&gt;    module exporting register(gated, { d402, server }) that adds your gated tools
+--no-search                 do not register the demo search tool
+--no-session-keys           agents must pass key (and sign); no per-session keypairs
+--bind-vouchers             SPEC 7.1: spends must be signed by the agent key (the server signs in session mode)
+--require-spend-nonce       SPEC 7.2: bound spends must carry a nonce
+--require-model-families    resolution needs votes from 2 model families
+--instructions &lt;text&gt;       instructions shown in every bundle
+--pool-url &lt;url&gt;            a d402 pool to lease labelling work from (a seller with no data of its own)
+--site-key &lt;key&gt;            site key issued by the pool admin (default: env D402_SITE_KEY)
+--name &lt;s&gt;                  MCP server name (default: d402-seller)</code></pre></div>
+<p>The port is printed to stderr as <code>d402-mcp-seller listening on http://localhost:<port></code>.</p>
+<h2 id="adding-your-own-gated-tools">Adding your own gated tools<a class="dc-anchor" href="#adding-your-own-gated-tools" aria-label="link to this section">#</a></h2>
+<p>Without touching the package, write a module that exports <code>register</code>:</p>
+<p>Install zod v4 next to your module (<code>npm i zod@4</code>); it is not resolved from
+this package.</p>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">js</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-js">// my-tools.mjs
+import { z } from &quot;zod&quot;;
+
+export function register(gated, { d402 }) {
+  gated(
+    &quot;lookup&quot;,
+    { description: &quot;Look up a ticker.&quot;, inputSchema: { symbol: z.string() }, scope: &quot;/mcp/lookup&quot; },
+    async ({ symbol }) =&gt; ({ content: [{ type: &quot;text&quot;, text: `${symbol}: 101.2` }], structuredContent: { symbol, price: 101.2 } }),
+  );
+}</code></pre></div>
+<div class="dc-code"><div class="dc-code-bar"><span class="dc-lang">sh</span><button type="button" class="dc-copy" aria-label="copy code">copy</button></div><pre><code class="language-sh">node packages/mcp-seller/dist/cli.js --tools-module ./my-tools.mjs --scope /mcp --no-search</code></pre></div>
+<p><code>gated(name, config, handler)</code> takes the same <code>config</code> as the SDK&#39;s
+<code>registerTool</code> (<code>title</code>, <code>description</code>, <code>inputSchema</code>, <code>annotations</code>) plus
+<code>scope</code>, the path the spend is checked against. The handler receives only your
+own args; the <code>d402_*</code> args are consumed before it runs. <code>register</code> may be
+async and is called once per MCP session.</p>
+<p>A custom tool whose <code>scope</code> is outside <code>--scope</code> can never be paid for: every
+call returns <code>scope_mismatch</code>, because no voucher covers its path. Nothing
+warns at boot, so check that each tool&#39;s scope starts with one of the
+<code>--scope</code> prefixes (here <code>/mcp/lookup</code> is under <code>/mcp</code>).</p>
+   <footer class="dc-foot label"> <a href="https://github.com/napoleon1313/d402/blob/main/packages/mcp-seller/README.md" rel="noopener">edit on github: packages/mcp-seller/README.md</a> <a href="#main">back to top</a> </footer> </article> </div>  </main> <footer class="site-footer" data-astro-cid-5hce7sga> <div class="wrap footer-inner" data-astro-cid-5hce7sga> <p class="footer-line" data-astro-cid-5hce7sga>d402 · mit · built at the yc make something agents want hackathon, oct 2026</p> <ul class="footer-links" role="list" data-astro-cid-5hce7sga> <li data-astro-cid-5hce7sga><a href="/d402-site/" data-astro-cid-5hce7sga>home</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/docs" data-astro-cid-5hce7sga>docs</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/integrate" data-astro-cid-5hce7sga>integrate</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/playground" data-astro-cid-5hce7sga>playground</a></li><li data-astro-cid-5hce7sga><a href="/d402-site/docs/use-cases" data-astro-cid-5hce7sga>use cases</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/sellers" data-astro-cid-5hce7sga>sellers</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms.txt" data-astro-cid-5hce7sga>llms.txt</a></li> <li data-astro-cid-5hce7sga><a href="/d402-site/llms-full.txt" data-astro-cid-5hce7sga>llms-full.txt</a></li> <li data-astro-cid-5hce7sga><a href="https://github.com/napoleon1313/d402" rel="noopener" data-astro-cid-5hce7sga>github</a></li> </ul> </div> </footer> <script>
+      (function () {
+        var root = document.documentElement;
+        var btns = document.querySelectorAll("[data-theme-toggle]");
+        function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+        function sync() {
+          var next = current() === "light" ? "dark" : "light";
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", current() === "light" ? "#f2f2f2" : "#0a0a0a");
+          btns.forEach(function (b) {
+            b.textContent = next;
+            b.setAttribute("aria-label", "switch to " + next + " theme");
+          });
+        }
+        btns.forEach(function (b) {
+          b.addEventListener("click", function () {
+            var next = current() === "light" ? "dark" : "light";
+            root.setAttribute("data-theme", next);
+            try { localStorage.setItem("d402-theme", next); } catch (e) {}
+            sync();
+          });
+        });
+        sync();
+      })();
+    </script> </body> </html>  <script type="module">document.addEventListener("click",async e=>{const t=e.target?.closest(".dc-copy");if(!t)return;const c=t.closest(".dc-code")?.querySelector("code")?.textContent??"";try{await navigator.clipboard.writeText(c),t.textContent="copied"}catch{t.textContent="select + copy"}t.setAttribute("data-copied",""),setTimeout(()=>{t.textContent="copy",t.removeAttribute("data-copied")},1500)});</script>
